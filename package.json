@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "@storybook/addon-info": "^3.2.19",
+    "@storybook/addon-options": "^3.2.19",
+    "@storybook/react": "^3.2.19",
+    "cfx.simple-build-tool": "^0.0.3",
+    "ddeyes": "^0.0.6",
+    "stylus": "^0.54.5"
+  },
+  "dependencies": {
+    "antd": "^3.0.3",
+    "cfx.dom": "^0.0.3",
+    "normalize.css": "^7.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "recompose": "^0.26.0",
+    "reset-css": "^2.2.1"
+  }
+}
