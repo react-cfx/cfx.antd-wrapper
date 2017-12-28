@@ -49,7 +49,7 @@ Commit = ({
         href: ''
       , '忘记密码'
 
-      ' Or '
+      ' or '
 
       c_a
         href: ''

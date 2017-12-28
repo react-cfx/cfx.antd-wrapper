@@ -34,6 +34,6 @@ UserName = ({
         prefix: c_Icon
           type: 'user'
           style: fontSize: 13
-        placeholder: 'Email / Phone / Username'
+        placeholder: 'Email / Phone / UserName'
 
 export default UserName
