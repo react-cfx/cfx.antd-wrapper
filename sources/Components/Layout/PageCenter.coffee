@@ -14,14 +14,13 @@ CFX = prefixDom {
 }
 
 hocMapProps = mapProps (ownerProps) =>
-  ownerProps
   {
     ownerProps...
     style: {
       (
         if ownerProps.style?
         then ownerProps.style
-        {}
+        else {}
       )...
       display: 'flex'
       height: '100vh'

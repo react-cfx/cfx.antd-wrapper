@@ -1,28 +1,41 @@
-import React from 'react'
 import { Card } from 'antd'
 import Form from './Form'
 import { prefixDom } from 'cfx.dom'
+
+import {
+  mapProps
+  compose
+} from 'recompose'
 
 CFX = prefixDom {
   Card
   Form
 }
 
-class LoginCard extends React.Component
+hocMapProps = mapProps (ownerProps) =>
+  {
+    ownerProps...
+    style: {
+      (
+        if ownerProps.style?
+        then ownerProps.style
+        else {}
+      )...
+      width: 300
+    }
+  }
 
-  render: ->
+enhance = compose hocMapProps
 
-    {
-      c_Card
-      c_Form
-    } = CFX
+LoginCard = enhance (props) =>
 
+  {
     c_Card
-      style: {
-        @props.style...
-        width: 300
-      }
-    ,
-      c_Form {}
+    c_Form
+  } = CFX
+
+  c_Card props
+  ,
+    c_Form {}
 
 export default LoginCard

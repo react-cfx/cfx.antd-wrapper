@@ -1,4 +1,3 @@
-import React from 'react'
 import PageCenter from '../Layout/PageCenter'
 import LoginCard from './Card'
 import {
@@ -10,17 +9,15 @@ CFX = prefixDom {
   LoginCard
 }
 
-class CenterCard extends React.Component
+CenterCard = =>
 
-  render: ->
+  {
+    c_PageCenter
+    c_LoginCard
+  } = CFX
 
-    {
-      c_PageCenter
-      c_LoginCard
-    } = CFX
-
-    c_PageCenter {}
-    ,
-      c_LoginCard {}
+  c_PageCenter {}
+  ,
+    c_LoginCard {}
 
 export default CenterCard
