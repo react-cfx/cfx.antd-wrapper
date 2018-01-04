@@ -2,23 +2,23 @@ import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
 
 import SiderBar from '../Components/Main/SiderBar'
-import MainContent from '../Components/Main/MainContent'
-import SiderBySider from '../Components/Main/SiderBySider'
-import SiderWithSider from '../Components/Main/SiderWithContent'
+# import MainContent from '../Components/Main/MainContent'
+# import SiderBySider from '../Components/Main/SiderBySider'
+# import SiderWithSider from '../Components/Main/SiderWithContent'
 
 import SiderContent from '../Components/Main/SiderContent'
 
-import MainPage from '../Components/Main/MainPage'
-import MainPage2 from '../Components/Main/MainPage2'
+# import MainPage from '../Components/Main/MainPage'
+# import MainPage2 from '../Components/Main/MainPage2'
 
 CFX = prefixDom {
   SiderBar
-  MainContent
-  SiderBySider
-  SiderWithSider
+  # MainContent
+  # SiderBySider
+  # SiderWithSider
   SiderContent
-  MainPage
-  MainPage2
+  # MainPage
+  # MainPage2
 }
 
 export default ->
@@ -35,31 +35,31 @@ export default ->
     { c_SiderContent } = CFX
     c_SiderContent {}
 
-  .add 'MainContent'
-  , =>
-    { c_MainContent } = CFX
-    c_MainContent {}
+  # .add 'MainContent'
+  # , =>
+  #   { c_MainContent } = CFX
+  #   c_MainContent {}
 
-  .add 'SiderWithSider'
-  , =>
+  # .add 'SiderWithSider'
+  # , =>
 
-    { c_SiderWithSider } = CFX
-    c_SiderWithSider {}
+  #   { c_SiderWithSider } = CFX
+  #   c_SiderWithSider {}
 
-  .add 'SiderBySider'
-  , =>
+  # .add 'SiderBySider'
+  # , =>
 
-    { c_SiderBySider } = CFX
-    c_SiderBySider {}
+  #   { c_SiderBySider } = CFX
+  #   c_SiderBySider {}
 
-  .add 'MainPage'
-  , =>
+  # .add 'MainPage'
+  # , =>
 
-    { c_MainPage } = CFX
-    c_MainPage {}
+  #   { c_MainPage } = CFX
+  #   c_MainPage {}
 
-  .add 'MainPage2'
-  , =>
+  # .add 'MainPage2'
+  # , =>
 
-    { c_MainPage2 } = CFX
-    c_MainPage2 {}
+  #   { c_MainPage2 } = CFX
+  #   c_MainPage2 {}

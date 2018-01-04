@@ -1,4 +1,4 @@
-import { ddbs as dd } from 'ddeyes'
+# import { ddbs as dd } from 'ddeyes'
 import React from 'react'
 import { Form } from 'antd'
 FormItem = Form.Item
@@ -27,7 +27,6 @@ getChildren = (children) =>
     handleDecorator children
   else if Array.isArray children
     children.reduce (r, c) =>
-      dd c
       [
         r...
         if c.decorator?
