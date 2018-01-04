@@ -1,9 +1,11 @@
 import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
-import Menu from './Menu'
+import MenuOne from './MenuOne'
+import MenuTwo from './MenuTwo'
 
 CFX = prefixDom {
-  Menu
+  MenuOne
+  MenuTwo
 }
 
 export default =>
@@ -13,5 +15,11 @@ export default =>
   .add 'Menu_One'
   , =>
 
-    { c_Menu } = CFX
-    c_Menu {}
+    { c_MenuOne } = CFX
+    c_MenuOne {}
+
+  .add 'Menu_Two'
+  , =>
+
+    { c_MenuTwo } = CFX
+    c_MenuTwo {}

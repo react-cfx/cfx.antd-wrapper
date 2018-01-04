@@ -1,4 +1,4 @@
-import { ddbs as dd } from 'ddeyes'
+# import { ddbs as dd } from 'ddeyes'
 import React from 'react'
 import { prefixDom } from 'cfx.dom'
 import { Menu, Icon } from 'antd'
@@ -50,12 +50,22 @@ _Menu = enhance (props) =>
   Dom =
     MenuItem: ({
       k
+      i
       c
     }) =>
-      dd "Create MenuItem Dom #{k}."
-      c_MenuItem
+      # dd "Create MenuItem Dom #{k}."
+      c_MenuItem.apply null
+      , [
         key: k
-      , c
+        (
+          if i?
+          then [
+            c_Icon type: i
+            c_span {}, c
+          ]
+          else [ c ]
+        )...
+      ]
     MenuItemGroup: (
       {
         lk
@@ -64,7 +74,7 @@ _Menu = enhance (props) =>
       }
       recMenu
     ) =>
-      dd "Create MenuItemGroup Dom #{lk}."
+      # dd "Create MenuItemGroup Dom #{lk}."
       c_MenuItemGroup.apply null
       ,
         recMenu others, [
@@ -80,7 +90,7 @@ _Menu = enhance (props) =>
       }
       recMenu
     ) =>
-      dd "Create SubMenu Dom #{k}."
+      # dd "Create SubMenu Dom #{k}."
       c_SubMenu.apply null
       ,
         recMenu others, [
@@ -118,6 +128,7 @@ _Menu = enhance (props) =>
           then [
             Dom.MenuItem {
               k
+              i
               c
             }
           ]
