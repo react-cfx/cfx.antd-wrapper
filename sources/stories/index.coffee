@@ -8,9 +8,11 @@ import Welcome from './Welcome'
 import Login from './Login'
 import Menu from './Menu'
 import Main from './Main'
+import AntdMB from './AntdMB'
 
 Welcome()
 
 Login()
 Menu()
 Main()
+AntdMB()
