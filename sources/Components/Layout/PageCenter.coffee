@@ -1,7 +1,5 @@
 # import { ddbs as dd } from 'ddeyes'
 
-import React from 'react'
-
 import { prefixDom } from 'cfx.dom'
 import {
   mapProps

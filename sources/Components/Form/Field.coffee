@@ -1,5 +1,4 @@
 # import { ddbs as dd } from 'ddeyes'
-import React from 'react'
 import { Form } from 'antd'
 FormItem = Form.Item
 import { prefixDom } from 'cfx.dom'

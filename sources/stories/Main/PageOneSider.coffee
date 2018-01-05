@@ -5,9 +5,9 @@ import {
 } from 'cfx.dom'
 import { Layout } from 'antd'
 
-import SiderBar from './SiderBar'
-import MainContent from './MainContent'
-import HocSiderContent from '../Layout/SiderContent'
+import SiderBar from '../Menu/MenuOne'
+import MainContent from './Content'
+import HocSiderContent from '../../Components/Layout/SiderContent'
 
 CFX = prefixDom {
   SiderBar

@@ -1,23 +1,20 @@
 import React from 'react'
-import {
-  # cfxify
-  prefixDom
-} from 'cfx.dom'
+import { prefixDom } from 'cfx.dom'
 import { Layout } from 'antd'
 
-import SiderBar from './SiderBar'
-import SiderWithContent from './SiderWithContent'
-import HocSiderContent from '../Layout/SiderContent'
+import SiderBar from '../Menu/MenuOne'
+import ContentWithSider from './ContentWithSider'
+import HocSiderContent from '../../Components/Layout/SiderContent'
 
 CFX = prefixDom {
   SiderBar
   Layout
-  SiderWithContent
+  ContentWithSider
 }
 
 MainPage = HocSiderContent(
   CFX.c_SiderBar {}
-  CFX.c_SiderWithContent {}
+  CFX.c_ContentWithSider {}
   collapsed: true
 )
 
