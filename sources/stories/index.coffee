@@ -7,10 +7,10 @@ import Welcome from './Welcome'
 
 import Login from './Login'
 import Menu from './Menu'
-import Main from './Main'
+import Layout from './Layout'
 
 Welcome()
 
 Login()
 Menu()
-Main()
+Layout()

@@ -1,5 +1,5 @@
 import { prefixDom } from 'cfx.dom'
-import Content from '../../Components/Main/Content'
+import Content from '../../Components/Layout/Content'
 
 CFX = prefixDom {
   Content

@@ -1,66 +1,66 @@
-import React from 'react'
+import { ddbs as dd } from 'ddeyes'
 import { prefixDom } from 'cfx.dom'
 import { Layout } from 'antd'
-{ Sider } = Layout
+{ Sider, Content } = Layout
+
+import {
+  mapProps
+  compose
+} from 'recompose'
 
 CFX = prefixDom {
   Layout
   Sider
+  Content
 }
 
-HocSiderContent = (
-  Sider
-  Content
-  options
-) ->
+getPropsChilden = (Obj) =>
+  {
+    props... 
+    children
+  } = Obj
+  {
+    props
+    children
+  }
 
-  class SiderContent extends React.Component
+hocMapProps = mapProps ({
+  sider
+  content
+  ownerProps...
+}) =>
 
-    state:
-      collapsed:
-        if options?.collapsed?
-        then options.collapsed
-        else false
+  sider = getPropsChilden sider
+  content = getPropsChilden content
 
-    onCollapse: (collapsed) =>
-      console.log collapsed
-      @setState {
-        collapsed
-      }
+  {
+    sider: {
+      sider...
+      className: 'ant-layout-has-sider'
+    }
+    content
+    ownerProps...
+  }
 
-    render: ->
+enhance = compose hocMapProps
 
-      {
-        c_Layout
-        c_Sider
-      } = CFX
+export default enhance ({
+  layout
+  sider
+  content
+}) =>
 
-      [
-        c_Sider {
-          key: 'Sider'
-          collapsible: @props.collapsible if @props?.collapsible?
-          collapsed: @state.collapsed
-          onCollapse: @onCollapse
-          style: {
-            (
-              if @props?.style?.sider?
-              then @props.style.sider
-              else {}
-            )...
-          }
-        }
-        ,
-          Sider
-        c_Layout {
-          (
-            if @props?.className?.layout?
-            then className: @props.className.layout
-            else {}
-          )...
-          key: 'Layout'
-        }
-        ,
-          Content
-      ]
+  {
+    c_Layout
+    c_Sider
+    c_Content
+  } = CFX
 
-export default HocSiderContent
+  c_Layout layout
+  ,
+    c_Sider sider.props
+    ,
+      sider.children
+    c_Content content.props
+    ,
+      content.children

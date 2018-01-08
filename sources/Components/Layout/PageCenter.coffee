@@ -1,6 +1,7 @@
 # import { ddbs as dd } from 'ddeyes'
 
 import { prefixDom } from 'cfx.dom'
+import { Layout } from 'antd'
 import {
   mapProps
   # withProps
@@ -8,7 +9,7 @@ import {
 } from 'recompose'
 
 CFX = prefixDom {
-  'div'
+  Layout
 }
 
 hocMapProps = mapProps (ownerProps) =>
@@ -51,7 +52,7 @@ PageCenter = enhance (
   # }
   # state
 ) =>
-  { c_div } = CFX
-  c_div props
+  { c_Layout } = CFX
+  c_Layout props
 
 export default PageCenter

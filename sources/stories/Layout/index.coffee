@@ -21,7 +21,7 @@ CFX = prefixDom {
 
 export default ->
 
-  storiesOf 'Main', module
+  storiesOf 'Layout', module
 
   .add 'Content'
   , =>
@@ -34,7 +34,6 @@ export default ->
     { c_PageOneSider } = CFX
     c_PageOneSider {}
 
- 
   .add 'PageTwoSider'
   , =>
 
