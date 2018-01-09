@@ -4,6 +4,7 @@ import {
   Checkbox
 } from 'antd'
 import { prefixDom } from 'cfx.dom'
+import nb from './style'
 
 CFX = prefixDom {
   'a'
@@ -27,10 +28,12 @@ Commit = ({
 
   c_FormField {}
   ,
-    c_Button
+    c_Button {
       type: 'primary'
       htmlType: 'submit'
-      className: 'login-form-button'
+      # className: 'login-form-button'
+      ( nb 'loginFormButton' )...
+    }
     , '登录'
 
     decorator: decorator
@@ -42,8 +45,10 @@ Commit = ({
       c_Checkbox {}
       , '记住用户名'
 
-    c_div 
-      className: 'login-form-forgot'
+    c_div {
+      # className: 'login-form-forgot'
+      ( nb 'loginFormForgot' )...
+    }
     ,
       c_a
         href: ''

@@ -10,10 +10,14 @@
   "dependencies": {
     "antd": "^3.0.3",
     "cfx.dom": "^0.0.3",
+    "cfx.style": "^0.0.4",
     "normalize.css": "^7.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "recompose": "^0.26.0",
-    "reset-css": "^2.2.1"
+    "reset-css": "^2.2.1",
+    "rollup": "^0.53.3",
+    "rollup-plugin-cleanup": "^2.0.0",
+    "rollup-plugin-re": "^1.0.6"
   }
 }

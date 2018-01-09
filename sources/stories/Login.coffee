@@ -1,11 +1,11 @@
 import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
 
-import {
+import LoginCenterCard, {
   LoginForm
   LoginCard
-  LoginCenterCard
 } from '../Components/Login'
+  
 
 CFX = prefixDom {
   LoginForm

@@ -5,5 +5,7 @@ import LoginCenterCard from './CenterCard'
 export {
   LoginForm
   LoginCard
-  LoginCenterCard
+  # LoginCenterCard
 }
+
+export default LoginCenterCard

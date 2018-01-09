@@ -4,7 +4,8 @@ import { prefixDom } from 'cfx.dom'
 import UserName from './UserName'
 import PassWord from './PassWord'
 import Commit from './Commit'
-import './index.css'
+# import './index.css'
+import nb from './style'
 
 CFX = prefixDom {
   'div'
@@ -34,9 +35,11 @@ class LoginForm extends React.Component
 
     loginForm =
 
-      c_Form
+      c_Form {
         onSubmit: @handleSubmit
-        className: 'login-form'
+        # className: 'login-form'
+        ( nb 'loginForm' )...
+      }
       ,
 
         c_UserName
