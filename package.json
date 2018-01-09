@@ -1,4 +1,14 @@
 {
+  "name": "cfx.antd-wrapper",
+  "version": "0.0.0",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "rollup -c",
+    "rebuild": "npm run clean; npm run build",
+    "test": "make rebuild; make server_storybook",
+    "postinstall": "npm run build"
+  },
   "devDependencies": {
     "@storybook/addon-info": "^3.2.19",
     "@storybook/addon-options": "^3.2.19",
