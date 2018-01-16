@@ -37,7 +37,6 @@ class LoginForm extends React.Component
 
       c_Form {
         onSubmit: @handleSubmit
-        # className: 'login-form'
         ( nb 'loginForm' )...
       }
       ,

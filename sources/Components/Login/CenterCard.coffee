@@ -1,8 +1,8 @@
+# import { ddbs as dd } from 'ddeyes'
 import PageCenter from '../Layout/PageCenter'
 import LoginCard from './Card'
-import {
-  prefixDom
-} from 'cfx.dom'
+
+import { prefixDom } from 'cfx.dom'
 
 CFX = prefixDom {
   PageCenter

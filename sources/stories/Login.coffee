@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
 
-import LoginCenterCard, {
+import Login, {
   LoginForm
   LoginCard
 } from '../Components/Login'
@@ -10,7 +10,7 @@ import LoginCenterCard, {
 CFX = prefixDom {
   LoginForm
   LoginCard
-  LoginCenterCard
+  Login
 }
 
 export default ->
@@ -27,9 +27,9 @@ export default ->
     { c_LoginCard } = CFX
     c_LoginCard {}
 
-  .add 'LoginCenterCard'
+  .add 'Login'
   , =>
 
-    { c_LoginCenterCard } = CFX
-    c_LoginCenterCard {}
+    { c_Login } = CFX
+    c_Login {}
  

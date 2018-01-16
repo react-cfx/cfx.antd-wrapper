@@ -31,7 +31,6 @@ Commit = ({
     c_Button {
       type: 'primary'
       htmlType: 'submit'
-      # className: 'login-form-button'
       ( nb 'loginFormButton' )...
     }
     , '登录'
@@ -46,7 +45,6 @@ Commit = ({
       , '记住用户名'
 
     c_div {
-      # className: 'login-form-forgot'
       ( nb 'loginFormForgot' )...
     }
     ,
