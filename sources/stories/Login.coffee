@@ -1,19 +1,24 @@
 import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
 
-import Login, {
+import {
   LoginForm
   LoginCard
+  CenterCard
+  WithBackImg
+  WithBackCanvas as Login
 } from '../Components/Login'
-  
 
 CFX = prefixDom {
   LoginForm
   LoginCard
   Login
+  CenterCard
+  WithBackImg
+  WithBackCanvas
 }
 
-export default ->
+export default =>
 
   storiesOf 'Login', module
 
@@ -26,6 +31,16 @@ export default ->
   , =>
     { c_LoginCard } = CFX
     c_LoginCard {}
+
+  .add 'CenterCard'
+  , =>
+    { c_CenterCard } = CFX
+    c_CenterCard {}
+
+  .add 'WithBackImg'
+  , =>
+    { c_WithBackImg } = CFX
+    c_WithBackImg {}
 
   .add 'Login'
   , =>

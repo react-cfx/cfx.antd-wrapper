@@ -6,8 +6,7 @@
     "clean": "rm -rf ./dist",
     "build": "rollup -c",
     "rebuild": "npm run clean; npm run build",
-    "test": "make rebuild; make server_storybook",
-    "postinstall": "npm run build"
+    "test": "make rebuild; make server_storybook"
   },
   "devDependencies": {
     "@storybook/addon-info": "^3.2.19",
@@ -24,6 +23,7 @@
     "normalize.css": "^7.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-particles-js": "^2.1.0",
     "recompose": "^0.26.0",
     "reset-css": "^2.2.1",
     "rollup": "^0.53.3",

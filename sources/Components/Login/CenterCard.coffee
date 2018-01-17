@@ -9,14 +9,14 @@ CFX = prefixDom {
   LoginCard
 }
 
-CenterCard = =>
+CenterCard = (props) =>
 
   {
     c_PageCenter
     c_LoginCard
   } = CFX
 
-  c_PageCenter {}
+  c_PageCenter props
   ,
     c_LoginCard {}
 
