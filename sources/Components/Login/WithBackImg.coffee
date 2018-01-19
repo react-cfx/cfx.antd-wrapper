@@ -12,4 +12,8 @@ export default =>
 
   c_CenterCard
     style:
-      backgroundImage: "url(#{BackgroundImg})"
+      backgroundImage: "url(#{
+        if BackgroundImg.src?
+        then BackgroundImg.src
+        else BackgroundImg}
+      )"

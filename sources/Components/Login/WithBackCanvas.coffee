@@ -114,7 +114,10 @@ export default =>
                 particles_nb: 2
           retina_detect: true
       c_img
-        src: BackgroundImg
+        src:
+          if BackgroundImg.src?
+          then BackgroundImg.src
+          else BackgroundImg
         style:
           width: '100%'
           minHeight: '100vh'
