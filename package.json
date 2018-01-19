@@ -7,7 +7,7 @@
     "build": "rollup -c",
     "rebuild": "npm run clean; npm run build",
     "test": "make rebuild; make server_storybook",
-    "postinstall": "make rebuild; make server_storybook"
+    "postinstall": "npm build"
   },
   "devDependencies": {
     "@storybook/addon-info": "^3.2.19",
