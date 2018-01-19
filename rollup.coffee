@@ -4,6 +4,7 @@ import {
   coffeepath
 } from 'cfx.rollup-plugin-coffee2'
 import cleanup from 'rollup-plugin-cleanup'
+import image from 'rollup-plugin-image'
 
 # import replace from 'rollup-plugin-re'
 
@@ -30,6 +31,7 @@ plugins = [
   coffee2
     bare: true
     sourceMap: true
+  image()
   coffeepath()
   cleanup()
 ]

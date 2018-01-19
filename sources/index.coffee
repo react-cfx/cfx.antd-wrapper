@@ -9,6 +9,9 @@ import {
 import Login, {
   LoginForm
   LoginCard
+  CenterCard
+  WithBackImg
+  WithBackCanva
 } from './Components/Login'
 import {
   Menu
@@ -22,5 +25,8 @@ export {
   Login
   LoginForm
   LoginCard
+  CenterCard
+  WithBackImg
+  WithBackCanvs
   Menu
 }

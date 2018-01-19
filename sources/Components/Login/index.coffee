@@ -13,3 +13,5 @@ export {
   WithBackImg
   WithBackCanvas
 }
+
+export default WithBackCanvas

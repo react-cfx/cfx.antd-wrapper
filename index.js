@@ -6,5 +6,7 @@ export {
   Login,
   LoginForm,
   LoginCard,
+  CenterCard,
+  WithBackImg,
   Menu
 } from './sources/index.coffee';

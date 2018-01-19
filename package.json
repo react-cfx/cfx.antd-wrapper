@@ -6,14 +6,16 @@
     "clean": "rm -rf ./dist",
     "build": "rollup -c",
     "rebuild": "npm run clean; npm run build",
-    "test": "make rebuild; make server_storybook"
+    "test": "make rebuild; make server_storybook",
+    "postinstall": "make rebuild; make server_storybook"
   },
   "devDependencies": {
     "@storybook/addon-info": "^3.2.19",
     "@storybook/addon-options": "^3.2.19",
     "@storybook/react": "^3.2.19",
-    "cfx.simple-build-tool": "^0.0.3",
+    "cfx.simple-build-tool": "^0.0.6",
     "ddeyes": "^0.0.6",
+    "rollup-plugin-image": "^1.0.2",
     "stylus": "^0.54.5"
   },
   "dependencies": {

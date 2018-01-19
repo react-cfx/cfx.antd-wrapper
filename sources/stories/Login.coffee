@@ -15,7 +15,6 @@ CFX = prefixDom {
   Login
   CenterCard
   WithBackImg
-  WithBackCanvas
 }
 
 export default =>
