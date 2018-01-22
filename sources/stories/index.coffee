@@ -5,12 +5,14 @@ import 'antd/dist/antd.css'
 
 import Welcome from './Welcome'
 
-import Login from './Login'
+
 import Menu from './Menu'
 import Layout from './Layout'
+# import header from './header'
+# import Contents from './Contents'
 
 Welcome()
-
-Login()
 Menu()
 Layout()
+# header()
+# Contents()

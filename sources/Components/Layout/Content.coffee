@@ -1,11 +1,13 @@
-# import { ddbs as dd } from 'ddeyes'
 import { prefixDom } from 'cfx.dom'
 import { Layout, Breadcrumb } from 'antd'
+import nb from './style'
 { Header, Content, Footer } = Layout
 BreadcrumbItem = Breadcrumb.Item
 
 CFX = prefixDom {
   'div'
+  'p'
+  'h1'
   Breadcrumb
   BreadcrumbItem
   Header
@@ -17,20 +19,29 @@ export default ({
   content
   props...
 }) =>
-
+  
   {
     header
+    pageHeader
+    title
+    description
     breadcrumb
     footer
   } = props
 
   {
     c_div
+    c_p
+    c_h1
     c_Breadcrumb
     c_BreadcrumbItem
     c_Header
     c_Content
     c_Footer
+    c_Icon
+    c_Row
+    c_Col
+    c_Badge
   } = CFX
 
   [
@@ -46,42 +57,71 @@ export default ({
       ]
       else []
     )...
+      
+    (
+      if pageHeader
+      then [
+        c_div {
+          key: 'pageHeader'
+          ( nb 'PageHeader')...
+        }        
+        ,
+          if breadcrumb
+          then [
+            c_Breadcrumb.apply null
+            , [
+                style:
+                  marginBottom: 16
+                (
+                  breadcrumb.reduce (r, c, i) =>
+                    [
+                      r...
+                      c_BreadcrumbItem
+                        key: "breadcrumb_#{i}"
+                      , c
+                    ]
+                  , []
+                )...
+            ]
+          ]
+          else []
+          
+          if title
+          then [
+            c_h1
+              style:
+                fontSize: 20
+            , title
+          ]
+          else []
 
+          if description
+          then [
+            c_p
+            , description
+          ]
+          else []
+      ]
+      else []
+    )...
+ 
     c_Content.apply null
     , [
 
       key: 'MainContentContent'
       style:
-        margin: '0 16px'
+        margin: '16px'
 
-      (
-        if breadcrumb
-        then [
-          c_Breadcrumb.apply null
-          , [
-            style:
-              margin: '12px 0'
-            (
-              breadcrumb.reduce (r, c, i) =>
-                [
-                  r...
-                  c_BreadcrumbItem
-                    key: "breadcrumb_#{i}"
-                  , c
-                ]
-              , []
-            )...
-          ]
-        ]
-        else []
-      )...
-
-      c_div
-        style: 
-          padding: 24
-          background: '#fff'
-          minHeight: 360
-      , content
+      if content
+      then [
+        c_div
+          style: 
+            padding: 24
+            background: '#fff'
+            minHeight: 360
+        , content 
+      ]
+      else []     
     ]
 
     (
