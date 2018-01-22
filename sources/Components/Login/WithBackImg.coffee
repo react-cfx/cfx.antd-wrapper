@@ -15,5 +15,5 @@ export default =>
       backgroundImage: "url(#{
         if BackgroundImg.src?
         then BackgroundImg.src
-        else BackgroundImg}
-      )"
+        else BackgroundImg
+      })"
