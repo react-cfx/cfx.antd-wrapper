@@ -26,8 +26,7 @@ style =
     padding: 4
   PageHeader:
     padding: '16px 32px 0'
-    # borderBottom: '1px solid #e8e8e8'
-    background: '#fff'
+    borderBottom: '1px solid #e8e8e8'
     boxSizing:'border-box'
 export default styl style
 ,
