@@ -36,7 +36,7 @@ export default ({
         style:
           marginBottom: 16
         (
-          breadcrumb.reduce (r, c, i) =>
+          breadcrumb.reduce(r,c,i) =>
             [
               r...
               c_BreadcrumbItem
@@ -45,10 +45,10 @@ export default ({
             ]
           , []
         )...
-    ]
+      ]
   ]
   else []
-  
+
   if title
   then [
     c_h1
@@ -64,6 +64,7 @@ export default ({
     , description
   ]
   else []
+  
 
 
 
