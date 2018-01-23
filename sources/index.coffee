@@ -6,11 +6,6 @@ import {
   SiderContent
   Content
 } from './Components/Layout'
-# import {
-#   pageHeader
-#   header
-# } from './Components/Layout_Component'
-
 import Login, {
   LoginForm
   LoginCard
@@ -24,9 +19,9 @@ import {
 
 export {
   FormField
-  # PageCenter
-  # SiderContent
-  # Content
+  PageCenter
+  SiderContent
+  Content
   Login
   LoginForm
   LoginCard
@@ -34,6 +29,5 @@ export {
   WithBackImg
   WithBackCanvs
   Menu
-  # pageHeader
-  # header
+  header
 }
