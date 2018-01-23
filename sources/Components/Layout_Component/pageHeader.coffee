@@ -61,8 +61,6 @@ export default ({
     if description
     then [
       c_p
-        style:
-          marginBottom: 16
       , description
     ]
     else []
