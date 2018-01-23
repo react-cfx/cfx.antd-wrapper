@@ -81,7 +81,6 @@ export default ({
       then [
         c_div
           style: 
-            padding: 24
             background: '#fff'
             minHeight: 360
         , content 
