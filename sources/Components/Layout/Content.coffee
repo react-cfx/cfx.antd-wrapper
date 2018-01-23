@@ -51,7 +51,7 @@ export default ({
         c_Header
           key: 'MainContentHeader'
           style:
-            borderBottom: '1px solid #e8e8e8'
+            marginBottom: '1px'
             background: '#fff'
         , header
       ]
