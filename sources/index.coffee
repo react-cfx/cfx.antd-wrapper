@@ -6,10 +6,12 @@ import {
   SiderContent
   Content
 } from './Components/Layout'
-import {
-  pageHeader
-  header
-} from './Components/Layout_Component'
+
+# import {
+#   pageHeader
+#   header
+# } from './Components/Layout_Component'
+
 import Login, {
   LoginForm
   LoginCard
@@ -33,6 +35,6 @@ export {
   WithBackImg
   WithBackCanvs
   Menu
-  pageHeader
-  header
+  # pageHeader
+  # header
 }

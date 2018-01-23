@@ -8,7 +8,5 @@ export {
   LoginCard,
   CenterCard,
   WithBackImg,
-  Menu,
-  header,
-  pageHeader
+  Menu
 } from './sources/index.coffee';
