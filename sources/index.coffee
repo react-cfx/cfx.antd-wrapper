@@ -1,15 +1,15 @@
 import {
   FormField
 } from './Components/Form'
-# import {
-#   PageCenter
-#   SiderContent
-#   Content
-# } from './Components/Layout'
 import {
-  pageHeader
-  header
-} from './Components/Layout_Component'
+  PageCenter
+  SiderContent
+  Content
+} from './Components/Layout'
+# import {
+#   pageHeader
+#   header
+# } from './Components/Layout_Component'
 
 import Login, {
   LoginForm
@@ -34,6 +34,6 @@ export {
   WithBackImg
   WithBackCanvs
   Menu
-  pageHeader
-  header
+  # pageHeader
+  # header
 }
