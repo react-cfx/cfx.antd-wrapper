@@ -28,42 +28,44 @@ export default ({
     c_Breadcrumb
     c_BreadcrumbItem    
   } = CFX
-  
-  if breadcrumb
-  then [
-    c_Breadcrumb.apply null
-    , [
-        style:
-          marginBottom: 16
-        (
-          breadcrumb.reduce (r, c, i) =>
-            [
-              r...
-              c_BreadcrumbItem
-                key: "breadcrumb_#{i}"
-              , c
-            ]
-          , []
-        )...
+  [
+    if breadcrumb
+    then [
+      c_Breadcrumb.apply null
+      , [
+          style:
+            marginBottom: 16
+          (
+            breadcrumb.reduce (r, c, i) =>
+              [
+                r...
+                c_BreadcrumbItem
+                  key: "breadcrumb_#{i}"
+                , c
+              ]
+            , []
+          )...
+      ]
     ]
-  ]
-  else []
-  
-  if title
-  then [
-    c_h1
-      style:
-        fontSize: 20
-    , title
-  ]
-  else []
+    else []
+    
+    if title
+    then [
+      c_h1
+        style:
+          fontSize: 20
+      , title
+    ]
+    else []
 
-  if description
-  then [
-    c_p
-    , description
+    if description
+    then [
+      c_p
+      , description
+    ]
+    else []
   ]
-  else []
+  
   
 
 
