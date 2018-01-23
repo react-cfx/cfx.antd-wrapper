@@ -22,11 +22,11 @@ export default ({
   } = props
 
   {
-    'div'
-    'p'
-    'h1'
-    Breadcrumb
-    BreadcrumbItem    
+    c_div
+    c_p
+    c_h1
+    c_Breadcrumb
+    c_BreadcrumbItem    
   } = CFX
   
   if breadcrumb
