@@ -65,7 +65,7 @@ export default ({
           key: 'pageHeader'
           ( nb 'PageHeader')...
         }        
-        , pageHeader           
+        , pageHeader  
       ]
       else []
     )...

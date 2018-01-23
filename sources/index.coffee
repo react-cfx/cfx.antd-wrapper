@@ -5,8 +5,11 @@ import {
   PageCenter
   SiderContent
   Content
-  header
 } from './Components/Layout'
+import {
+  pageHeader
+  header
+} from './Components/Layout_Component'
 import Login, {
   LoginForm
   LoginCard
@@ -23,6 +26,7 @@ export {
   PageCenter
   SiderContent
   Content
+  pageHeader
   header
   Login
   LoginForm

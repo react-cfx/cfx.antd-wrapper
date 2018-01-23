@@ -1,7 +1,7 @@
 import { prefixDom } from 'cfx.dom'
 import React,{ Component } from 'react'
 import { Layout, Icon, Row, Col, Badge } from 'antd'
-import nb from './style'
+import nb from '../Layout/style'
 { Header, Content, Footer } = Layout
 
 CFX = prefixDom {
