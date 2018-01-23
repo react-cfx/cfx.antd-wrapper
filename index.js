@@ -1,12 +1,14 @@
 export {
   FormField,
-  PageCenter,
-  SiderContent,
-  Content,
+  // PageCenter,
+  // SiderContent,
+  // Content,
   Login,
   LoginForm,
   LoginCard,
   CenterCard,
   WithBackImg,
-  Menu
+  Menu,
+  header,
+  pageHeader
 } from './sources/index.coffee';
