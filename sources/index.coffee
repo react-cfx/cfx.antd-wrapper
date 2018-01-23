@@ -31,5 +31,4 @@ export {
   WithBackImg
   WithBackCanvs
   Menu
-  header
 }
