@@ -62,7 +62,7 @@ export default ({
     then [
       c_p
         style:
-          marginBottom: 16
+          paddingBottom: 16
       , description
     ]
     else []
