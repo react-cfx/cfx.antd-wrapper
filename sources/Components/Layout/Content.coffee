@@ -72,7 +72,7 @@ export default ({
       key: 'MainContentContent'
       style:
         margin: '16px'
-        background: '#f0f2f5'
+        
       if content
       then [
         c_div
