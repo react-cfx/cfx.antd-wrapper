@@ -28,6 +28,7 @@ export {
   SiderContent
   Content
   pageHeader
+  pageContent
   header
   Login
   LoginForm
