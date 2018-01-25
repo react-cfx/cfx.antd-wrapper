@@ -10,5 +10,6 @@ export {
   WithBackImg,
   Menu,
   header,
-  pageHeader
+  pageHeader,
+  pageContent
 } from './sources/index.coffee';

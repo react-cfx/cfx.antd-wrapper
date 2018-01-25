@@ -9,6 +9,7 @@ import {
 import {
   pageHeader
   header
+  pageContent
 } from './Components/Layout_Component'
 import Login, {
   LoginForm
