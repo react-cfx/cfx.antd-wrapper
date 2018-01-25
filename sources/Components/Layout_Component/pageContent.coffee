@@ -23,7 +23,7 @@ export default ({
     c_Layout
       style:
         background: '#f0f2f5'
-        margin: '24px 24px 0'
+        padding: '24px 24px 0'
     , pageContent      
   ]
   else []
