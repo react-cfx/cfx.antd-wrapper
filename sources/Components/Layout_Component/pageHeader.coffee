@@ -4,9 +4,9 @@ import { Layout,Breadcrumb } from 'antd'
 BreadcrumbItem = Breadcrumb.Item
 
 CFX = prefixDom {
-  'div'
   'p'
   'h1'
+  Layout
   Breadcrumb
   BreadcrumbItem
 }
@@ -22,13 +22,19 @@ export default ({
   } = props
 
   {
-    c_div
     c_p
     c_h1
+    c_Layout
     c_Breadcrumb
     c_BreadcrumbItem    
   } = CFX
-  [
+
+  c_Layout
+    style:
+      background: '#fff'
+      padding: '16px 32px 0'
+      borderBottom: '1px solid #e8e8e8'
+  ,       
     if breadcrumb
     then [
       c_Breadcrumb.apply null
@@ -66,7 +72,6 @@ export default ({
       , description
     ]
     else []
-  ]
   
   
 

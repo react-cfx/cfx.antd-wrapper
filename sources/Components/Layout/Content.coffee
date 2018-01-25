@@ -61,11 +61,7 @@ export default ({
     (
       if pageHeader
       then [
-        c_div {
-          key: 'pageHeader'
-          ( nb 'PageHeader')...
-        }        
-        , pageHeader
+        pageHeader
       ]
       else []
     )...
