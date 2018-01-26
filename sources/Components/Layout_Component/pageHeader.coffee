@@ -40,8 +40,8 @@ export default ({
     then [
       c_Breadcrumb.apply null
       , [
+          key: 'breadcrumb'
           style:
-            key: 'breadcrumb'
             marginBottom: 16
           (
             breadcrumb.reduce (r, c, i) =>
