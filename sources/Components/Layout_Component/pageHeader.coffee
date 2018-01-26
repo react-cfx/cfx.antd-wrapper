@@ -31,6 +31,7 @@ export default ({
 
   c_Layout
     style:
+      key: 'layout2'
       background: '#fff'
       padding: '16px 32px 0'
       borderBottom: '1px solid #e8e8e8'
@@ -40,6 +41,7 @@ export default ({
       c_Breadcrumb.apply null
       , [
           style:
+            key: 'breadcrumb'
             marginBottom: 16
           (
             breadcrumb.reduce (r, c, i) =>
@@ -58,6 +60,7 @@ export default ({
     if title
     then [
       c_h1
+        key: 'title'
         style:
           fontSize: 20
       , title
@@ -67,6 +70,7 @@ export default ({
     if description
     then [
       c_p
+        key: 'sub'
         style:
           paddingBottom: 16
       , description

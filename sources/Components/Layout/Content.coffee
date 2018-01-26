@@ -76,6 +76,7 @@ export default ({
       if content
       then [
         c_div
+          key: 'layout3'
           style: 
             background: '#fff'
             minHeight: 360
