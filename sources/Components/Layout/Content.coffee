@@ -1,6 +1,6 @@
 import { prefixDom } from 'cfx.dom'
 import { Layout, Breadcrumb } from 'antd'
-import nb from './style'
+import nb from '../style'
 { Header, Content, Footer } = Layout
 BreadcrumbItem = Breadcrumb.Item
 
@@ -22,7 +22,7 @@ export default ({
   
   {
     header
-    pageHeader
+    PageHeader
     title
     description
     breadcrumb
@@ -59,9 +59,9 @@ export default ({
     )...
       
     (
-      if pageHeader
+      if PageHeader
       then [
-        pageHeader
+        PageHeader
       ]
       else []
     )...

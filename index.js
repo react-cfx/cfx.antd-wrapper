@@ -9,7 +9,7 @@ export {
   CenterCard,
   WithBackImg,
   Menu,
-  header,
-  pageHeader,
-  pageContent
+  Header,
+  PageHeader,
+  PageContent
 } from './sources/index.coffee';

@@ -7,10 +7,12 @@ import {
   Content
 } from './Components/Layout'
 import {
-  pageHeader
-  header
-  pageContent
-} from './Components/Layout_Component'
+  PageHeader
+  PageContent
+} from './Components/Page'
+import {
+  Header
+} from './Components/Header'
 import Login, {
   LoginForm
   LoginCard
@@ -27,9 +29,9 @@ export {
   PageCenter
   SiderContent
   Content
-  pageHeader
-  pageContent
-  header
+  PageHeader
+  PageContent
+  Header
   Login
   LoginForm
   LoginCard
