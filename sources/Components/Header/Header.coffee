@@ -1,7 +1,7 @@
 import { prefixDom } from 'cfx.dom'
 import React,{ Component } from 'react'
 import { Layout, Icon, Row, Col, Badge } from 'antd'
-import nb from '../style'
+import nb from './style'
 { Header, Content, Footer } = Layout
 
 CFX = prefixDom {
@@ -14,7 +14,7 @@ CFX = prefixDom {
   Header
 }
 
-class header extends React.Component
+class Header extends React.Component
 
   constructor: (props) ->
     super props
@@ -115,4 +115,4 @@ class header extends React.Component
           }
             
             
-export default header
+export default Header

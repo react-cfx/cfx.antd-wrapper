@@ -1,6 +1,6 @@
 import { prefixDom } from 'cfx.dom'
 import { Layout, Breadcrumb } from 'antd'
-import nb from '../style'
+import nb from './style'
 { Header, Content, Footer } = Layout
 BreadcrumbItem = Breadcrumb.Item
 
