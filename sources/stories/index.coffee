@@ -8,9 +8,11 @@ import Welcome from './Welcome'
 import Login from './Login'
 import Menu from './Menu'
 import Layout from './Layout'
+import EditTable from './Table/EditTable'
 
 Welcome()
 
 Login()
 Menu()
 Layout()
+EditTable()

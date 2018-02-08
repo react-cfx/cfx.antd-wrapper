@@ -1,6 +1,6 @@
 import { prefixDom } from 'cfx.dom'
 import CenterCard from './CenterCard'
-import BackgroundImg from './background.jpg'
+import BackgroundImg from '../../../public/assets/background.jpg'
 
 CFX = prefixDom {
   CenterCard

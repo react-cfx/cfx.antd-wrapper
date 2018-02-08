@@ -1,5 +1,5 @@
-import Table from './Table'
+import Edit from './index'
 
 export {
-  Table
+  Edit
 }
