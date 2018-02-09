@@ -208,10 +208,7 @@ class EditableTable extends Component
         title: @props.title6
         dataIndex: 'address'
         render: (text, record) =>
-          c_EditableCell
-            value: text
-            onChange: @onCellChange record.key, 'rent'
-            editPen: @props.editPen
+
       ,
         title: '操作'
         dataIndex: 'operation'
@@ -237,19 +234,6 @@ class EditableTable extends Component
             href: '#'
           , record["#{@FSheaderKey}"]
         header...
-      # ,
-      #   title: '押付方式'
-      #   dataIndex: 'pay'
-      # ,
-      #   title: '出租金额'
-      #   dataIndex: 'money'
-      # ,
-      #   title: '出租状态'
-      #   dataIndex: 'status'
-      # ,
-      #   title: '地址'
-      #   dataIndex: 'address'
-      # ,
         title: '操作'
         dataIndex: 'operation'
         width: '105px'
@@ -298,12 +282,12 @@ class EditableTable extends Component
   handleAdd: () =>
     newDtata =
       key: "#{@state.count++}"
-      name: '何文涛'
-      rent: '间租'
-      pay: '押一付三'
-      money: '2000'
-      status: '已租'
-      address: '武汉市武昌区聚华豪庭'
+      name: '陈欢'
+      age: '8'
+      sex: '男'
+      phone: '1300000000'
+      email: '1300000000@qq.com'
+      address: '武汉'
 
     @setState {
       dataSource: [ @state.dataSource..., newDtata ]
