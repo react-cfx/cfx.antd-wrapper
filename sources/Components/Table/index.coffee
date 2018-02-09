@@ -124,73 +124,80 @@ class EditableTable extends Component
       count: 2
     @
 
+    header = @props.header
+    headers = for k, v of header
+      "#{v}"
+    headers.map (i) =>
+      i
+
     @columns = [
-        title: @props.title1
+      headers.map (i) =>
+        title: i
         dataIndex: 'rent'
         render: (text, record) =>
           c_EditableCell
             value: text
             onChange: @onCellChange record.key, 'rent'
             editPen: @props.editPen
-      ,
-        title: @props.title2
-        dataIndex: 'name'
-        render: (text, record) =>
-          c_EditableCell
-            value: text
-            onChange: @onCellChange record.key, 'rent'
-            editPen: @props.editPen
-      ,
-        title: @props.title3
-        dataIndex: 'pay'
-        render: (text, record) =>
-          c_EditableCell
-            value: text
-            onChange: @onCellChange record.key, 'rent'
-            editPen: @props.editPen
-      ,
-        title: @props.title4
-        dataIndex: 'money'
-        render: (text, record) =>
-          c_EditableCell
-            value: text
-            onChange: @onCellChange record.key, 'rent'
-            editPen: @props.editPen
-      ,
-        title: @props.title5
-        dataIndex: 'status'
-        render: (text, record) =>
-          c_EditableCell
-            value: text
-            onChange: @onCellChange record.key, 'rent'
-            editPen: @props.editPen
-      ,
-        title: @props.title6
-        dataIndex: 'address'
-        render: (text, record) =>
-          c_EditableCell
-            value: text
-            onChange: @onCellChange record.key, 'rent'
-            editPen: @props.editPen
-      ,
-        title: '操作'
-        dataIndex: 'operation'
-        render: (text, record) =>
-          c_Popconfirm
-            key: 'Popconfirm'
-            title: 'Sure to delete??'
-            onConfirm: () => @onDelete record.key
-          ,
-            c_a
-              key: 'a'
-              href: '#'
-              style:
-                color: '#F00'
-            , '删除'
+      # ,
+      #   title: @props.title2
+      #   dataIndex: 'name'
+      #   render: (text, record) =>
+      #     c_EditableCell
+      #       value: text
+      #       onChange: @onCellChange record.key, 'rent'
+      #       editPen: @props.editPen
+      # ,
+      #   title: @props.title3
+      #   dataIndex: 'pay'
+      #   render: (text, record) =>
+      #     c_EditableCell
+      #       value: text
+      #       onChange: @onCellChange record.key, 'rent'
+      #       editPen: @props.editPen
+      # ,
+      #   title: @props.title4
+      #   dataIndex: 'money'
+      #   render: (text, record) =>
+      #     c_EditableCell
+      #       value: text
+      #       onChange: @onCellChange record.key, 'rent'
+      #       editPen: @props.editPen
+      # ,
+      #   title: @props.title5
+      #   dataIndex: 'status'
+      #   render: (text, record) =>
+      #     c_EditableCell
+      #       value: text
+      #       onChange: @onCellChange record.key, 'rent'
+      #       editPen: @props.editPen
+      # ,
+      #   title: @props.title6
+      #   dataIndex: 'address'
+      #   render: (text, record) =>
+      #     c_EditableCell
+      #       value: text
+      #       onChange: @onCellChange record.key, 'rent'
+      #       editPen: @props.editPen
+      # ,
+      #   title: '操作'
+      #   dataIndex: 'operation'
+      #   render: (text, record) =>
+      #     c_Popconfirm
+      #       key: 'Popconfirm'
+      #       title: 'Sure to delete??'
+      #       onConfirm: () => @onDelete record.key
+      #     ,
+      #       c_a
+      #         key: 'a'
+      #         href: '#'
+      #         style:
+      #           color: '#F00'
+      #       , '删除'
     ]
 
     @column = [
-        title: '出租方式'
+        title: headers[0]
         dataIndex: 'rent'
         width: '15%'
       ,
@@ -288,7 +295,7 @@ class EditableTable extends Component
       c_Button
       c_EditableCell
     } = CFX
-
+    console.log @
     c_div {}
     ,
       if @props.btn
