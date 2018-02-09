@@ -122,104 +122,134 @@ class EditableTable extends Component
     @state =
       dataSource: props.dataSource
       count: 2
-    @
 
-    header = @props.header
-    headers = for k, v of header
+
+    # (
+    #   Object.keys @props.header
+    # ).reduce (r, c) =>
+    #   {
+    #     r...
+    #     "#{c}": @props.header["#{c}"]
+    #   }
+    # , {}
+    # forOf @props.header, (k, v) =>
+
+    header = for k, v of @props.header
+      title: "#{v}"
+      dataIndex: "#{k}"
+
+    if header[0]?
+    then header.shift()
+    else []
+
+    headerKey = for k, v of @props.header
+      "#{k}"
+
+    headerVal = for k, v of @props.header
       "#{v}"
-    headers.map (i) =>
-      i
+
+    # data = @props.dataSource
+
+    @FSheaderKey = headerKey[0]
+
+    # console.log data
+    console.log '这是headerVal', headerVal[0]
+    console.log '这是header第一个key' ,@FSheaderKey
+    # console.log '这是headerKey' ,headerKey[0]
+
+    # headerVal = for k, v of arrayVal
+    #   title: "#{v}"
+
+    # console.log '这是headerVal', headerVal
+
+
 
     @columns = [
-      headers.map (i) =>
-        title: i
+        title: @props.title1
         dataIndex: 'rent'
         render: (text, record) =>
           c_EditableCell
             value: text
             onChange: @onCellChange record.key, 'rent'
             editPen: @props.editPen
-      # ,
-      #   title: @props.title2
-      #   dataIndex: 'name'
-      #   render: (text, record) =>
-      #     c_EditableCell
-      #       value: text
-      #       onChange: @onCellChange record.key, 'rent'
-      #       editPen: @props.editPen
-      # ,
-      #   title: @props.title3
-      #   dataIndex: 'pay'
-      #   render: (text, record) =>
-      #     c_EditableCell
-      #       value: text
-      #       onChange: @onCellChange record.key, 'rent'
-      #       editPen: @props.editPen
-      # ,
-      #   title: @props.title4
-      #   dataIndex: 'money'
-      #   render: (text, record) =>
-      #     c_EditableCell
-      #       value: text
-      #       onChange: @onCellChange record.key, 'rent'
-      #       editPen: @props.editPen
-      # ,
-      #   title: @props.title5
-      #   dataIndex: 'status'
-      #   render: (text, record) =>
-      #     c_EditableCell
-      #       value: text
-      #       onChange: @onCellChange record.key, 'rent'
-      #       editPen: @props.editPen
-      # ,
-      #   title: @props.title6
-      #   dataIndex: 'address'
-      #   render: (text, record) =>
-      #     c_EditableCell
-      #       value: text
-      #       onChange: @onCellChange record.key, 'rent'
-      #       editPen: @props.editPen
-      # ,
-      #   title: '操作'
-      #   dataIndex: 'operation'
-      #   render: (text, record) =>
-      #     c_Popconfirm
-      #       key: 'Popconfirm'
-      #       title: 'Sure to delete??'
-      #       onConfirm: () => @onDelete record.key
-      #     ,
-      #       c_a
-      #         key: 'a'
-      #         href: '#'
-      #         style:
-      #           color: '#F00'
-      #       , '删除'
+      ,
+        title: @props.title2
+        dataIndex: 'name'
+        render: (text, record) =>
+          c_EditableCell
+            value: text
+            onChange: @onCellChange record.key, 'rent'
+            editPen: @props.editPen
+      ,
+        title: @props.title3
+        dataIndex: 'pay'
+        render: (text, record) =>
+          c_EditableCell
+            value: text
+            onChange: @onCellChange record.key, 'rent'
+            editPen: @props.editPen
+      ,
+        title: @props.title4
+        dataIndex: 'money'
+        render: (text, record) =>
+          c_EditableCell
+            value: text
+            onChange: @onCellChange record.key, 'rent'
+            editPen: @props.editPen
+      ,
+        title: @props.title5
+        dataIndex: 'status'
+        render: (text, record) =>
+          c_EditableCell
+            value: text
+            onChange: @onCellChange record.key, 'rent'
+            editPen: @props.editPen
+      ,
+        title: @props.title6
+        dataIndex: 'address'
+        render: (text, record) =>
+          c_EditableCell
+            value: text
+            onChange: @onCellChange record.key, 'rent'
+            editPen: @props.editPen
+      ,
+        title: '操作'
+        dataIndex: 'operation'
+        render: (text, record) =>
+          c_Popconfirm
+            key: 'Popconfirm'
+            title: 'Sure to delete??'
+            onConfirm: () => @onDelete record.key
+          ,
+            c_a
+              key: 'a'
+              href: '#'
+              style:
+                color: '#F00'
+            , '删除'
     ]
 
     @column = [
-        title: headers[0]
-        dataIndex: 'rent'
-        width: '15%'
-      ,
-        title: '房东'
-        dataIndex: 'name'
-        render: (text, record) =>
+        title: headerVal[0]
+        dataIndex: headerKey[0]
+        render: (text, record, index) =>
           c_a
             href: '#'
-          , record.name
-      ,
-        title: '押付方式'
-        dataIndex: 'pay'
-      ,
-        title: '出租金额'
-        dataIndex: 'money'
-      ,
-        title: '出租状态'
-        dataIndex: 'status'
-      ,
-        title: '地址'
-        dataIndex: 'address'
-      ,
+          , record["#{@FSheaderKey}"]
+        header...
+      # ,
+      #   title: '押付方式'
+      #   dataIndex: 'pay'
+      # ,
+      #   title: '出租金额'
+      #   dataIndex: 'money'
+      # ,
+      #   title: '出租状态'
+      #   dataIndex: 'status'
+      # ,
+      #   title: '地址'
+      #   dataIndex: 'address'
+      # ,
         title: '操作'
         dataIndex: 'operation'
         width: '105px'
@@ -295,7 +325,7 @@ class EditableTable extends Component
       c_Button
       c_EditableCell
     } = CFX
-    console.log @
+
     c_div {}
     ,
       if @props.btn
