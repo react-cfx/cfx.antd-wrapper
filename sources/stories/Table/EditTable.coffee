@@ -18,7 +18,16 @@ export default =>
     } = CFX
 
     c_Table
+      # addChildren: true
+      editPen: true
       btn: '添加房源'
+      childrenHeader:
+        name: '姓名'
+        age: '年龄1'
+        sex: '性别1'
+        phone: '手机号1'
+        email: '邮箱1'
+        address: '地址1'
       header:
         name: '姓名'
         age: '年龄'
@@ -34,15 +43,6 @@ export default =>
           phone: '1300000000'
           email: '1300000000@qq.com'
           address: '武汉'
-          children: [
-              key: '101'
-              name: '陈欢'
-              age: '8'
-              sex: '男'
-              phone: '1300000000'
-              email: '1300000000@qq.com'
-              address: '武汉'
-          ]
         ,
           key: '02'
           name: '陈欢'
@@ -51,17 +51,7 @@ export default =>
           phone: '1300000000'
           email: '1300000000@qq.com'
           address: '武汉'
-          children: [
-              key: '201'
-              name: '陈欢'
-              age: '8'
-              sex: '男'
-              phone: '1300000000'
-              email: '1300000000@qq.com'
-              address: '武汉'
-          ]
       ]
-
 
   # .add 'Table'
   # , =>

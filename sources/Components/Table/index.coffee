@@ -1,5 +1,6 @@
 import { prefixDom } from 'cfx.dom'
 import React, { Component } from 'react'
+import EditableCell from './EditableCell'
 import nb from './style'
 import {
   Table
@@ -10,89 +11,6 @@ import {
   Popconfirm
   Divider
 } from 'antd'
-
-class EditableCell extends Component
-
-  constructor: (props) ->
-    super props
-    @state =
-      value: @props.value
-      editable: false
-
-  handleChange: (e) =>
-    value = e.target.value
-    @setState {
-      value
-    }
-
-  check: () =>
-    @setState {
-      editable: false
-    }
-    if @props.onChange
-    then @props.onChange @state.value
-    else []
-
-  edit: () =>
-    @setState {
-      editable: true
-    }
-
-  render: (props) ->
-
-    {
-      value
-      editable
-    } = @state
-
-    {
-      c_div
-      c_Input
-      c_Icon
-    } = CFX
-
-    if @props.editPen is true
-    then [
-      c_div {
-        key: 'cell'
-        ( nb 'editable_cell' )...
-      }
-      ,
-        if editable
-        then [
-          c_div {
-            key: 'div'
-            ( nb 'editable_cell_input_wrapper' )...
-          }
-          ,
-            c_Input
-              key: 'Input'
-              value: @state.value
-              onChange: @handleChange
-              onPressEnter: @check
-            c_Icon {
-              key: 'Icon'
-              type: 'check'
-              ( nb 'editable_cell_icon_check' )...
-              onClick: @check
-            }
-        ]
-        else [
-          c_div {
-            key: 'div'
-            ( nb 'editable_cell_text_wrapper' )...
-          }
-          ,
-            @state.value or ' '
-            c_Icon {
-              key: 'Icon'
-              type: 'edit'
-              ( nb 'editable_cell_icon' )...
-              onClick: @edit
-            }
-        ]
-      ]
-    else []
 
 CFX = prefixDom {
   'a'
@@ -111,7 +29,11 @@ class EditableTable extends Component
 
   {
     c_a
+    c_div
+    c_Icon
     c_span
+    c_Table
+    c_Button
     c_EditableCell
     c_Popconfirm
     c_Divider
@@ -122,7 +44,6 @@ class EditableTable extends Component
     @state =
       dataSource: props.dataSource
       count: 2
-
 
     # (
     #   Object.keys @props.header
@@ -138,6 +59,19 @@ class EditableTable extends Component
       title: "#{v}"
       dataIndex: "#{k}"
 
+    childrenHeader1 = for k, v of @props.childrenHeader
+      title: "#{v}"
+      dataIndex: "#{k}"      
+    
+    HeaderEdit = for k, v of @props.header
+      title: "#{v}"
+      dataIndex: "#{k}"
+      render: (text, record) =>
+        c_EditableCell
+          value: text
+          onChange: @onCellChange record.key, "#{k}"
+          editPen: @props.editPen
+
     if header[0]?
     then header.shift()
     else []
@@ -148,75 +82,26 @@ class EditableTable extends Component
     headerVal = for k, v of @props.header
       "#{v}"
 
-    # data = @props.dataSource
-
     @FSheaderKey = headerKey[0]
 
-    # console.log data
-    console.log '这是headerVal', headerVal[0]
-    console.log '这是header第一个key' ,@FSheaderKey
-    # console.log '这是headerKey' ,headerKey[0]
-
-    # headerVal = for k, v of arrayVal
-    #   title: "#{v}"
-
-    # console.log '这是headerVal', headerVal
-
-
-
     @columns = [
-        title: @props.title1
-        dataIndex: 'rent'
-        render: (text, record) =>
-          c_EditableCell
-            value: text
-            onChange: @onCellChange record.key, 'rent'
-            editPen: @props.editPen
-      ,
-        title: @props.title2
-        dataIndex: 'name'
-        render: (text, record) =>
-          c_EditableCell
-            value: text
-            onChange: @onCellChange record.key, 'rent'
-            editPen: @props.editPen
-      ,
-        title: @props.title3
-        dataIndex: 'pay'
-        render: (text, record) =>
-          c_EditableCell
-            value: text
-            onChange: @onCellChange record.key, 'rent'
-            editPen: @props.editPen
-      ,
-        title: @props.title4
-        dataIndex: 'money'
-        render: (text, record) =>
-          c_EditableCell
-            value: text
-            onChange: @onCellChange record.key, 'rent'
-            editPen: @props.editPen
-      ,
-        title: @props.title5
-        dataIndex: 'status'
-        render: (text, record) =>
-          c_EditableCell
-            value: text
-            onChange: @onCellChange record.key, 'rent'
-            editPen: @props.editPen
-      ,
-        title: @props.title6
-        dataIndex: 'address'
-        render: (text, record) =>
-
-      ,
+        HeaderEdit...
         title: '操作'
         dataIndex: 'operation'
+        width: '105px'
         render: (text, record) =>
           c_Popconfirm
             key: 'Popconfirm'
             title: 'Sure to delete??'
             onConfirm: () => @onDelete record.key
+          ,
+            c_a
+              href: '#'
+              style:
+                color: '#959595'
+            , '详细'
+            c_Divider
+              type: 'vertical'
           ,
             c_a
               key: 'a'
@@ -258,6 +143,15 @@ class EditableTable extends Component
                 color: '#F00'
             , '删除'
     ]
+    
+    childrenHeader = [
+      childrenHeader1...
+    ]
+
+    @NestedTable = () ->
+      c_Table
+        # dataSource: dataSource
+        columns: childrenHeader
 
   onCellChange: (key,dataIndex) =>
     (value) =>
@@ -298,17 +192,9 @@ class EditableTable extends Component
     onChange: (selectedRowKeys, selectedRows) =>
       console.log("selectedRowKeys: #{selectedRowKeys}", 'selectedRows: ', selectedRows)
     getCheckboxProps: (record) =>
-      disabled: record.name == 'Disabled User'
+      disabled: record.name == 'Disabled User'   
 
-  render: (props) ->
-
-    {
-      c_div
-      c_Icon
-      c_Table
-      c_Button
-      c_EditableCell
-    } = CFX
+  render: () ->
 
     c_div {}
     ,
@@ -323,12 +209,27 @@ class EditableTable extends Component
         , @props.btn
       ]
       else []
-      c_Table
-        rowSelection: @rowSelection
-        dataSource: @state.dataSource
-        columns:
-          if @props.editPen is true
-          then @columns
-          else @column
+      if @props.addChildren is true
+      then [
+        c_Table
+          key: 'Table'        
+          expandedRowRender: @NestedTable
+          rowSelection: @rowSelection
+          dataSource: @state.dataSource
+          columns:
+            if @props.editPen is true
+            then @columns
+            else @column
+          ]  
+      else [
+        c_Table
+          key: 'Table'
+          rowSelection: @rowSelection
+          dataSource: @state.dataSource
+          columns:
+            if @props.editPen is true
+            then @columns
+            else @column        
+      ]
 
 export default EditableTable
