@@ -16,6 +16,9 @@ import Login, {
 import {
   Menu
 } from './Components/Navigation'
+import {
+  Table
+} from './Components/Table'
 
 export {
   FormField
@@ -29,4 +32,5 @@ export {
   WithBackImg
   WithBackCanvs
   Menu
+  Table
 }
