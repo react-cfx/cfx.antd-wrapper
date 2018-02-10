@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
-import { Table } from '../../Components/Table/Table'
+import Table from '../../Components/Table'
 
 CFX = prefixDom {
   Table
@@ -18,16 +18,9 @@ export default =>
     } = CFX
 
     c_Table
-      # addChildren: true
-      editPen: true
+      addChildren: true
       btn: '添加房源'
-      childrenHeader:
-        name: '姓名'
-        age: '年龄1'
-        sex: '性别1'
-        phone: '手机号1'
-        email: '邮箱1'
-        address: '地址1'
+      editPen: true
       header:
         name: '姓名'
         age: '年龄'
@@ -35,6 +28,13 @@ export default =>
         phone: '手机号'
         email: '邮箱'
         address: '地址'
+      childrenHeader:
+        name: '姓名'
+        age: '年龄1'
+        sex: '性别1'
+        phone: '手机号1'
+        email: '邮箱1'
+        address: '地址1'        
       dataSource: [
           key: '01'
           name: '陈欢'
@@ -52,10 +52,3 @@ export default =>
           email: '1300000000@qq.com'
           address: '武汉'
       ]
-
-  # .add 'Table'
-  # , =>
-
-  #   {
-  #     c_Table
-  #   } = CFX

@@ -61,8 +61,8 @@ class EditableTable extends Component
 
     childrenHeader1 = for k, v of @props.childrenHeader
       title: "#{v}"
-      dataIndex: "#{k}"      
-    
+      dataIndex: "#{k}"
+
     HeaderEdit = for k, v of @props.header
       title: "#{v}"
       dataIndex: "#{k}"
@@ -143,7 +143,7 @@ class EditableTable extends Component
                 color: '#F00'
             , '删除'
     ]
-    
+
     childrenHeader = [
       childrenHeader1...
     ]
@@ -192,7 +192,7 @@ class EditableTable extends Component
     onChange: (selectedRowKeys, selectedRows) =>
       console.log("selectedRowKeys: #{selectedRowKeys}", 'selectedRows: ', selectedRows)
     getCheckboxProps: (record) =>
-      disabled: record.name == 'Disabled User'   
+      disabled: record.name == 'Disabled User'
 
   render: () ->
 
@@ -212,7 +212,7 @@ class EditableTable extends Component
       if @props.addChildren is true
       then [
         c_Table
-          key: 'Table'        
+          key: 'Table'
           expandedRowRender: @NestedTable
           rowSelection: @rowSelection
           dataSource: @state.dataSource
@@ -220,7 +220,7 @@ class EditableTable extends Component
             if @props.editPen is true
             then @columns
             else @column
-          ]  
+          ]
       else [
         c_Table
           key: 'Table'
@@ -229,7 +229,7 @@ class EditableTable extends Component
           columns:
             if @props.editPen is true
             then @columns
-            else @column        
+            else @column
       ]
 
 export default EditableTable
