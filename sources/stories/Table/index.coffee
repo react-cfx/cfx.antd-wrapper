@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
-import Table from '../../Components/Table'
+import { Table } from '../../Components/Table'
 
 CFX = prefixDom {
   Table
@@ -43,6 +43,23 @@ export default =>
           phone: '1300000000'
           email: '1300000000@qq.com'
           address: '武汉'
+          Children: [
+              key: '101'
+              name: '张三1'
+              age: '20'
+              sex: '男'
+              phone: '12345678900'
+              email: '12345678900@qq.com'
+              address: '武汉'
+            ,
+              key: '102'
+              name: '张三2'
+              age: '20'
+              sex: '男'
+              phone: '12345678900'
+              email: '12345678900@qq.com'
+              address: '武汉'
+          ]
         ,
           key: '02'
           name: '陈欢'
@@ -51,4 +68,30 @@ export default =>
           phone: '1300000000'
           email: '1300000000@qq.com'
           address: '武汉'
+          Children: [
+              key: '101'
+              name: '张三2'
+              age: '20'
+              sex: '男'
+              phone: '12345678900'
+              email: '12345678900@qq.com'
+              address: '武汉'
+          ]    
+        ,
+          key: '03'
+          name: '陈欢'
+          age: '18'
+          sex: '男'
+          phone: '1300000000'
+          email: '1300000000@qq.com'
+          address: '武汉'
+          Children: [
+              key: '101'
+              name: '张三3'
+              age: '20'
+              sex: '男'
+              phone: '12345678900'
+              email: '12345678900@qq.com'
+              address: '武汉'
+          ]           
       ]

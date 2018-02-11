@@ -1,3 +1,4 @@
+import { ddbs as dd } from 'ddeyes'
 import { prefixDom } from 'cfx.dom'
 import React, { Component } from 'react'
 import EditableCell from './EditableCell'
@@ -148,10 +149,14 @@ class EditableTable extends Component
       childrenHeader1...
     ]
 
-    @NestedTable = () ->
+    @NestedTable = (args...) ->
+
+      dd { args }
+
       c_Table
-        # dataSource: dataSource
+        dataSource: args[0].Children
         columns: childrenHeader
+        pagination: false
 
   onCellChange: (key,dataIndex) =>
     (value) =>
