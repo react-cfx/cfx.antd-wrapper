@@ -209,15 +209,16 @@ class EditableTable extends Component
           key: 'Button'
           onClick: @handleAdd
           type: 'primary'
-          ( nb 'editable_add_btn' )...
+          ( nb 'components_table_demo_nested' )...
         }
         , @props.btn
       ]
       else []
       if @props.addChildren is true
       then [
-        c_Table
+        c_Table {
           key: 'Table'
+          className: 'components-table-demo-nested'
           expandedRowRender: @NestedTable
           rowSelection: @rowSelection
           dataSource: @state.dataSource
@@ -225,7 +226,9 @@ class EditableTable extends Component
             if @props.editPen is true
             then @columns
             else @column
-          ]
+          # ( nb 'components_table_demo_nested' )...  
+        }   
+      ] 
       else [
         c_Table
           key: 'Table'

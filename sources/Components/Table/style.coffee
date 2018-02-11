@@ -28,8 +28,12 @@ style =
     cursor: 'pointer'
     lineHeight: '28px'
 
-  # editable_add_btn:
-  #   position: 'relative'
+  components_table_demo_nested:
+    background: 'red'
+
+  editable_add_btn:
+    background: 'red'
+    position: 'relative'
 
 export default styl style
 ,
