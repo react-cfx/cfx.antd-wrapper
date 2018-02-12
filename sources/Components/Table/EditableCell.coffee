@@ -56,6 +56,7 @@ class EditableCell extends Component
     then [
       c_div {
         key: 'cell'
+        className: 'editPen'
         ( nb 'editable_cell' )...
       }
       ,
@@ -86,6 +87,7 @@ class EditableCell extends Component
           ,
             @state.value or ' '
             c_Icon {
+              className: 'Icon_Edit'
               key: 'Icon'
               type: 'edit'
               ( nb 'editable_cell_icon' )...
@@ -95,4 +97,4 @@ class EditableCell extends Component
       ]
     else []
 
-export default EditableCell   
+export default EditableCell

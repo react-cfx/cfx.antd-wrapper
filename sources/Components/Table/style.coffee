@@ -18,6 +18,7 @@ style =
     bottom: '5'
     width: '20'
     cursor: 'pointer'
+    display: 'none !important'
     lineHeight: '18px !important'
 
   editable_cell_icon_check:
@@ -29,12 +30,15 @@ style =
     lineHeight: '28px'
 
   components_table_demo_nested:
+    "& .editPen:hover":
+      "& .Icon_Edit":
+        display: 'inline-block !important'
     "& .table-operation":
       "& a:not(:last-child)":
         marginRight: '24px'
     "& .ant-table-expanded-row > td:last-child":
       padding: '0 48px 0 8px'
-    "& .ant-table-expanded-row": 
+    "& .ant-table-expanded-row":
       "& .ant-table-row:last-child":
         "& td":
           border: 'none'
