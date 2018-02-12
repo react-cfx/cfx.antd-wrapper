@@ -200,17 +200,16 @@ class EditableTable extends Component
       disabled: record.name == 'Disabled User'
 
   render: () ->
-
-    c_div {}
+    c_div {
+      ( nb 'components_table_demo_nested' )...
+    }
     ,
       if @props.btn
       then [
-        c_Button {
+        c_Button
           key: 'Button'
           onClick: @handleAdd
-          type: 'primary'
-          ( nb 'components_table_demo_nested' )...
-        }
+          type: 'primary'    
         , @props.btn
       ]
       else []
@@ -218,7 +217,6 @@ class EditableTable extends Component
       then [
         c_Table {
           key: 'Table'
-          className: 'components-table-demo-nested'
           expandedRowRender: @NestedTable
           rowSelection: @rowSelection
           dataSource: @state.dataSource
@@ -226,7 +224,7 @@ class EditableTable extends Component
             if @props.editPen is true
             then @columns
             else @column
-          # ( nb 'components_table_demo_nested' )...  
+          ( nb 'components_table_demo_nested' )...
         }   
       ] 
       else [

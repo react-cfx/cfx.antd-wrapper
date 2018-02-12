@@ -29,7 +29,27 @@ style =
     lineHeight: '28px'
 
   components_table_demo_nested:
-    background: 'red'
+    "& .table-operation":
+      "& a:not(:last-child)":
+        marginRight: '24px'
+    "& .ant-table-expanded-row > td:last-child":
+      padding: '0 48px 0 8px'
+    "& .ant-table-expanded-row": 
+      "& .ant-table-row:last-child":
+        "& td":
+          border: 'none'
+      "& .ant-table-thead > tr > th":
+        background: 'none'
+     "& .ant-table-expanded-row:hover > td":
+        background: '#fbfbfb'
+      "& .ant-table-row":
+        "& td:first-child":
+          paddingLeft: '0'
+      "& .ant-table-thead":
+        "& th:first-child":
+          paddingLeft: '0'
+        "& th":
+          borderBottom: '1px solid #e9e9e9'
 
   editable_add_btn:
     background: 'red'
