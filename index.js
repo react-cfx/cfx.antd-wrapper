@@ -11,5 +11,6 @@ export {
   Menu,
   Header,
   PageHeader,
-  PageContent
+  PageContent,
+  PrjForm
 } from './sources/index.coffee';

@@ -1,21 +1,25 @@
+import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
 import PrjForm from '../../Components/PrjForm/Form'
 
 CFX = prefixDom {
   PrjForm
-  'h1'
 }
 
-export default =>
-  {
-    c_PrjForm
-    c_h1
-  } = CFX
+export default ->
 
-  c_PrjForm
-    title: [
-      '房客姓名'
-      '手机号'
-      '身份证号'
-      '客户来源'
-    ]
+  storiesOf 'PrjForm', module
+
+  .add 'index'
+
+  , =>
+
+    { c_PrjForm } = CFX
+
+    c_PrjForm
+      title: [
+        '房客姓名'
+        '手机号'
+        '身份证号'
+        '客户来源'
+      ]
