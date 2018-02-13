@@ -19,6 +19,7 @@ import {
 import {
   Table
 } from './Components/Table'
+import Steps from './Components/Steps'
 
 export {
   FormField
@@ -33,4 +34,5 @@ export {
   WithBackCanvs
   Menu
   Table
+  Steps
 }

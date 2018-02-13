@@ -9,6 +9,7 @@ import Login from './Login'
 import Menu from './Menu'
 import Layout from './Layout'
 import Table from './Table'
+import Steps from './Steps'
 
 Welcome()
 
@@ -16,3 +17,4 @@ Login()
 Menu()
 Layout()
 Table()
+Steps()

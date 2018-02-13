@@ -9,5 +9,6 @@ export {
   CenterCard,
   WithBackImg,
   Menu,
-  Table
+  Table,
+  Steps
 } from './sources/index.coffee';

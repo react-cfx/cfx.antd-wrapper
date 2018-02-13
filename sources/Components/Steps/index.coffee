@@ -15,8 +15,8 @@ CFX = prefixDom {
 # current: number
 ## 当前显示指定当前步骤，从 0 开始记数。
 # title: 数组
-#
-## 
+## ex [ { title: 'xx' type: 'xx' } ]
+
 class StepsCurrent extends React.Component
 
   render: ->
@@ -44,7 +44,7 @@ class StepsCurrent extends React.Component
                   type: c.type
           ]
         , []
-        )...
-      ]
+      )...
+    ]
 
 export default StepsCurrent
