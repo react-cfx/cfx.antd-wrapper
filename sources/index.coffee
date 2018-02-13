@@ -23,9 +23,7 @@ import Login, {
 import {
   Menu
 } from './Components/Navigation'
-import {
-  PrjForm 
-} from './Components/PrjForm/Form'
+import PrjForm from './Components/PrjForm/Form'
 
 export {
   FormField
