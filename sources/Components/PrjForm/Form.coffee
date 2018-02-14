@@ -76,6 +76,21 @@ class PrjForm extends Component
           ]
         , []
       )...
+    ,
+      c_FormItem {}
+      ,
+        c_Row {}
+        ,
+          c_Col
+            xs: 24
+            sm: 19
+            offset: 5
+          ,
+            c_Button
+              type: 'primary'
+              style:
+                float: 'right'
+            , @props.btn   
     ]
     
 
