@@ -6,6 +6,7 @@ import {
   Input
   Row
   Col
+  Button
   AutoComplete
 } from 'antd'
 
@@ -13,6 +14,7 @@ FormItem = Form.Item
 
 CFX = prefixDom {
   'div'
+  Button
   Form
   FormItem
   Input
@@ -47,6 +49,7 @@ class PrjForm extends Component
     {
       c_div
       c_Form
+      c_Button
       c_FormItem
       c_Input
       c_Row
