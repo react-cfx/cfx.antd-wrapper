@@ -29,7 +29,7 @@ class PrjForm extends Component
       @state =
         dataSource: []
       @
- 
+
   onSelect: (value) =>
     console.log 'onSelect',value
   handleSearch: (value) =>
@@ -89,12 +89,37 @@ class PrjForm extends Component
             sm: 19
             offset: 5
           ,
-            c_Button
-              type: 'primary'
-              style:
-                float: 'right'
-            , @props.btn   
+            if @props.btnright
+            then [
+              c_Button
+                type: 'primary'
+                style:
+                  float: 'right'
+              , @props.btnright
+            ]
+            else []
+            if @props.btn
+            then [
+              c_Button
+                type: 'primary'
+                style:
+                  float: 'right'
+                  marginLeft: '10px'
+                  marginRight: '-40px'
+              , @props.btn
+            ]
+            else []
+            if @props.btnleft
+            then [
+              c_Button
+                type: 'primary'
+                style:
+                  float: 'left'
+              , @props.btnleft
+            ]
+            else []
+
     ]
-    
+
 
 export default PrjForm
