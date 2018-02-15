@@ -89,13 +89,13 @@ class PrjForm extends Component
             sm: 19
             offset: 5
           ,
-            if @props.btnright
+            if @props.btnleft
             then [
               c_Button
                 type: 'primary'
                 style:
-                  float: 'right'
-              , @props.btnright
+                  float: 'left'
+              , @props.btnleft
             ]
             else []
             if @props.btn
@@ -109,16 +109,15 @@ class PrjForm extends Component
               , @props.btn
             ]
             else []
-            if @props.btnleft
+            if @props.btnright
             then [
               c_Button
                 type: 'primary'
                 style:
-                  float: 'left'
-              , @props.btnleft
+                  float: 'right'
+              , @props.btnright
             ]
             else []
-
     ]
 
 
