@@ -104,21 +104,18 @@ class PrjForm extends Component
                 type: 'primary'
                 style:
                   float: 'right'
-                  marginLeft: '10px'
-                  marginRight: '-40px'
               , @props.btn
             ]
-            else []
+            else []               
             if @props.btnright
             then [
               c_Button
                 type: 'primary'
                 style:
+                  marginRight: '10px'                
                   float: 'right'
               , @props.btnright
             ]
             else []
     ]
-
-
 export default PrjForm
