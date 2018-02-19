@@ -89,6 +89,16 @@ class PrjForm extends Component
             sm: 19
             offset: 5
           ,
+            if @props.btnleftsty
+            then [
+              c_Button
+                type: 'primary'
+                style:
+                  float: 'left'
+                  marginLeft: '-70px'
+              , @props.btnleftsty                 
+            ]
+            else []
             if @props.btnleft
             then [
               c_Button
