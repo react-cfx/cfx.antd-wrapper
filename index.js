@@ -10,5 +10,6 @@ export {
   WithBackImg,
   Menu,
   Table,
-  Steps
+  Steps,
+  Cards
 } from './sources/index.coffee';

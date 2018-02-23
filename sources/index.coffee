@@ -20,6 +20,7 @@ import {
   Table
 } from './Components/Table'
 import Steps from './Components/Steps'
+import Cards from './Components/Cards'
 
 export {
   FormField
@@ -35,4 +36,5 @@ export {
   Menu
   Table
   Steps
+  Cards
 }
