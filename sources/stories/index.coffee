@@ -10,6 +10,7 @@ import Menu from './Menu'
 import Layout from './Layout'
 import Table from './Table'
 import Steps from './Steps'
+import Cards from './Cards'
 
 Welcome()
 
@@ -18,3 +19,4 @@ Menu()
 Layout()
 Table()
 Steps()
+Cards()
