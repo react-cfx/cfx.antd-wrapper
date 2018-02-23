@@ -185,14 +185,16 @@ class EditableTable extends Component
     }
 
   handleAdd: () =>
-    newDtata =
-      key: "#{@state.count++}"
-      name: '陈欢'
-      age: '8'
-      sex: '男'
-      phone: '1300000000'
-      email: '1300000000@qq.com'
-      address: '武汉'
+    console.log @props.dataSource
+    newDtata = @props.dataSource[0]
+    # newDtata =
+    #   key: "#{@state.count++}"
+    #   name: '陈欢'
+    #   age: '8'
+    #   sex: '男'
+    #   phone: '1300000000'
+    #   email: '1300000000@qq.com'
+    #   address: '武汉'
 
     @setState {
       dataSource: [ @state.dataSource..., newDtata ]

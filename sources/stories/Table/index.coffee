@@ -34,7 +34,7 @@ export default =>
         sex: '性别1'
         phone: '手机号1'
         email: '邮箱1'
-        address: '地址1'        
+        address: '地址1'
       dataSource: [
           key: '01'
           name: '陈欢'
@@ -76,7 +76,7 @@ export default =>
               phone: '12345678900'
               email: '12345678900@qq.com'
               address: '武汉'
-          ]    
+          ]
         ,
           key: '03'
           name: '陈欢'
@@ -93,5 +93,5 @@ export default =>
               phone: '12345678900'
               email: '12345678900@qq.com'
               address: '武汉'
-          ]           
+          ]
       ]
