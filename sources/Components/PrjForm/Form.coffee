@@ -92,6 +92,7 @@ class PrjForm extends Component
             if @props.btnleftsty
             then [
               c_Button
+                key: 'btnleftsty'
                 type: 'primary'
                 style:
                   float: 'left'
@@ -102,6 +103,7 @@ class PrjForm extends Component
             if @props.btnleft
             then [
               c_Button
+                key: 'btnleft'
                 type: 'primary'
                 style:
                   float: 'left'
@@ -111,6 +113,7 @@ class PrjForm extends Component
             if @props.btn
             then [
               c_Button
+                key: 'btn'
                 type: 'primary'
                 style:
                   float: 'right'
@@ -120,6 +123,7 @@ class PrjForm extends Component
             if @props.btnright
             then [
               c_Button
+                key: 'btnright'
                 type: 'primary'
                 style:
                   marginRight: '10px'                
