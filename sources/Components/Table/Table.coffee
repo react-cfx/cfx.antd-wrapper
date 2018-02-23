@@ -13,6 +13,8 @@ import {
   Divider
 } from 'antd'
 
+FormItem = Form.Item
+
 CFX = prefixDom {
   'a'
   'div'
@@ -24,6 +26,8 @@ CFX = prefixDom {
   Table
   Icon
   Divider
+  Form
+  FormItem
 }
 
 class EditableTable extends Component
@@ -38,6 +42,8 @@ class EditableTable extends Component
     c_EditableCell
     c_Popconfirm
     c_Divider
+    c_Form
+    c_FormItem
   } = CFX
 
   constructor: (props) ->
@@ -206,11 +212,15 @@ class EditableTable extends Component
     ,
       if @props.btn
       then [
-        c_Button
-          key: 'Button'
-          onClick: @handleAdd
-          type: 'primary'    
-        , @props.btn
+        c_FormItem {}
+        ,   
+          c_Button
+            style:
+              float: 'right'          
+            key: 'Button'
+            onClick: @handleAdd
+            type: 'primary'    
+          , @props.btn
       ]
       else []
       if @props.addChildren is true
