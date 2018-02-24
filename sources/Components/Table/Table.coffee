@@ -62,6 +62,12 @@ class EditableTable extends Component
     # , {}
     # forOf @props.header, (k, v) =>
 
+    dataSourcekeys = for k, v of @props.dataSource
+      "#{k}"
+
+    dataSourceVals = for k, v of @props.dataSource
+      "#{v}"  
+
     header = for k, v of @props.header
       title: "#{v}"
       dataIndex: "#{k}"
@@ -185,17 +191,16 @@ class EditableTable extends Component
     }
 
   handleAdd: () =>
-    console.log @props.dataSource
-    newDtata = @props.dataSource[0]
-    # newDtata =
-    #   key: "#{@state.count++}"
-    #   name: '陈欢'
-    #   age: '8'
-    #   sex: '男'
-    #   phone: '1300000000'
-    #   email: '1300000000@qq.com'
-    #   address: '武汉'
 
+    newDtata =
+      # key: "#{@state.count++}"
+      # name: '章仁'
+      # age: '8'
+      # sex: '男'
+      # phone: '1300000000'
+      # email: '1300000000@qq.com'
+      # address: '武汉'
+      @props.dataSource[0]
     @setState {
       dataSource: [ @state.dataSource..., newDtata ]
       count: @state.count++
