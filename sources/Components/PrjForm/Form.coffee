@@ -94,6 +94,10 @@ class PrjForm extends Component
               c_Button
                 key: 'btnleftsty'
                 type: 'primary'
+                onClick:
+                  if @props.linkto
+                  then linkTo @props.linkto[0], @props.linkto[1]
+                  else []                  
                 style:
                   float: 'left'
                   marginLeft: '-70px'
@@ -105,6 +109,10 @@ class PrjForm extends Component
               c_Button
                 key: 'btnleft'
                 type: 'primary'
+                onClick:
+                  if @props.linkto
+                  then linkTo @props.linkto[0], @props.linkto[1]
+                  else []                  
                 style:
                   float: 'left'
               , @props.btnleft
@@ -115,6 +123,10 @@ class PrjForm extends Component
               c_Button
                 key: 'btn'
                 type: 'primary'
+                onClick:
+                  if @props.linkto
+                  then linkTo @props.linkto[0], @props.linkto[1]
+                  else []                  
                 style:
                   float: 'right'
               , @props.btn
@@ -125,6 +137,10 @@ class PrjForm extends Component
               c_Button
                 key: 'btnright'
                 type: 'primary'
+                onClick:
+                  if @props.linkto
+                  then linkTo @props.linkto[0], @props.linkto[1]
+                  else []                  
                 style:
                   marginRight: '10px'                
                   float: 'right'
