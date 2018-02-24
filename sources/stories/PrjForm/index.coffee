@@ -23,3 +23,8 @@ export default ->
         '身份证号'
         '客户来源'
       ]
+      btnright: '下一步'
+      linkto: [
+        'Page'
+        'Header'
+      ]
