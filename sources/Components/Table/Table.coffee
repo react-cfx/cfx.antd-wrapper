@@ -163,6 +163,8 @@ class EditableTable extends Component
       dd { args }
 
       c_Table
+        style:
+          marginLeft: '67px'
         dataSource: args[0].Children
         columns: childrenHeader
         pagination: false

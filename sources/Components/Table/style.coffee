@@ -29,7 +29,15 @@ style =
     cursor: 'pointer'
     lineHeight: '28px'
 
+  # editPen:
+  #   "& .editable_cell_icon_check:hover":
+  #     color: '#108ee9 !important'
+
   components_table_demo_nested:
+    "& .Icon_Edit:hover":
+      color: '#108ee9'
+    "& .Icon_editPen:hover":
+      color: '#108ee9'
     "& .editPen:hover":
       "& .Icon_Edit":
         display: 'inline-block !important'

@@ -75,6 +75,7 @@ class EditableCell extends Component
             c_Icon {
               key: 'Icon'
               type: 'check'
+              className: 'Icon_editPen'
               ( nb 'editable_cell_icon_check' )...
               onClick: @check
             }
