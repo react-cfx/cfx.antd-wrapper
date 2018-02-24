@@ -192,7 +192,7 @@ class EditableTable extends Component
 
   handleAdd: () =>
 
-    newDtata =
+    newDtata = 
       # key: "#{@state.count++}"
       # name: '章仁'
       # age: '8'
