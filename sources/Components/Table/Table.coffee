@@ -66,7 +66,7 @@ class EditableTable extends Component
       "#{k}"
 
     dataSourceVals = for k, v of @props.dataSource
-      "#{v}"  
+      "#{v}"
 
     header = for k, v of @props.header
       title: "#{v}"
@@ -104,7 +104,6 @@ class EditableTable extends Component
         width: '105px'
         render: (text, record) =>
           c_Popconfirm
-            key: 'Popconfirm'
             title: 'Sure to delete??'
             onConfirm: () => @onDelete record.key
           ,
@@ -117,7 +116,6 @@ class EditableTable extends Component
               type: 'vertical'
           ,
             c_a
-              key: 'a'
               href: '#'
               style:
                 color: '#F00'
@@ -150,7 +148,6 @@ class EditableTable extends Component
               type: 'vertical'
           ,
             c_a
-              key: 'a'
               href: '#'
               style:
                 color: '#F00'
@@ -176,7 +173,6 @@ class EditableTable extends Component
       target = dataSource.find (item) => item.key is key
       if target
       then [
-        key: 'value'
         target[dataIndex] = value
         @setState {
           dataSource
@@ -191,16 +187,11 @@ class EditableTable extends Component
     }
 
   handleAdd: () =>
+    newDtata = {
+      @props.addsource...
+      key: "#{@state.count++}"
+    }
 
-    newDtata = 
-      # key: "#{@state.count++}"
-      # name: '章仁'
-      # age: '8'
-      # sex: '男'
-      # phone: '1300000000'
-      # email: '1300000000@qq.com'
-      # address: '武汉'
-      @props.dataSource[0]
     @setState {
       dataSource: [ @state.dataSource..., newDtata ]
       count: @state.count++
@@ -219,14 +210,15 @@ class EditableTable extends Component
     ,
       if @props.btn
       then [
-        c_FormItem {}
-        ,   
+        c_FormItem
+          key: 'FormItem'
+        ,
           c_Button
             style:
-              float: 'right'          
+              float: 'right'
             key: 'Button'
             onClick: @handleAdd
-            type: 'primary'    
+            type: 'primary'
           , @props.btn
       ]
       else []
@@ -242,8 +234,8 @@ class EditableTable extends Component
             then @columns
             else @column
           ( nb 'components_table_demo_nested' )...
-        }   
-      ] 
+        }
+      ]
       else [
         c_Table
           key: 'Table'

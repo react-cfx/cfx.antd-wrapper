@@ -17,6 +17,7 @@ export default =>
       c_Table
     } = CFX
 
+
     c_Table
       addChildren: true
       btn: '添加房源'
@@ -35,6 +36,13 @@ export default =>
         phone: '手机号1'
         email: '邮箱1'
         address: '地址1'
+      addsource:
+        name: '张三'
+        age: '20'
+        sex: '男'
+        phone: '12345678900'
+        email: '12345678900@qq.com'
+        address: '武汉'
       dataSource: [
           key: '01'
           name: '陈欢'
