@@ -1,6 +1,7 @@
 import { ddbs as dd } from 'ddeyes'
 import { prefixDom } from 'cfx.dom'
 import React, { Component } from 'react'
+import { linkTo } from '@storybook/addon-links'
 import EditableCell from './EditableCell'
 import nb from './style'
 import {
@@ -109,6 +110,7 @@ class EditableTable extends Component
           ,
             c_a
               href: '#'
+              onClick: linkTo @props.linkto[0], @props.linkto[1]
               style:
                 color: '#959595'
             , '详细'
