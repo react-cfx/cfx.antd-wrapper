@@ -110,7 +110,7 @@ class EditableTable extends Component
           ,
             c_a
               href: '#'
-              onClick: linkTo @props.linkto[0], @props.linkto[1]
+              # onClick: linkTo @props.linkto[0], @props.linkto[1]
               style:
                 color: '#959595'
             , '详细'
