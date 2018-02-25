@@ -97,8 +97,8 @@ class PrjForm extends Component
                 type: 'primary'
                 onClick:
                   if @props.linkto
-                  then linkTo @props.linkto[0], @props.linkto[1]
-                  else []                  
+                  then linkTo @props.linktoup[0], @props.linktoup[1]
+                  else @onSelect                 
                 style:
                   float: 'left'
                   marginLeft: '-70px'
@@ -111,9 +111,9 @@ class PrjForm extends Component
                 key: 'btnleft'
                 type: 'primary'
                 onClick:
-                  if @props.linkto
-                  then linkTo @props.linkto[0], @props.linkto[1]
-                  else []                  
+                  if @props.linktoup
+                  then linkTo @props.linktoup[0], @props.linktoup[1]
+                  else @onSelect    
                 style:
                   float: 'left'
               , @props.btnleft
@@ -125,9 +125,9 @@ class PrjForm extends Component
                 key: 'btn'
                 type: 'primary'
                 onClick:
-                  if @props.linkto
-                  then linkTo @props.linkto[0], @props.linkto[1]
-                  else []                  
+                  if @props.linktobtn
+                  then linkTo @props.linktobtn[0], @props.linktobtn[1]
+                  else @onSelect                 
                 style:
                   float: 'right'
               , @props.btn
@@ -139,9 +139,9 @@ class PrjForm extends Component
                 key: 'btnright'
                 type: 'primary'
                 onClick:
-                  if @props.linkto
-                  then linkTo @props.linkto[0], @props.linkto[1]
-                  else []                  
+                  if @props.linktodown
+                  then linkTo @props.linktodown[0], @props.linktodown[1]
+                  else @onSelect           
                 style:
                   marginRight: '10px'                
                   float: 'right'
