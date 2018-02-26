@@ -105,25 +105,30 @@ class EditableTable extends Component
           dataIndex: 'operation'
           width: '105px'
           render: (text, record) =>
-            c_Popconfirm
-              title: 'Sure to delete??'
-              onConfirm: () => @onDelete record.key
-            ,
-              c_a
-                href: '#'
-                # onClick: linkTo @props.linkto[0], @props.linkto[0]
-                style:
-                  color: '#959595'
-              , '详细'
-              c_Divider
-                type: 'vertical'
-            ,
-              c_a
-                href: '#'
-                style:
-                  color: '#F00'
-              , '删除'
-        else []      
+            [
+                c_a
+                  key: 'a'
+                  href: 'javascript:void(0);'
+                  style:
+                    color: '#959595'
+                , '详细'
+                c_Divider
+                  key: 'Divider'
+                  type: 'vertical'
+              ,
+                c_Popconfirm
+                  key: 'Popconfirm'
+                  title: 'Sure to delete??'
+                  onConfirm: () => @onDelete record.key
+                ,                
+                  c_a
+                    key: 'a'
+                    href: '#'
+                    style:
+                      color: '#F00'
+                  , '删除'
+            ]
+        else []  
     ]
 
     @column = [
@@ -139,24 +144,29 @@ class EditableTable extends Component
           dataIndex: 'operation'
           width: '105px'
           render: (text, record) =>
-            c_Popconfirm
-              key: 'Popconfirm'
-              title: 'Sure to delete??'
-              onConfirm: () => @onDelete record.key
-            ,
-              c_a
-                href: '#'
-                style:
-                  color: '#959595'
-              , '详细'
-              c_Divider
-                type: 'vertical'
-            ,
-              c_a
-                href: '#'
-                style:
-                  color: '#F00'
-              , '删除'
+            [
+                c_a
+                  key: 'a'
+                  href: 'javascript:void(0);'
+                  style:
+                    color: '#959595'
+                , '详细'
+                c_Divider
+                  key: 'Divider'
+                  type: 'vertical'
+              ,
+                c_Popconfirm
+                  key: 'Popconfirm'
+                  title: 'Sure to delete??'
+                  onConfirm: () => @onDelete record.key
+                ,                
+                  c_a
+                    key: 'a'
+                    href: '#'
+                    style:
+                      color: '#F00'
+                  , '删除'
+            ]
         else []      
     ]
 
