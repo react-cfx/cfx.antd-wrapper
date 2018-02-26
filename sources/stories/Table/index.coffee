@@ -19,7 +19,7 @@ export default =>
 
 
     c_Table
-      addChildren: true
+      # addChildren: true
       operating: false
       btn: '添加房源'
       editPen: true
@@ -46,7 +46,7 @@ export default =>
         address: '武汉'
       dataSource: [
           key: '01'
-          name: '陈欢'
+          name: '张三'
           age: '8'
           sex: '男'
           phone: '1300000000'
@@ -71,7 +71,7 @@ export default =>
           ]
         ,
           key: '02'
-          name: '陈欢'
+          name: '张三'
           age: '8'
           sex: '男'
           phone: '1300000000'
@@ -88,7 +88,7 @@ export default =>
           ]
         ,
           key: '03'
-          name: '陈欢'
+          name: '张三'
           age: '18'
           sex: '男'
           phone: '1300000000'

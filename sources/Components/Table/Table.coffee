@@ -230,29 +230,19 @@ class EditableTable extends Component
           , @props.btn
       ]
       else []
-      if @props.addChildren is true
-      then [
-        c_Table {
-          key: 'Table'
-          expandedRowRender: @NestedTable
-          rowSelection: @rowSelection
-          dataSource: @state.dataSource
-          columns:
-            if @props.editPen is true
-            then @columns
-            else @column
-          ( nb 'components_table_demo_nested' )...
-        }
-      ]
-      else [
-        c_Table
-          key: 'Table'
-          rowSelection: @rowSelection
-          dataSource: @state.dataSource
-          columns:
-            if @props.editPen is true
-            then @columns
-            else @column
-      ]
+      c_Table {
+        (
+          if @props.addChildren is true
+          then expandedRowRender: @NestedTable
+          else []
+        )...  
+        rowSelection: @rowSelection
+        dataSource: @state.dataSource
+        columns:
+          if @props.editPen is true
+          then @columns
+          else @column
+        ( nb 'components_table_demo_nested' )...
+      }
 
 export default EditableTable
