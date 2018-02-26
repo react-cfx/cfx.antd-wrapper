@@ -20,6 +20,7 @@ export default =>
 
     c_Table
       addChildren: true
+      operating: false
       btn: '添加房源'
       editPen: true
       header:

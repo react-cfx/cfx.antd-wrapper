@@ -100,28 +100,30 @@ class EditableTable extends Component
 
     @columns = [
         HeaderEdit...
-        title: '操作'
-        dataIndex: 'operation'
-        width: '105px'
-        render: (text, record) =>
-          c_Popconfirm
-            title: 'Sure to delete??'
-            onConfirm: () => @onDelete record.key
-          ,
-            c_a
-              href: '#'
-              # onClick: linkTo @props.linkto[0], @props.linkto[0]
-              style:
-                color: '#959595'
-            , '详细'
-            c_Divider
-              type: 'vertical'
-          ,
-            c_a
-              href: '#'
-              style:
-                color: '#F00'
-            , '删除'
+        unless props.operating is false
+          title: '操作'
+          dataIndex: 'operation'
+          width: '105px'
+          render: (text, record) =>
+            c_Popconfirm
+              title: 'Sure to delete??'
+              onConfirm: () => @onDelete record.key
+            ,
+              c_a
+                href: '#'
+                # onClick: linkTo @props.linkto[0], @props.linkto[0]
+                style:
+                  color: '#959595'
+              , '详细'
+              c_Divider
+                type: 'vertical'
+            ,
+              c_a
+                href: '#'
+                style:
+                  color: '#F00'
+              , '删除'
+        else []      
     ]
 
     @column = [
@@ -132,28 +134,30 @@ class EditableTable extends Component
             href: '#'
           , record["#{@FSheaderKey}"]
         header...
-        title: '操作'
-        dataIndex: 'operation'
-        width: '105px'
-        render: (text, record) =>
-          c_Popconfirm
-            key: 'Popconfirm'
-            title: 'Sure to delete??'
-            onConfirm: () => @onDelete record.key
-          ,
-            c_a
-              href: '#'
-              style:
-                color: '#959595'
-            , '详细'
-            c_Divider
-              type: 'vertical'
-          ,
-            c_a
-              href: '#'
-              style:
-                color: '#F00'
-            , '删除'
+        unless props.operating is false
+          title: '操作'
+          dataIndex: 'operation'
+          width: '105px'
+          render: (text, record) =>
+            c_Popconfirm
+              key: 'Popconfirm'
+              title: 'Sure to delete??'
+              onConfirm: () => @onDelete record.key
+            ,
+              c_a
+                href: '#'
+                style:
+                  color: '#959595'
+              , '详细'
+              c_Divider
+                type: 'vertical'
+            ,
+              c_a
+                href: '#'
+                style:
+                  color: '#F00'
+              , '删除'
+        else []      
     ]
 
     childrenHeader = [
