@@ -21,6 +21,10 @@ export default =>
     c_Table
       # addChildren: true
       # operating: false
+      linkto: [
+        'Steps'
+        'Steps'
+      ]
       btn: '添加房源'
       editPen: true
       header:
