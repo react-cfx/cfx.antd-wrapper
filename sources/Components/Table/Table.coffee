@@ -109,7 +109,10 @@ class EditableTable extends Component
                 c_a
                   key: 'a'
                   href: 'javascript:void(0);'
-                  onClick: linkTo @props.linkto[0], @props.linkto[1]
+                  onClick:
+                    if @props.linkto
+                    then linkTo @props.linkto[0], @props.linkto[1]
+                    else console.log '请添加链接'
                   style:
                     color: '#959595'
                 , '详细'
@@ -149,7 +152,10 @@ class EditableTable extends Component
                 c_a
                   key: 'a'
                   href: 'javascript:void(0);'
-                  onClick: linkTo @props.linkto[0], @props.linkto[1]
+                  onClick:
+                    if @props.linkto
+                    then linkTo @props.linkto[0], @props.linkto[1]
+                    else console.log '请添加链接'
                   style:
                     color: '#959595'
                 , '详细'
