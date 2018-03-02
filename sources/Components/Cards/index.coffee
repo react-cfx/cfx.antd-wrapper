@@ -6,6 +6,7 @@ import {
   Divider
   Form
   Input
+  Button
 } from 'antd'
 
 FormItem = Form.Item
@@ -19,6 +20,7 @@ CFX = prefixDom {
   Input
   FormItem
   Divider
+  Button
 }
 
 export default =>
@@ -33,6 +35,7 @@ export default =>
       c_Form
       c_FormItem
       c_Input
+      c_Button
     } = CFX
 
     c_div {}
@@ -40,11 +43,21 @@ export default =>
       c_div
         style:
           fontSize: '16px'
+          float: 'left'
           color: 'rgba(0, 0, 0, .85)'
           fontWeight: '500'
           marginBottom: '16px'
       , @props.title
       
+      c_Button
+        type: 'primary'
+        shape: 'circle'
+        icon: 'search'
+        style:
+          float: 'right'
+          marginBottom: '16px'
+      , @props.search
+
       if @props.data?
       then [
         c_Row.apply @, [
