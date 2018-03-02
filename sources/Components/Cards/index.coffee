@@ -15,6 +15,9 @@ CFX = prefixDom {
   Row
   Col
   Card
+  Form
+  Input
+  FormItem
   Divider
 }
 
