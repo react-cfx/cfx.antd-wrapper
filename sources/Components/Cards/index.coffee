@@ -27,6 +27,9 @@ export default =>
       c_Row
       c_Col
       c_Divider
+      c_Form
+      c_FormItem
+      c_Input
     } = CFX
 
     c_div {}
@@ -107,4 +110,5 @@ export default =>
           )...
         ]
       ]
+      else []
       c_Divider {}
