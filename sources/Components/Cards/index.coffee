@@ -4,7 +4,11 @@ import {
   Col
   Card
   Divider
+  Form
+  Input
 } from 'antd'
+
+FormItem = Form.Item
 
 CFX = prefixDom {
   'div' 
@@ -20,7 +24,6 @@ export default =>
 
     {
       c_div
-      c_Card
       c_Row
       c_Col
       c_Divider
@@ -78,5 +81,30 @@ export default =>
         ]
       ]
       else []
-      
+      if @props.form?
+      then [
+        c_Form.apply @ , [
+          style:
+            margin: '40px auto 0'
+            maxWidth: '500px'
+        ,
+          (
+            @props.form.reduce (r,c) =>
+              [
+                r...
+                c_FormItem
+                  labelCol: 
+                    span: 5
+                  wrapperCol:
+                    span: 19
+                  label: c
+                ,
+                  c_Input
+                    type: 'text'
+                    placeholder: "请输入#{c}"
+              ]
+            , []
+          )...
+        ]
+      ]
       c_Divider {}
