@@ -142,8 +142,7 @@ class PrjForm extends Component
                   if @props.linktodown
                   then linkTo @props.linktodown[0], @props.linktodown[1]
                   else @onSelect           
-                style:
-                  marginRight: '10px'                
+                style:               
                   float: 'right'
               , @props.btnright
             ]
