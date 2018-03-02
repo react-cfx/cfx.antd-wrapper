@@ -38,8 +38,7 @@ export default =>
       c_Button
     } = CFX
 
-    c_div
-      style:
+    c_div {}
     ,
       c_div
         style:
