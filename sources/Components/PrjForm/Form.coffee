@@ -130,7 +130,7 @@ class PrjForm extends Component
                   else @onSelect
                 style:
                   float: 'right'
-                  marginRight: '10px'
+                  marginLeft: '10px'
               , @props.btn
             ]
             else []
