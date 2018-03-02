@@ -38,7 +38,8 @@ export default =>
       c_Button
     } = CFX
 
-    c_div {}
+    c_div
+      style:
     ,
       c_div
         style:
@@ -125,5 +126,22 @@ export default =>
             , []
           )...
         ]
+      else []
+      if @props.btn is true
+      then [
+        c_Row {}
+        ,
+          c_Col
+            xs: 24
+            sm: 19
+            offset: 5
+          ,
+            c_Button
+              style:
+                float: 'right'
+              key: 'primary'
+              type: 'primary'
+            , '完成'
+      ]
       else []
       c_Divider {}
