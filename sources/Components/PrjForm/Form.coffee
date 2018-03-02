@@ -98,11 +98,11 @@ class PrjForm extends Component
                 onClick:
                   if @props.linkto
                   then linkTo @props.linktoup[0], @props.linktoup[1]
-                  else @onSelect                 
+                  else @onSelect
                 style:
                   float: 'left'
                   marginLeft: '-70px'
-              , @props.btnleftsty                 
+              , @props.btnleftsty
             ]
             else []
             if @props.btnleft
@@ -113,7 +113,7 @@ class PrjForm extends Component
                 onClick:
                   if @props.linktoup
                   then linkTo @props.linktoup[0], @props.linktoup[1]
-                  else @onSelect    
+                  else @onSelect
                 style:
                   float: 'left'
               , @props.btnleft
@@ -127,12 +127,13 @@ class PrjForm extends Component
                 onClick:
                   if @props.linktobtn
                   then linkTo @props.linktobtn[0], @props.linktobtn[1]
-                  else @onSelect                 
+                  else @onSelect
                 style:
                   float: 'right'
+                  marginRight: '10px'
               , @props.btn
             ]
-            else []               
+            else []
             if @props.btnright
             then [
               c_Button
@@ -141,8 +142,8 @@ class PrjForm extends Component
                 onClick:
                   if @props.linktodown
                   then linkTo @props.linktodown[0], @props.linktodown[1]
-                  else @onSelect           
-                style:               
+                  else @onSelect
+                style:
                   float: 'right'
               , @props.btnright
             ]
