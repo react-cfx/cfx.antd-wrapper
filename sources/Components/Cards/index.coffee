@@ -86,7 +86,7 @@ export default =>
       else []
       if @props.form?
       then [
-        c_Form.apply @ , [
+        c_Form
           style:
             margin: '40px auto 0'
             maxWidth: '500px'
@@ -109,6 +109,5 @@ export default =>
             , []
           )...
         ]
-      ]
-      else []
+        else []
       c_Divider {}
