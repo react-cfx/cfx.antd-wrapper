@@ -96,7 +96,7 @@ class PrjForm extends Component
                 key: 'btnleftsty'
                 type: 'primary'
                 onClick:
-                  if @props.linkto
+                  if @props.linktoup
                   then linkTo @props.linktoup[0], @props.linktoup[1]
                   else @onSelect
                 style:
