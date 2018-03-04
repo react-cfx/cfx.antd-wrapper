@@ -43,20 +43,26 @@ export default =>
       c_div
         style:
           fontSize: '16px'
-          float: 'left'
+          # float: 'left'
           color: 'rgba(0, 0, 0, .85)'
           fontWeight: '500'
           marginBottom: '16px'
       , @props.title
       
-      c_Button
-        type: 'primary'
-        shape: 'circle'
-        icon: 'search'
-        style:
-          float: 'right'
-          marginBottom: '16px'
-      , @props.search
+      (
+        if @props.search?
+        then [
+          c_Button
+            type: 'primary'
+            shape: 'circle'
+            icon: 'search'
+            style:
+              float: 'right'
+              marginBottom: '16px'
+          , @props.search
+        ]
+        else []
+      )...
 
       if @props.data?
       then [
