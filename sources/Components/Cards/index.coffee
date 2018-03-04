@@ -53,6 +53,7 @@ export default =>
         if @props.search?
         then [
           c_Button
+            key: 'Button'
             type: 'primary'
             shape: 'circle'
             icon: 'search'
@@ -67,6 +68,7 @@ export default =>
       if @props.data?
       then [
         c_Row.apply @, [
+          key: 'Row'
           style:
             marginLeft: '-16px'
             marginRight: '-16px'
