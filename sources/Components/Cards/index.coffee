@@ -23,9 +23,14 @@ CFX = prefixDom {
   Button
 }
 
-export default =>
+export default ({
+  props...
+}) =>
 
   render: ->
+    {
+      CardContent
+    } = props
 
     {
       c_div
@@ -49,8 +54,11 @@ export default =>
           marginBottom: '16px'
       , @props.title
       
-      (
-        if @props.search?
+      c_div
+        style:
+          float: 'right'
+      ,
+        if @props.search is true
         then [
           c_Button
             key: 'Button'
@@ -60,78 +68,11 @@ export default =>
             style:
               float: 'right'
               marginBottom: '16px'
-          , @props.search
         ]
         else []
-      )...
-
-      if @props.data?
+      if CardContent
       then [
-        c_Row.apply @, [
-          key: 'Row'
-          style:
-            marginLeft: '-16px'
-            marginRight: '-16px'
-        ,
-          (
-            @props.data.reduce (r, c) =>
-              [
-                r...
-                c_Col
-                  xs: 24
-                  sm: 12
-                  md: 8
-                  style:
-                    paddingLeft: '16px'
-                    paddingRight: '16px'
-                ,
-                  c_div
-                    style:
-                      lineHeight: '22px'
-                      paddingBottom: '16px'
-                      marginRight: '8px'
-                      color: 'rgba(0, 0, 0, .85)'
-                      whiteSpace: 'nowrap'
-                      display: 'table-cell'
-                  , c.keys
-                  c_div
-                    style:
-                      lineHeight: '22px'
-                      width: '100%'
-                      paddingBottom: '16px'
-                      color: 'rgba(0,0,0,.65)'
-                      display: 'table-cell'
-                  , c.values
-              ]
-            , []
-          )...
-        ]
+        CardContent
       ]
-      else []
-      if @props.form?
-      then [
-        c_Form
-          style:
-            margin: '40px auto 0'
-            maxWidth: '500px'
-        ,
-          (
-            @props.form.reduce (r,c) =>
-              [
-                r...
-                c_FormItem
-                  labelCol: 
-                    span: 5
-                  wrapperCol:
-                    span: 19
-                  label: c
-                ,
-                  c_Input
-                    type: 'text'
-                    placeholder: "请输入#{c}"
-              ]
-            , []
-          )...
-        ]
       else []
       c_Divider {}
