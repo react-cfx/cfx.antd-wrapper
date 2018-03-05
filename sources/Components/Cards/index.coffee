@@ -47,7 +47,7 @@ export default ({
     ,
       c_div
         style:
-          minHeight: '40px'
+          minHeight: '50px'
       ,    
         c_div
           style:
