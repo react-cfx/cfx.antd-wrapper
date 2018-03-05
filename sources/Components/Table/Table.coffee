@@ -115,7 +115,7 @@ class EditableTable extends Component
                     else console.log '请添加链接'
                   style:
                     color: '#959595'
-                , '详细'
+                , @props.alink
                 c_Divider
                   key: 'Divider'
                   type: 'vertical'
@@ -158,7 +158,7 @@ class EditableTable extends Component
                     else console.log '请添加链接'
                   style:
                     color: '#959595'
-                , '详细'
+                , @props.alink
                 c_Divider
                   key: 'Divider'
                   type: 'vertical'
