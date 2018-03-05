@@ -55,12 +55,12 @@ export default ({
             float: 'left'
             color: 'rgba(0, 0, 0, .85)'
             fontWeight: '500'
-            marginBottom: '16px'
         , @props.title
         
         c_div
           style:
             float: 'right'
+            marginBottom: '16px'
         ,
           if @props.search is true
           then [
@@ -73,6 +73,7 @@ export default ({
           else if @props.btn?
           then [
             c_Button
+              key: 'Button'
               type: 'primary'
             , @props.btn
           ]
