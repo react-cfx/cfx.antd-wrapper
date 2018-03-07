@@ -30,6 +30,9 @@ export default =>
       c_Cards
         title: '个人信息'
         btn: '这是按钮'
+        linkto: [
+          'Table'
+        ]
         CardContent: [
           c_List
             key: 'List'  

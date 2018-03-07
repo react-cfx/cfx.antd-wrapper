@@ -1,4 +1,5 @@
 import { prefixDom } from 'cfx.dom'
+import { linkTo } from '@storybook/addon-links'
 import {
   Row
   Col
@@ -75,6 +76,10 @@ export default ({
             c_Button
               key: 'Button'
               type: 'primary'
+              onClick:
+                if @props.linkto
+                then linkTo @props.linkto[0], @props.linkto[1]
+                else console.log '请添加链接'
             , @props.btn
           ]
           else []
