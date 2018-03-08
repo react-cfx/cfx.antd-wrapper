@@ -55,7 +55,8 @@ Commit = ({
       ' or '
 
       c_a
-        href: ''
+        href: 'javascript:void(0)'
+        style: color: 'rgb(204, 204, 204)'
       , '注册'
 
 export default Commit
