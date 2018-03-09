@@ -16,5 +16,6 @@ export {
   PageContent,
   PrjForm,
   BtnModal,
-  List
+  List,
+  ContentPage
 } from './sources/index.coffee';

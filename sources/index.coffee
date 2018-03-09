@@ -10,6 +10,7 @@ import {
   PageHeader
   PageContent
 } from './Components/Page'
+import ContentPage from './Components/Content'
 import {
   Header
 } from './Components/Header'
@@ -38,6 +39,7 @@ export {
   PrjForm
   BtnModal
   List
+  ContentPage
 
   FormField
   PageCenter
