@@ -36,10 +36,10 @@ CFX = prefixDom {
 
 class PrjForm extends Component
   constructor: (props) ->
-      super props
-      @state =
-        dataSource: []
-      @
+    super props
+    @state =
+      dataSource: []
+    @
   options: [
       value: '湖北'
       label: '湖北'
@@ -157,7 +157,7 @@ class PrjForm extends Component
                   paddingRight: '8px'
               ,
                 c_FormItem
-                  key: "item#{i}"
+                  key: "Item#{i}"
                   label: c.keys
                 ,
                   if c.type is 'data'
@@ -227,6 +227,7 @@ class PrjForm extends Component
 
     else [
       c_Form.apply @, [
+        key: 'Form'
         style:
           margin: '40px auto 0'
           maxWidth: '500px'
@@ -235,7 +236,6 @@ class PrjForm extends Component
             [
               r...
               c_FormItem
-                key: "item#{i}"
                 labelCol:
                   span: 5
                 wrapperCol:
