@@ -1,11 +1,13 @@
-# import { ddbs as dd } from 'ddeyes'
 import { prefixDom } from 'cfx.dom'
 import { Layout, Breadcrumb } from 'antd'
+import nb from './style'
 { Header, Content, Footer } = Layout
 BreadcrumbItem = Breadcrumb.Item
 
 CFX = prefixDom {
   'div'
+  'p'
+  'h1'
   Breadcrumb
   BreadcrumbItem
   Header
@@ -17,20 +19,29 @@ export default ({
   content
   props...
 }) =>
-
+  
   {
     header
+    PageHeader
+    title
+    description
     breadcrumb
     footer
   } = props
 
   {
     c_div
+    c_p
+    c_h1
     c_Breadcrumb
     c_BreadcrumbItem
     c_Header
     c_Content
     c_Footer
+    c_Icon
+    c_Row
+    c_Col
+    c_Badge
   } = CFX
 
   [
@@ -40,48 +51,38 @@ export default ({
         c_Header
           key: 'MainContentHeader'
           style:
+            marginBottom: '1px'
             background: '#fff'
-            padding: 0
         , header
       ]
       else []
     )...
-
+      
+    (
+      if PageHeader
+      then [
+        PageHeader
+      ]
+      else []
+    )...
+ 
     c_Content.apply null
     , [
 
       key: 'MainContentContent'
       style:
-        margin: '0 16px'
-
-      (
-        if breadcrumb
-        then [
-          c_Breadcrumb.apply null
-          , [
-            style:
-              margin: '12px 0'
-            (
-              breadcrumb.reduce (r, c, i) =>
-                [
-                  r...
-                  c_BreadcrumbItem
-                    key: "breadcrumb_#{i}"
-                  , c
-                ]
-              , []
-            )...
-          ]
-        ]
-        else []
-      )...
-
-      c_div
-        style: 
-          padding: 24
-          background: '#fff'
-          minHeight: 360
-      , content
+        margin: '16px'
+        
+      if content
+      then [
+        c_div
+          key: 'layout3'
+          style: 
+            background: '#fff'
+            minHeight: 360
+        , content 
+      ]
+      else []     
     ]
 
     (

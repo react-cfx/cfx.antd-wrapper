@@ -57,32 +57,6 @@ export default ({
             color: 'rgba(0, 0, 0, .85)'
             fontWeight: '500'
         , @props.title
-        
-        c_div
-          style:
-            float: 'right'
-            marginBottom: '16px'
-        ,
-          if @props.search is true
-          then [
-            c_Button
-              key: 'Button'
-              type: 'primary'
-              shape: 'circle'
-              icon: 'search'
-          ]
-          else if @props.btn?
-          then [
-            c_Button
-              key: 'Button'
-              type: 'primary'
-              onClick:
-                if @props.linkto
-                then linkTo @props.linkto[0], @props.linkto[1]
-                else console.log '请添加链接'
-            , @props.btn
-          ]
-          else []
       if CardContent
       then [
         CardContent

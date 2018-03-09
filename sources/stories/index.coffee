@@ -11,6 +11,9 @@ import Layout from './Layout'
 import Table from './Table'
 import Steps from './Steps'
 import Cards from './Cards'
+import BtnModal from './BtnModal'
+import FormPrj from './FormPrj'
+import Content from './Content'
 
 Welcome()
 
@@ -20,3 +23,6 @@ Layout()
 Table()
 Steps()
 Cards()
+BtnModal()
+FormPrj()
+Content()

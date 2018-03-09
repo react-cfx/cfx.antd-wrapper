@@ -11,5 +11,10 @@ export {
   Menu,
   Table,
   Steps,
-  Cards
+  Cards,
+  PageHeader,
+  PageContent,
+  PrjForm,
+  BtnModal,
+  List  
 } from './sources/index.coffee';
