@@ -123,14 +123,17 @@ class PrjForm extends Component
       c_Option
       c_InputNumber
     } = CFX
+
     if @props.Layout is 'vertical'
     then [
       c_Form
+        key: 'Form'
         style:
           margin: '40px auto 0'
           minWidth: '500px'
       ,
         c_Row
+          key: 'Row'
           style:
             marginLeft: '-8px'
             marginRight: '-8px'
@@ -139,6 +142,7 @@ class PrjForm extends Component
             [
               r...
               c_Col
+                key: "#{i}"
                 sm:
                   span: 24
                 md:
@@ -153,6 +157,7 @@ class PrjForm extends Component
                   paddingRight: '8px'
               ,
                 c_FormItem
+                  key: "item#{i}"
                   label: c.keys
                 ,
                   if c.type is 'data'
@@ -175,6 +180,7 @@ class PrjForm extends Component
                   else if c.type is 'select'
                   then [
                     c_Select
+                      key: 'Select'
                       defaultValue: '默认'
                       style:
                         width: '120px'
@@ -193,12 +199,14 @@ class PrjForm extends Component
                   else if c.type is 'inputSelect'
                   then [
                     c_Input
+                      key: 'Input'
                       addonAfter: @selectAfter
                       placeholder: '请输入租赁时间'
                   ]
                   else if c.type is 'number'
                   then [
                     c_InputNumber
+                      key: 'InputNumber'
                       style:
                         width: '196px'
                       min: '0'
