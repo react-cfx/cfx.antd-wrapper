@@ -29,11 +29,12 @@ export default =>
       # ]
       footlabel:
         c_a
+          key: 'a'
           href: "#"
           style: color: '#959595'
         , '详细'
       btn: '添加房源'
-      editPen: true
+      # editPen: true
       header:
         name: '姓名'
         age: '年龄'
@@ -82,7 +83,7 @@ export default =>
           ]
         ,
           key: '02'
-          name: '张三'
+          name: '张三1'
           age: '8'
           sex: '男'
           phone: '1300000000'
@@ -99,7 +100,7 @@ export default =>
           ]
         ,
           key: '03'
-          name: '张三'
+          name: '张三3'
           age: '18'
           sex: '男'
           phone: '1300000000'

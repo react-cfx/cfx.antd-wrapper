@@ -98,6 +98,8 @@ class EditableTable extends Component
 
     @FSheaderKey = headerKey[0]
 
+    @FSheaderVal = headerVal[0]
+
     @columns = [
         HeaderEdit...
         unless props.operating is false
@@ -132,6 +134,7 @@ class EditableTable extends Component
         render: (text, record, index) =>
           c_a
             href: '#'
+          # , '213'  
           , record["#{@FSheaderKey}"]
         header...
         unless props.operating is false
@@ -149,7 +152,7 @@ class EditableTable extends Component
                   key: 'Popconfirm'
                   title: 'Sure to delete??'
                   onConfirm: () => @onDelete record.key
-                ,                
+                ,     
                   c_a
                     key: 'a'
                     href: '#'
