@@ -106,23 +106,14 @@ class EditableTable extends Component
           width: '105px'
           render: (text, record) =>
             [
-                c_a
-                  key: 'a'
-                  href: 'javascript:void(0);'
-                  onClick:
-                    if @props.linkto
-                    then linkTo @props.linkto[0], @props.linkto[1]
-                    else console.log '请添加链接'
-                  style:
-                    color: '#959595'
-                , @props.alink
+                @props.footlabel
                 c_Divider
                   key: 'Divider'
                   type: 'vertical'
               ,
                 c_Popconfirm
                   key: 'Popconfirm'
-                  title: 'Sure to delete??'
+                  title: '是否要删除??'
                   onConfirm: () => @onDelete record.key
                 ,                
                   c_a
@@ -149,16 +140,7 @@ class EditableTable extends Component
           width: '105px'
           render: (text, record) =>
             [
-                c_a
-                  key: 'a'
-                  href: 'javascript:void(0);'
-                  onClick:
-                    if @props.linkto
-                    then linkTo @props.linkto[0], @props.linkto[1]
-                    else console.log '请添加链接'
-                  style:
-                    color: '#959595'
-                , @props.alink
+                @props.footlabel
                 c_Divider
                   key: 'Divider'
                   type: 'vertical'

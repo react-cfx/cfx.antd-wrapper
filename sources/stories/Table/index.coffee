@@ -3,6 +3,7 @@ import { prefixDom } from 'cfx.dom'
 import { Table } from '../../Components/Table'
 
 CFX = prefixDom {
+  'a'
   Table
 }
 
@@ -14,6 +15,7 @@ export default =>
   , =>
 
     {
+      c_a
       c_Table
     } = CFX
 
@@ -25,6 +27,11 @@ export default =>
       #   'Steps'
       #   'Steps'
       # ]
+      footlabel:
+        c_a
+          href: "#"
+          style: color: '#959595'
+        , '详细'
       btn: '添加房源'
       editPen: true
       header:

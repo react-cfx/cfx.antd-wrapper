@@ -21,45 +21,46 @@ export default =>
     [
       c_FormPrj
         key: 'FormPrj'
-        # Layout: 'vertical'
+        Layout: 'vertical'
         title: [
             keys: 'normal'
             type: 'normal'
-          # ,
-          #   keys: 'date'
-          #   type: 'date'
-          # ,
-          #   keys: 'address'
-          #   type: 'address'
-          # ,
-          #   keys: 'select'
-          #   type: 'select'
-          # ,
-          #   keys: 'inputSelect'
-          #   type: 'inputSelect'
-          # ,
-          #   keys: 'number'
-          #   type: 'number'
+          ,
+            keys: 'date'
+            type: 'date'
+          ,
+            keys: 'address'
+            type: 'address'
+          ,
+            keys: 'select'
+            type: 'select'
+          ,
+            keys: 'inputSelect'
+            type: 'inputSelect'
+          ,
+            keys: 'number'
+            type: 'number'
         ]
-      # c_FormPrj
-      #   key: 'FormPrj1'
-      #   title: [
-      #       keys: 'normal'
-      #       type: 'normal'
-      #     ,
-      #       keys: 'date'
-      #       type: 'date'
-      #     ,
-      #       keys: 'address'
-      #       type: 'address'
-      #     ,
-      #       keys: 'select'
-      #       type: 'select'
-      #     ,
-      #       keys: 'inputSelect'
-      #       type: 'inputSelect'
-      #     ,
-      #       keys: 'number'
-      #       type: 'number'
-      #   ]
+      c_FormPrj
+        btnright: '下一步'
+        key: 'FormPrj1'
+        title: [
+            keys: 'normal'
+            type: 'normal'
+          ,
+            keys: 'date'
+            type: 'date'
+          ,
+            keys: 'address'
+            type: 'address'
+          ,
+            keys: 'select'
+            type: 'select'
+          ,
+            keys: 'inputSelect'
+            type: 'inputSelect'
+          ,
+            keys: 'number'
+            type: 'number'
+        ]
     ]
