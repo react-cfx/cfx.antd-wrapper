@@ -21,7 +21,7 @@ export default =>
 
 
     c_Table
-      # addChildren: true
+      addChildren: true
       # operating: false
       headlabel: (index, text) =>
         c_a
@@ -34,7 +34,7 @@ export default =>
           style: color: '#959595'
         , '详细'
       btn: '添加房源'
-      # editPen: true
+      editPen: true
       header:
         name: '姓名'
         age: '年龄'

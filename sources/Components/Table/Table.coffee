@@ -133,50 +133,83 @@ class EditableTable extends Component
     ]
 
     @column = [
-        HeaderEdit...
-        title: headerVal[0]
-        dataIndex: headerKey[0]
-        render: (text, record, index) =>
-          if @props.headlabel?
-          then [
-            @props.headlabel index, text
-          ]
-          else [
-            record["#{@FSheaderKey}"]
-          ]
+        (
+          if @props.editPen is true
+          then [ 
+            HeaderEdit...
+            unless @props.operating is false
+              title: '操作'
+              dataIndex: 'operation'
+              width: '105px'
+              render: (text, record) =>
+                [
+                    if @props.footlabel?
+                    then [
+                      @props.footlabel
+                    ]
+                    else []
 
-          # , record["#{@FSheaderKey}"]
-          
-        header...
-        unless props.operating is false
-          title: '操作'
-          dataIndex: 'operation'
-          width: '105px'
-          render: (text, record) =>
-            [
-                if @props.footlabel?
-                then [
-                  @props.footlabel
+                    c_Divider
+                      key: 'Divider'
+                      type: 'vertical'
+                  ,
+                    c_Popconfirm
+                      key: 'Popconfirm'
+                      title: 'Sure to delete??'
+                      onConfirm: () => @onDelete record.key
+                    ,     
+                      c_a
+                        key: 'a'
+                        href: '#'
+                        style:
+                          color: '#F00'
+                      , '删除'
                 ]
-                else []
+            else [] 
+          ]             
+          else [
+            title: headerVal[0]
+            dataIndex: headerKey[0]
+            render: (text, record, index) =>
+              if @props.headlabel?
+              then [
+                @props.headlabel index, text
+              ]
+              else [
+                record["#{@FSheaderKey}"]
+              ]
+            header...
+            unless @props.operating is false
+              title: '操作'
+              dataIndex: 'operation'
+              width: '105px'
+              render: (text, record) =>
+                [
+                    if @props.footlabel?
+                    then [
+                      @props.footlabel
+                    ]
+                    else []
 
-                c_Divider
-                  key: 'Divider'
-                  type: 'vertical'
-              ,
-                c_Popconfirm
-                  key: 'Popconfirm'
-                  title: 'Sure to delete??'
-                  onConfirm: () => @onDelete record.key
-                ,     
-                  c_a
-                    key: 'a'
-                    href: '#'
-                    style:
-                      color: '#F00'
-                  , '删除'
-            ]
-        else []      
+                    c_Divider
+                      key: 'Divider'
+                      type: 'vertical'
+                  ,
+                    c_Popconfirm
+                      key: 'Popconfirm'
+                      title: 'Sure to delete??'
+                      onConfirm: () => @onDelete record.key
+                    ,     
+                      c_a
+                        key: 'a'
+                        href: '#'
+                        style:
+                          color: '#F00'
+                      , '删除'
+                ]
+            else []             
+          ]
+        )...  
     ]
 
     childrenHeader = [
@@ -257,10 +290,10 @@ class EditableTable extends Component
         )...  
         rowSelection: @rowSelection
         dataSource: @state.dataSource
-        columns:
-          if @props.editPen is true
-          then @columns
-          else @column
+        columns: @column
+          # if @props.editPen is true
+          # then @columns
+          # else 
         ( nb 'components_table_demo_nested' )...
       }
 
