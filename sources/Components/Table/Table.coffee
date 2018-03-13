@@ -108,7 +108,11 @@ class EditableTable extends Component
           width: '105px'
           render: (text, record) =>
             [
-                @props.footlabel
+                if @props.footlabel?
+                then [
+                  @props.footlabel
+                ]
+                else []
                 c_Divider
                   key: 'Divider'
                   type: 'vertical'
@@ -129,13 +133,20 @@ class EditableTable extends Component
     ]
 
     @column = [
+        HeaderEdit...
         title: headerVal[0]
         dataIndex: headerKey[0]
         render: (text, record, index) =>
-          c_a
-            href: '#'
-          # , '213'  
-          , record["#{@FSheaderKey}"]
+          if @props.headlabel?
+          then [
+            @props.headlabel index, text
+          ]
+          else [
+            record["#{@FSheaderKey}"]
+          ]
+
+          # , record["#{@FSheaderKey}"]
+          
         header...
         unless props.operating is false
           title: '操作'
@@ -143,7 +154,12 @@ class EditableTable extends Component
           width: '105px'
           render: (text, record) =>
             [
-                @props.footlabel
+                if @props.footlabel?
+                then [
+                  @props.footlabel
+                ]
+                else []
+
                 c_Divider
                   key: 'Divider'
                   type: 'vertical'

@@ -23,10 +23,10 @@ export default =>
     c_Table
       # addChildren: true
       # operating: false
-      # linkto: [
-      #   'Steps'
-      #   'Steps'
-      # ]
+      headlabel: (index, text) =>
+        c_a
+          href: "/#{index}"
+        , text
       footlabel:
         c_a
           key: 'a'
