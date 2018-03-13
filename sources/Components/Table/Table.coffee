@@ -100,38 +100,6 @@ class EditableTable extends Component
 
     @FSheaderVal = headerVal[0]
 
-    @columns = [
-        HeaderEdit...
-        unless props.operating is false
-          title: '操作'
-          dataIndex: 'operation'
-          width: '105px'
-          render: (text, record) =>
-            [
-                if @props.footlabel?
-                then [
-                  @props.footlabel
-                ]
-                else []
-                c_Divider
-                  key: 'Divider'
-                  type: 'vertical'
-              ,
-                c_Popconfirm
-                  key: 'Popconfirm'
-                  title: '是否要删除??'
-                  onConfirm: () => @onDelete record.key
-                ,                
-                  c_a
-                    key: 'a'
-                    href: '#'
-                    style:
-                      color: '#F00'
-                  , '删除'
-            ]
-        else []  
-    ]
-
     @column = [
         (
           if @props.editPen is true
