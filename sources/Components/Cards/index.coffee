@@ -31,7 +31,8 @@ export default ({
   render: ->
     {
       CardContent
-      NotDivider
+      HeaderDivider
+      FooterDivider
     } = props
 
     {
@@ -58,18 +59,21 @@ export default ({
             color: 'rgba(0, 0, 0, .85)'
             fontWeight: '500'
         , @props.title
+      if HeaderDivider
+      then [
+        c_Divider
+          key: '2'
+      ]
+      else []
       if CardContent
       then [
         CardContent
       ]
       else []
       
-      if NotDivider
-      then []
-      else [
+      if FooterDivider
+      then [
         c_Divider
           key: '1'
       ]
-      
-        # style:
-        #   float: 'left'
+      else []
