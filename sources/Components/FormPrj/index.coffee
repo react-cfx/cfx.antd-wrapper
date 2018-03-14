@@ -260,14 +260,11 @@ class PrjForm extends Component
                 else if c.type is 'select'
                 then [
                   c_Select
-                    defaultValue: '默认'
+                    defaultValue: '支付宝'
                     style:
                       width: '196px'
                     onChange: @onChange3
                   ,
-                    c_Option
-                      value: '支付宝'
-                    , '支付宝'
                     c_Option
                       value: '微信'
                     , '微信'
