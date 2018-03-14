@@ -289,14 +289,12 @@ class PrjForm extends Component
                     min: '0'
                     max: '10'
                     step: '0.1'
-                    formatter: (value) => "￥(千)   #{value}"
+                    formatter: (value) => "￥ #{value}"
                     onChange: @onChangeSelect
                 ]
                 else [
-                  c_AutoComplete
+                  c_Input
                     key: "AutoComp#{i}"
-                    dataSource: @state.dataSource
-                    onSearch: @handleSearch
                     placeholder: "请输入#{c.keys}"
                 ]
             ]
