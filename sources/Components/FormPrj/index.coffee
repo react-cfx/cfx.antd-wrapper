@@ -69,16 +69,13 @@ class PrjForm extends Component
   } = CFX
   selectAfter:
     c_Select
-      defaultValue: '默认'
+      defaultValue: '月'
       style:
         width: '80px'
     ,
       c_Option
         value: '日'
       , '日'
-      c_Option
-        value: '月'
-      , '月'
       c_Option
         value: '年'
       , '年'
