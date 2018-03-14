@@ -210,15 +210,13 @@ class PrjForm extends Component
                       style:
                         width: '196px'
                       min: '0'
-                      max: '10'
-                      step: '0.1'
-                      formatter: (value) => "￥(千)    #{value}"
+                      max: '6000'
+                      step: '50'
+                      formatter: (value) => "￥    #{value}"
                   ]
                   else [
-                    c_AutoComplete
+                    c_Input
                       key: "AutoComp"
-                      dataSource: @state.dataSource
-                      onSearch: @handleSearch
                       placeholder: "请输入#{c.keys}"
                   ]
             ]
@@ -262,14 +260,11 @@ class PrjForm extends Component
                 else if c.type is 'select'
                 then [
                   c_Select
-                    defaultValue: '默认'
+                    defaultValue: '支付宝'
                     style:
                       width: '196px'
                     onChange: @onChange3
                   ,
-                    c_Option
-                      value: '支付宝'
-                    , '支付宝'
                     c_Option
                       value: '微信'
                     , '微信'
@@ -289,16 +284,14 @@ class PrjForm extends Component
                     style:
                       width: '196px'
                     min: '0'
-                    max: '10'
-                    step: '0.1'
-                    formatter: (value) => "￥(千)   #{value}"
+                    max: '10000'
+                    step: '100'
+                    formatter: (value) => "￥ #{value}"
                     onChange: @onChangeSelect
                 ]
                 else [
-                  c_AutoComplete
+                  c_Input
                     key: "AutoComp#{i}"
-                    dataSource: @state.dataSource
-                    onSearch: @handleSearch
                     placeholder: "请输入#{c.keys}"
                 ]
             ]
