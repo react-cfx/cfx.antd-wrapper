@@ -210,9 +210,9 @@ class PrjForm extends Component
                       style:
                         width: '196px'
                       min: '0'
-                      max: '10'
-                      step: '0.1'
-                      formatter: (value) => "￥(千)    #{value}"
+                      max: '6000'
+                      step: '50'
+                      formatter: (value) => "￥    #{value}"
                   ]
                   else [
                     c_AutoComplete
