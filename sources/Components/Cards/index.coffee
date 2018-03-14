@@ -31,6 +31,7 @@ export default ({
   render: ->
     {
       CardContent
+      NotDivider
     } = props
 
     {
@@ -62,6 +63,13 @@ export default ({
         CardContent
       ]
       else []
-      c_Divider {}
+      
+      if NotDivider
+      then []
+      else [
+        c_Divider
+          key: '1'
+      ]
+      
         # style:
         #   float: 'left'
