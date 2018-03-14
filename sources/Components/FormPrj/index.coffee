@@ -215,10 +215,8 @@ class PrjForm extends Component
                       formatter: (value) => "￥    #{value}"
                   ]
                   else [
-                    c_AutoComplete
+                    c_Input
                       key: "AutoComp"
-                      dataSource: @state.dataSource
-                      onSearch: @handleSearch
                       placeholder: "请输入#{c.keys}"
                   ]
             ]
