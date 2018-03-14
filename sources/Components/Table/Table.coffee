@@ -103,7 +103,7 @@ class EditableTable extends Component
     @column = [
         (
           if @props.editPen is true
-          then [ 
+          then [
             HeaderEdit...
             unless @props.operating is false
               title: '操作'
@@ -116,16 +116,19 @@ class EditableTable extends Component
                       @props.footlabel
                     ]
                     else []
-
-                    c_Divider
-                      key: 'Divider'
-                      type: 'vertical'
+                    unless @props.Divider is false
+                    then [
+                      c_Divider
+                        key: 'Divider'
+                        type: 'vertical'
+                    ]
+                    else []
                   ,
                     c_Popconfirm
                       key: 'Popconfirm'
                       title: 'Sure to delete??'
                       onConfirm: () => @onDelete record.key
-                    ,     
+                    ,
                       c_a
                         key: 'a'
                         href: '#'
@@ -133,8 +136,8 @@ class EditableTable extends Component
                           color: '#F00'
                       , '删除'
                 ]
-            else [] 
-          ]             
+            else []
+          ]
           else [
             title: headerVal[0]
             dataIndex: headerKey[0]
@@ -167,7 +170,7 @@ class EditableTable extends Component
                       key: 'Popconfirm'
                       title: 'Sure to delete??'
                       onConfirm: () => @onDelete record.key
-                    ,     
+                    ,
                       c_a
                         key: 'a'
                         href: '#'
@@ -175,9 +178,9 @@ class EditableTable extends Component
                           color: '#F00'
                       , '删除'
                 ]
-            else []             
+            else []
           ]
-        )...  
+        )...
     ]
 
     childrenHeader = [
@@ -255,13 +258,13 @@ class EditableTable extends Component
           if @props.addChildren is true
           then expandedRowRender: @NestedTable
           else []
-        )...  
+        )...
         rowSelection: @rowSelection
         dataSource: @state.dataSource
         columns: @column
           # if @props.editPen is true
           # then @columns
-          # else 
+          # else
         ( nb 'components_table_demo_nested' )...
       }
 

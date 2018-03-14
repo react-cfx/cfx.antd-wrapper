@@ -27,12 +27,14 @@ export default =>
         c_a
           href: "/#{index}"
         , text
+      # Divider: false
       footlabel:
         c_a
           key: 'a'
           href: "#"
           style: color: '#959595'
         , '详细'
+      
       btn: '添加房源'
       editPen: true
       header:
