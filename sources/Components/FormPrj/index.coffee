@@ -287,8 +287,8 @@ class PrjForm extends Component
                     style:
                       width: '196px'
                     min: '0'
-                    max: '10'
-                    step: '0.1'
+                    max: '10000'
+                    step: '100'
                     formatter: (value) => "￥ #{value}"
                     onChange: @onChangeSelect
                 ]
