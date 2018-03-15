@@ -24,24 +24,24 @@ export default ->
 
     if @props.many is true
     then [
-      c_PageContent
-        key: 'PageContent'
-        PageContent:
-          if @props.many is true
-          then [
-            @props.Content.reduce (r,c,i) =>
-              [
-                r...
-                c_Card
-                  key: "Card_#{i}"
-                  style: 
-                    marginBottom: 20
-                  bordered: false
-                ,
-                  c
-              ]
-            , []
+      # c_PageContent
+      #   key: 'PageContent'
+      #   PageContent:
+      if @props.many is true
+      then [
+        @props.Content.reduce (r,c,i) =>
+          [
+            r...
+            c_Card
+              key: "Card_#{i}"
+              style:
+                marginBottom: 20
+              bordered: false
+            ,
+              c
           ]
+        , []
+      ]
     ]
     else [
       c_PageContent
