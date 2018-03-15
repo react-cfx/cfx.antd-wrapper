@@ -5,6 +5,7 @@ import {
 } from '../Page'
 
 CFX = prefixDom {
+  'div'
   Card
   PageContent
 }
@@ -18,6 +19,7 @@ export default ->
     } = props
 
     {
+      c_div
       c_Card
       c_PageContent
     } = CFX
@@ -32,7 +34,7 @@ export default ->
             @props.Content.reduce (r,c,i) =>
               [
                 r...
-                c_Card
+                c_div
                   key: "Card_#{i}"
                   style: 
                     marginBottom: 20
