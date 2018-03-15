@@ -3,50 +3,49 @@ import { prefixDom } from 'cfx.dom'
 import Content from '../../Components/Content'
 
 CFX = prefixDom {
-  'div'
-  Content
+	'div'
+	Content
 }
 
 export default =>
 
-  storiesOf 'Content', module
+	storiesOf 'Content', module
 
-  .add 'Content'
+	.add 'Content'
 
-  , =>
+	, =>
 
-    {
-      c_div
-      c_Content
-    } = CFX
+		{
+			c_div
+			c_Content
+		} = CFX
 
-    [
-      c_Content
-        key: 'Content'
-        many: true
-        Content: [
-          c_div
-            key: 'div'
-          , 'HelloWorld!'
-          c_div
-            key: 'div1'
-          , 'HelloWorld!'
-          c_div
-            key: 'div2'
-          , 'HelloWorld!'                
-        ]
-      c_Content
-        key: 'Content'
-        Content: [
-          c_div
-            key: 'div'
-          , 'HelloWorld!'
-          c_div
-            key: 'div1'
-          , 'HelloWorld!'
-          c_div
-            key: 'div2'
-          , 'HelloWorld!'                
-        ]        
-    ]
-  
+		[
+			c_Content
+				key: 'Content'
+				many: true
+				Content: [
+					c_div
+						key: 'div'
+					, 'HelloWorld!'
+					c_div
+						key: 'div1'
+					, 'HelloWorld!'
+					c_div
+						key: 'div2'
+					, 'HelloWorld!'
+				]
+			c_Content
+				key: 'Content'
+				Content: [
+					c_div
+						key: 'div'
+					, 'HelloWorld!'
+					c_div
+						key: 'div1'
+					, 'HelloWorld!'
+					c_div
+						key: 'div2'
+					, 'HelloWorld!'
+				]
+		]
