@@ -1,13 +1,11 @@
 import { prefixDom } from 'cfx.dom'
 import { Card } from 'antd'
-import card from '../Cards/card'
 import {
   PageContent
 } from '../Page'
 
 CFX = prefixDom {
   Card
-  card
   PageContent
 }
 
@@ -21,7 +19,6 @@ export default ->
 
     {
       c_Card
-      c_card
       c_PageContent
     } = CFX
 
@@ -50,7 +47,7 @@ export default ->
       c_PageContent
         key: 'PageContent'
         PageContent:
-          c_card
+          c_Card
             bordered: false
           , @props.Content
     ]
