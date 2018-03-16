@@ -44,8 +44,7 @@ export default (props) =>
       then [
         c_PageContent
           key: 'PageContent'
-        ,
-          many.reduce (r, c, i) =>
+          Content: many.reduce (r, c, i) =>
             [
               r...
               c_div
