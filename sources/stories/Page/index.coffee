@@ -25,13 +25,12 @@ export default =>
       title: '这是一个标题'
       header01: '面包屑'
       header02: '面包屑'
-      Content:
+      Content: '123'
+      many: [
         c_div {}
-        , '123321'
-      # many: [
-      #   c_div {}
-      #   , '2123'
-      #   c_div {}
-      #   , '213'
-      #   c_div {}
-      #   , '21311'
+        , '2123'
+        c_div {}
+        , '213'
+        c_div {}
+        , '21311'
+      ]

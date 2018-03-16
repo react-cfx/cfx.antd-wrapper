@@ -12,9 +12,7 @@ CFX = prefixDom {
   PageContent
 }
 
-export default ({
-  props...
-})=>
+export default (props) =>
 
   {
     title
@@ -24,48 +22,52 @@ export default ({
     many
   } = props
 
-  render: ->
+  {
+    c_div
+    c_Card
+    c_Header
+    c_Contents
+    c_PageContent
+  } = CFX
 
-    {
-      c_div
-      c_Card
-      c_Header
-      c_Contents
-      c_PageContent
-    } = CFX
+  [
+    c_Header
+      key: 'Header'
+      title: title
+      breadcrumb: [
+        header01
+        header02
+      ]
 
-    [
-      c_Header
-        key: 'Header'
-        title: title
-        breadcrumb: [
-          header01
-          header02
-        ]
+    (
       if many?
       then [
         c_PageContent
           key: 'PageContent'
-          PageContent:
-            many.reduce (r, c, i) =>
-              [
-                r...
-                c_div
+        ,
+          many.reduce (r, c, i) =>
+            [
+              r...
+              c_div
+                key: "Card_#{i}"
+                style:
+                  marginBottom: '20px'
+              ,
+                c_Card
                   key: "Card_#{i}"
-                  style:
-                    marginBottom: '20px'
-                ,
-                  c_Card
-                    key: "Card_#{i}"
-                    bordered: false
-                  , c
-              ]
-            , []
+                  bordered: false
+                , c
+            ]
+          , []
       ]
-      else [
-        c_Contents
-          key: 'Contents'
-          Content: Content
-      ]
-    ]
-
+      else (
+        if Content?
+        then [
+          c_Contents
+            key: 'Contents'
+          , Content
+        ]
+        else []
+      )
+    )...
+  ]

@@ -14,6 +14,7 @@ import Cards from './Cards'
 import BtnModal from './BtnModal'
 import FormPrj from './FormPrj'
 import Content from './Content'
+import PageContent from './Page/PageContent'
 import Page from './Page'
 
 Welcome()
@@ -28,3 +29,4 @@ BtnModal()
 FormPrj()
 Content()
 Page()
+PageContent()
