@@ -12,6 +12,7 @@ export {
   Table,
   Steps,
   Cards,
+  Page,
   PageHeader,
   PageContent,
   PrjForm,

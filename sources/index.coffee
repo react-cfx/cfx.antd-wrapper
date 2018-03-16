@@ -7,6 +7,7 @@ import {
   Content
 } from './Components/Layout'
 import {
+  Page
   PageHeader
   PageContent
 } from './Components/Page'
@@ -34,6 +35,7 @@ import BtnModal from './Components/Cards/BtnModal'
 import List from './Components/Cards/List'
 
 export {
+  Page
   PageHeader
   PageContent
   PrjForm
