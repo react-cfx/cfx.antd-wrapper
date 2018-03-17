@@ -4,7 +4,7 @@ import {
 import {
   PageCenter
   SiderContent
-  Content
+  MainContent
 } from './Components/Layout'
 import {
   Page
@@ -46,7 +46,7 @@ export {
   FormField
   PageCenter
   SiderContent
-  Content
+  MainContent
   Login
   LoginForm
   LoginCard

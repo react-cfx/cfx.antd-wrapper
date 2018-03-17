@@ -2,7 +2,7 @@ export {
   FormField,
   PageCenter,
   SiderContent,
-  Content,
+  MainContent,
   Login,
   LoginForm,
   LoginCard,
