@@ -23,8 +23,12 @@ export default =>
     c_Page
       key: 'Page'
       title: '这是一个标题'
-      header01: '面包屑'
-      header02: '面包屑'
+      breadcrumb: [
+        '面包屑'
+        '面包屑'
+        '面包屑'
+        '面包屑'
+      ]
       Content:
         c_div {}
         , '123'

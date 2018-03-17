@@ -16,8 +16,7 @@ export default (props) =>
 
   {
     title
-    header01
-    header02
+    breadcrumb
     Content
     many
   } = props
@@ -34,10 +33,7 @@ export default (props) =>
     c_Header
       key: 'Header'
       title: title
-      breadcrumb: [
-        header01
-        header02
-      ]
+      breadcrumb: breadcrumb
 
     (
       if many?
