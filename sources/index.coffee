@@ -14,7 +14,7 @@ import {
 import ContentPage from './Components/Content'
 import {
   Header
-} from './Components/Header/Header'
+} from './Components/Header'
 import Login, {
   LoginForm
   LoginCard
