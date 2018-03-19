@@ -3,6 +3,7 @@ export {
   PageCenter,
   SiderContent,
   MainContent,
+  Header,
   Login,
   LoginForm,
   LoginCard,
