@@ -29,14 +29,14 @@ export default =>
         '面包屑'
         '面包屑'
       ]
-      Content:
+      # Content:
+      #   c_div {}
+      #   , '123'
+      many: [
         c_div {}
-        , '123'
-      # many: [
-      #   c_div {}
-      #   , '2123'
-      #   c_div {}
-      #   , '213'
-      #   c_div {}
-      #   , '21311'
-      # ]
+        , '2123'
+        c_div {}
+        , '213'
+        c_div {}
+        , '21311'
+      ]

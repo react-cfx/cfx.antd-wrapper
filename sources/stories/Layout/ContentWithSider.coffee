@@ -1,6 +1,6 @@
 import { prefixDom } from 'cfx.dom'
 import Menu from '../../Components/Navigation/Menu'
-import Content from '../../Components/Layout/Content'
+import Content from '../../Components/Layout/MainContent'
 import SiderContent from '../../Components/Layout/SiderContent'
 
 CFX = prefixDom {
