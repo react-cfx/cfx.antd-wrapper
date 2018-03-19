@@ -16,6 +16,7 @@ import FormPrj from './FormPrj'
 import Content from './Content'
 import PageContent from './Page/PageContent'
 import Page from './Page'
+import Header from './Header'
 
 Welcome()
 
@@ -30,3 +31,4 @@ FormPrj()
 Content()
 Page()
 PageContent()
+Header()
