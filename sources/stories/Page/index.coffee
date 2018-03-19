@@ -33,10 +33,18 @@ export default =>
       #   c_div {}
       #   , '123'
       many: [
-        c_div {}
-        , '2123'
-        c_div {}
-        , '213'
-        c_div {}
-        , '21311'
+          label:
+            c_div {}
+            , '2123'
+          title: '123'
+        ,  
+          label:
+            c_div {}
+            , '2123'
+          title: '123'
+        ,  
+          label:
+            c_div {}
+            , '2123'
+          title: '123'
       ]

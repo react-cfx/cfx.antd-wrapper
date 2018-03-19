@@ -51,7 +51,8 @@ export default (props) =>
                 c_Card
                   key: "Card_#{i}"
                   bordered: false
-                , c
+                  title: c.title
+                , c.label
             ]
           , []
       ]
