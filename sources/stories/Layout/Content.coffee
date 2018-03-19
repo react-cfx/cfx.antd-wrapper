@@ -1,17 +1,17 @@
 import { prefixDom } from 'cfx.dom'
-import Content from '../../Components/Layout/Content'
+import MainContent from '../../Components/Layout/MainContent'
 
 CFX = prefixDom {
-  Content
+  MainContent
 }
 
 export default =>
 
   {
-    c_Content
+    c_MainContent
   } = CFX
 
-  c_Content
+  c_MainContent
     header: ''
     breadcrumb: [
       'User'

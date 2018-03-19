@@ -89,8 +89,8 @@ class Header extends React.Component
             count: 99
           ,
             c_Icon {
-              onMouseEnter: @.onHoverBell
-              onMouseLeave: @.onLeaveBell
+              onMouseEnter: @onHoverBell
+              onMouseLeave: @onLeaveBell
               key: 'message'
               type:"bell"
               ( nb 'HeaderIcon' )...
@@ -108,10 +108,10 @@ class Header extends React.Component
         ,
           c_Icon {
             ( nb 'HeaderIcon' )...
-            onMouseEnter: @.onHoverUser
-            onMouseLeave: @.onLeaveUser
+            onMouseEnter: @onHoverUser
+            onMouseLeave: @onLeaveUser
             key: 'UserIcon'
-            type:"user"
+            type: "user"
           }
             
             
