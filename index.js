@@ -10,12 +10,6 @@ export {
   CenterCard,
   WithBackImg,
   Menu,
-<<<<<<< HEAD
-  Header,
-  PageHeader,
-  PageContent,
-  PrjForm
-=======
   Table,
   Steps,
   Cards,
@@ -26,5 +20,4 @@ export {
   BtnModal,
   List,
   ContentPage
->>>>>>> 042365ec02611b218fa98f012d11a6ae7472ed92
 } from './sources/index.coffee';

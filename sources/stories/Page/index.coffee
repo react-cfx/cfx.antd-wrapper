@@ -1,33 +1,4 @@
 import { storiesOf } from '@storybook/react'
-<<<<<<< HEAD
-import Header from './Header'
-import Content from './Content'
-import { prefixDom } from 'cfx.dom'
-
-CFX = prefixDom {
-  Header
-  Content 
-}
-
-export default ->
-
-  storiesOf 'Page', module
-
-  .add 'Header'
-
-  , =>
-
-    { c_Header } = CFX
-
-    c_Header {}
-  
-  . add 'Content'
-  , =>
-
-    { c_Content } = CFX
-
-    c_Content {}
-=======
 import { prefixDom } from 'cfx.dom'
 import Page from '../../Components/Page/Page'
 
@@ -77,4 +48,3 @@ export default =>
             , '2123'
           title: '123'
       ]
->>>>>>> 042365ec02611b218fa98f012d11a6ae7472ed92
