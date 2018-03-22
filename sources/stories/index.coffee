@@ -20,7 +20,6 @@ import Header from './Header'
 
 
 Welcome()
-Header()
 Menu()
 Layout()
 Table()
