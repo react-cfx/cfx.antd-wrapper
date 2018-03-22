@@ -1,6 +1,8 @@
 import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
 
+import MainContent from './MainContent'
+
 import Content from './Content'
 
 import PageOneSider from './PageOneSider'
@@ -10,6 +12,7 @@ import ContentWithSider from './ContentWithSider'
 import PageContentWithinSider from './PageContentWithinSider'
 
 CFX = prefixDom {
+  MainContent
   Content
 
   PageOneSider
@@ -22,6 +25,11 @@ CFX = prefixDom {
 export default ->
 
   storiesOf 'Layout', module
+
+  .add 'MainContent'
+  , =>
+    { c_MainContent } = CFX
+    c_MainContent {}  
 
   .add 'Content'
   , =>

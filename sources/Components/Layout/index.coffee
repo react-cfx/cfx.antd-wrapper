@@ -1,9 +1,9 @@
 import PageCenter from './PageCenter'
 import SiderContent from './SiderContent'
-import Content from './Content'
+import MainContent from './MainContent'
 
 export {
   PageCenter
   SiderContent
-  Content
+  MainContent
 }

@@ -1,11 +1,11 @@
 import { prefixDom } from 'cfx.dom'
 import Menu from '../../Components/Navigation/Menu'
-import Content from '../../Components/Layout/Content'
+import MainContent from '../../Components/Layout/MainContent'
 import SiderContent from '../../Components/Layout/SiderContent'
 
 CFX = prefixDom {
   Menu
-  Content
+  MainContent
   SiderContent
 }
 
@@ -13,11 +13,11 @@ export default ->
 
   {
     c_Menu
-    c_Content 
+    c_MainContent
     c_SiderContent
   } = CFX
 
-  c_Content
+  c_MainContent
     # style:
     #   padding: '0 50px'
     breadcrumb: [

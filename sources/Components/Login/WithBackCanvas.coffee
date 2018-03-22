@@ -5,7 +5,7 @@ import FullPageLayers from '../Layout/FullPageLayers'
 
 import Particles from 'react-particles-js'
 import particlesConfig from './particlesConfig'
-import BackgroundImg from './background.jpg'
+import BackgroundImg from '../../../public/assets/background.jpg'
 
 CFX = prefixDom {
   'img'

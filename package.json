@@ -1,5 +1,5 @@
 {
-  "name": "cfx.antd-wrapper",
+  "name": "cfx.antd-wrapper-ch",
   "version": "0.0.0",
   "main": "dist/bundle.js",
   "scripts": {
