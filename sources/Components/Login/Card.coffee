@@ -34,8 +34,16 @@ LoginCard = enhance (props) =>
     c_Form
   } = CFX
 
-  c_Card props
-  ,
-    c_Form {}
+  render: ->
+
+    c_Card props
+    ,
+      c_Form {
+        (
+          if @props.onSubmit
+          then onSubmit: @props.onSubmit
+          else {}
+        )...
+      }
 
 export default LoginCard
