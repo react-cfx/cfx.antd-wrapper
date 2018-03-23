@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
-import FormPrj from '../../Components/FormPrj'
+import FormPrj from '../../Components/PrjForm/Form'
 
 CFX = prefixDom {
   FormPrj

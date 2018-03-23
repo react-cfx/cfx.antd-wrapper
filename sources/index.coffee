@@ -25,7 +25,7 @@ import Login, {
 import {
   Menu
 } from './Components/Navigation'
-import PrjForm from './Components/FormPrj'
+import PrjForm from './Components/PrjForm/Form'
 import {
   Table
 } from './Components/Table'
