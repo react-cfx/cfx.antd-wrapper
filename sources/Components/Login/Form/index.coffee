@@ -36,8 +36,12 @@ class LoginForm extends React.Component
     loginForm =
 
       c_Form {
-        onSubmit: @handleSubmit
-        ( nb 'loginForm' )...
+        ( nb 'loginForm' )...        
+        (
+          if @props.onSubmit
+          then onSubmit: @props.onSubmit
+          else onSubmit: @handleSubmit
+        )...
       }
       ,
 

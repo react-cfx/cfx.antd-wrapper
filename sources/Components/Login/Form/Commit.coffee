@@ -50,13 +50,13 @@ Commit = ({
     ,
       c_a
         href: ''
+        style: color: 'rgb(204, 204, 204)'        
       , '忘记密码'
 
       ' or '
 
       c_a
-        href: 'javascript:void(0)'
-        style: color: 'rgb(204, 204, 204)'
+        href: ''
       , '注册'
 
 export default Commit
