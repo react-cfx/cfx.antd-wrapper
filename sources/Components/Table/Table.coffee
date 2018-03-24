@@ -149,6 +149,11 @@ class EditableTable extends Component
               else [
                 record["#{@FSheaderKey}"]
               ]
+
+              ###
+              aTag = @props.aTag text, record, index # aTag = (text, record, index) => aTag<Component>
+              ###
+
             header...
             unless @props.operating is false
               title: '操作'
