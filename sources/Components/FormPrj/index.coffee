@@ -6,7 +6,6 @@ import {
   Row
   Col
   Button
-  AutoComplete
   DatePicker
   Cascader
   Select
@@ -24,7 +23,6 @@ CFX = prefixDom {
   Input
   Row
   Col
-  AutoComplete
   DatePicker
   Cascader
   Select
@@ -36,8 +34,16 @@ class PrjForm extends Component
   constructor: (props) ->
     super props
     @state =
-      dataSource: []
+      # dataSource: []
     @
+  onChangeSelect: (value) ->
+    console.log value 
+  onChangeAddress: (value) ->
+    console.log value 
+  onChangeDate: (date, dateString) ->
+    console.log date,dateString
+  onChange: (e) ->
+    console.log e.target.value
   options: [
       value: '湖北'
       label: '湖北'
@@ -61,13 +67,16 @@ class PrjForm extends Component
         ]
       ]
   ]
+  
   {
     c_Option
     c_Select
   } = CFX
+  
   selectAfter:
     c_Select
       defaultValue: '月'
+      onChange: (value) => console.log value 
       style:
         width: '80px'
     ,
@@ -77,11 +86,6 @@ class PrjForm extends Component
       c_Option
         value: '年'
       , '年'
-  
-  handleSubmit: (e) =>
-    e.preventDefault()
-    @props.form.validateFields (err, values) =>
-      console.log 'Received values of form: ', values unless err
   
   render: ->
 
@@ -93,7 +97,6 @@ class PrjForm extends Component
       c_Input
       c_Row
       c_Col
-      c_AutoComplete
       c_DatePicker
       c_Cascader
       c_Select
@@ -101,7 +104,6 @@ class PrjForm extends Component
       c_InputNumber
     } = CFX
     
-    { getFieldDecorator } = @props.form
 
     if @props.Layout is 'vertical'
     then [
@@ -138,66 +140,66 @@ class PrjForm extends Component
                 c_FormItem
                   key: "Item#{i}"
                   label: c.keys
-                  getFieldDecorator("Values#{i}", rules: [{
-                    required: true
-                    message: 'Please input your username!'
-                  }])(
-                    (
-                      if c.type is 'data'
-                      then [
-                        c_DatePicker
-                          key: "select"
-                          style:
-                            width: '396px'
-                          placeholder: "请输入#{c.keys}"
-                      ]
-                      else if c.type is 'address'
-                      then [
-                        c_Cascader
-                          key: "Cascader"
-                          options: @options
-                          placeholder: "请输入#{c.keys}"
-                      ]
-                      else if c.type is 'select'
-                      then [
-                        c_Select
-                          key: 'Select'
-                          defaultValue: '支付宝'
-                          style:
-                            width: '120px'
-                        ,
-                          c_Option
-                            value: '微信'
-                          , '微信'
-                          c_Option
-                            value: '网上银行'
-                          , '网上银行'
-                      ]
-                      else if c.type is 'inputSelect'
-                      then [
-                        c_Input
-                          key: 'Input'
-                          addonAfter: @selectAfter
-                          placeholder: '请输入租赁时间'
-                      ]
-                      else if c.type is 'number'
-                      then [
-                        c_InputNumber
-                          key: 'InputNumber'
-                          style:
-                            width: '196px'
-                          min: '0'
-                          max: '6000'
-                          step: '50'
-                          formatter: (value) => "￥    #{value}"
-                      ]
-                      else [
-                        c_Input
-                          key: "AutoComp"
-                          placeholder: "请输入#{c.keys}"
-                      ]
-                    )...
-                  )
+                ,
+                  if c.type is 'date'
+                  then [
+                    c_DatePicker
+                      key: "select"
+                      onChange: @onChangeDate
+                      style:
+                        width: '396px'
+                      placeholder: "请输入#{c.keys}"
+                  ]
+                  else if c.type is 'address'
+                  then [
+                    c_Cascader
+                      key: "Cascader"
+                      onChange: @onChangeAddress
+                      options: @options
+                      placeholder: "请输入#{c.keys}"
+                  ]
+                  else if c.type is 'select'
+                  then [
+                    c_Select
+                      onChange: @onChangeSelect
+                      key: 'Select'
+                      defaultValue: '支付宝'
+                      style:
+                        width: '120px'
+                    ,
+                      c_Option
+                        value: '微信'
+                      , '微信'
+                      c_Option
+                        value: '网上银行'
+                      , '网上银行'
+                  ]
+                  else if c.type is 'inputSelect'
+                  then [
+                    c_Input
+                      key: 'Input'
+                      onBlur: @onChange
+                      addonAfter: @selectAfter
+                      placeholder: '请输入租赁时间'
+                  ]
+                  else if c.type is 'number'
+                  then [
+                    c_InputNumber
+                      key: 'InputNumber'
+                      onBlur: @onChange
+                      style:
+                        width: '196px'
+                      min: '0'
+                      max: '6000'
+                      step: '50'
+                      formatter: (value) => "￥    #{value}"
+                  ]
+                  else [
+                    c_Input
+                      onBlur: @onChange
+                      key: "AutoComp"
+                      placeholder: "请输入#{c.keys}"
+                  ]
             ]
           , []
       ]
@@ -219,69 +221,69 @@ class PrjForm extends Component
                 wrapperCol:
                   span: 19
                 label: c.keys
-                getFieldDecorator("value#{i}",rules: [ {
-                  required: true
-                  message: 'Please input your context!'
-                } ])(
-                    (
-                      if c.type is 'data'
-                      then [
-                        c_DatePicker
-                          key: "select"
-                          style:
-                            width: '396px'
-                          placeholder: "请输入#{c.keys}"
-                      ]
-                      else if c.type is 'address'
-                      then [
-                        c_Cascader
-                          key: "Cascader"
-                          options: @options
-                          placeholder: "请输入#{c.keys}"
-                      ]
-                      else if c.type is 'select'
-                      then [
-                        c_Select
-                          key: 'Select'
-                          defaultValue: '支付宝'
-                          style:
-                            width: '120px'
-                        ,
-                          c_Option
-                            value: '支付宝'
-                          , '支付宝'
-                          c_Option
-                            value: '微信'
-                          , '微信'
-                          c_Option
-                            value: '网上银行'
-                          , '网上银行'
-                      ]
-                      else if c.type is 'inputSelect'
-                      then [
-                        c_Input
-                          key: 'Input'
-                          placeholder: '请输入租赁时间'
-                      ]
-                      else if c.type is 'number'
-                      then [
-                        c_InputNumber
-                          key: 'InputNumber'
-                          style:
-                            width: '196px'
-                          min: '0'
-                          max: '6000'
-                          step: '50'
-                          formatter: (value) => "￥    #{value}"
-                      ]
-                      else [
-                        c_Input
-                          key: "AutoComp"
-                          placeholder: "请输入#{c.keys}"
-                      ]
-                    )...
-                    
-                )
+              ,
+                if c.type is 'date'
+                then [
+                  c_DatePicker
+                    key: "select"
+                    onChange: @onChangeDate
+                    style:
+                      width: '396px'
+                    placeholder: "请输入#{c.keys}"
+                ]
+                else if c.type is 'address'
+                then [
+                  c_Cascader
+                    key: "Cascader"
+                    onChange: @onChangeAddress
+                    options: @options
+                    placeholder: "请输入#{c.keys}"
+                ]
+                else if c.type is 'select'
+                then [
+                  c_Select
+                    key: 'Select'
+                    defaultValue: '支付宝'
+                    onChange: @onChangeSelect
+                    style:
+                      width: '120px'
+                  ,
+                    c_Option
+                      value: '支付宝'
+                    , '支付宝'
+                    c_Option
+                      value: '微信'
+                    , '微信'
+                    c_Option
+                      value: '网上银行'
+                    , '网上银行'
+                ]
+                else if c.type is 'inputSelect'
+                then [
+                  c_Input
+                    key: 'Input'
+                    onBlur: @onChange
+                    placeholder: '请输入租赁时间'
+                    addonAfter: @selectAfter
+                ]
+                else if c.type is 'number'
+                then [
+                  c_InputNumber
+                    key: 'InputNumber'
+                    onBlur: @onChange
+                    style:
+                      width: '196px'
+                    min: '0'
+                    max: '6000'
+                    step: '50'
+                    formatter: (value) => "￥    #{value}"
+                ]
+                else [
+                  c_Input
+                    onBlur: @onChange
+                    key: "AutoComp"
+                    placeholder: "请输入#{c.keys}"
+                ]
             ]
           , []
         )...
@@ -303,4 +305,4 @@ class PrjForm extends Component
       ]
     ]
 
-export default Form.create() PrjForm
+export default PrjForm
