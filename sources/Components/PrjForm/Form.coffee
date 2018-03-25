@@ -103,8 +103,7 @@ class PrjForm extends Component
       c_Option
       c_InputNumber
     } = CFX
-    
-
+    console.log @props
     if @props.Layout is 'vertical'
     then [
       c_Form
@@ -280,7 +279,10 @@ class PrjForm extends Component
                 ]
                 else [
                   c_Input
-                    onBlur: @onChange
+                    onBlur:
+                      if @props.onChange
+                      then @props.onChange
+                      else @onChange
                     key: "AutoComp"
                     placeholder: "请输入#{c.keys}"
                 ]

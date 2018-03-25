@@ -42,6 +42,8 @@ export default =>
             type: 'number'
         ]
       c_FormPrj
+        onChange: (e) ->
+          console.log e.target.value
         btnright: '下一步'
         key: 'FormPrj1'
         title: [
