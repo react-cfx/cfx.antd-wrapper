@@ -30,7 +30,7 @@ CFX = prefixDom {
   InputNumber
 }
 
-class PrjForm extends Component
+class FormPrj extends Component
   constructor: (props) ->
     super props
     @state =
@@ -333,4 +333,4 @@ class PrjForm extends Component
       ]
     ]
 
-export default PrjForm
+export default FormPrj

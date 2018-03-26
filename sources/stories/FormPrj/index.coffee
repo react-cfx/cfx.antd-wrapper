@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
-import FormPrj from '../../Components/PrjForm/Form'
+import FormPrj from '../../Components/FormPrj/index'
 
 CFX = prefixDom {
   FormPrj
@@ -53,6 +53,7 @@ export default =>
             keys: 'number'
             type: 'number'
         ]
+        
       c_FormPrj
         Change: (
           (value) -> console.log value.target.value
