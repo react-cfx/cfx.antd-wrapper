@@ -18,6 +18,8 @@ CFX = prefixDom {
 class LoginForm extends React.Component
 
   handleSubmit: (e) =>
+    return @props.onSubmit e, @props.form if @props.onSubmit?
+
     e.preventDefault()
     @props.form.validateFields (err, values) =>
       console.log 'Received values of form: ', values unless err
@@ -37,11 +39,7 @@ class LoginForm extends React.Component
 
       c_Form {
         ( nb 'loginForm' )...        
-        (
-          if @props.onSubmit
-          then onSubmit: @props.onSubmit
-          else onSubmit: @handleSubmit
-        )...
+        onSubmit: @handleSubmit
       }
       ,
 
