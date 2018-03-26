@@ -17,7 +17,7 @@ import Content from './Content'
 import PageContent from './Page/PageContent'
 import Page from './Page'
 import Header from './Header'
-
+import Login from './Login'
 
 Welcome()
 Menu()
@@ -31,3 +31,4 @@ Content()
 Page()
 PageContent()
 Header()
+Login()

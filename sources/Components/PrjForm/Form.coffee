@@ -34,16 +34,9 @@ class PrjForm extends Component
   constructor: (props) ->
     super props
     @state =
-      # dataSource: []
+      
     @
-  onChangeSelect: (value) ->
-    console.log value 
-  onChangeAddress: (value) ->
-    console.log value 
-  onChangeDate: (date, dateString) ->
-    console.log date,dateString
-  onChange: (e) ->
-    console.log e.target.value
+  
   options: [
       value: '湖北'
       label: '湖北'
@@ -104,7 +97,42 @@ class PrjForm extends Component
       c_InputNumber
     } = CFX
     
+    ChangeSelect =
+      if @props.ChangeSelect?
+      then @props.ChangeSelect
+      else (ChangeSelect) =>
+        console.log 'pls run ChangeSelect function!'
+        console.log ChangeSelect
+    onChangeSelect = (value) ->
+      ChangeSelect value
+    
+    ChangeAddress =
+      if @props.ChangeAddress?
+      then @props.ChangeAddress
+      else (ChangeAddress) =>
+        console.log 'pls run ChangeAddress function!'
+        console.log ChangeAddress
+    onChangeAddress = (value) ->
+      ChangeAddress value
+    
+    ChangeDate =
+      if @props.ChangeDate?
+      then @props.ChangeDate
+      else (ChangeDate) =>
+        console.log 'pls run ChangeDate function!'
+        console.log ChangeDate
+    onChangeDate = (date, dateString) ->
+      ChangeDate date,dateString
 
+    Change =
+      if @props.Change?
+      then @props.Change
+      else (Change) =>
+        console.log 'pls run Change function!'
+        console.log Change
+    onChange = (value) ->
+      Change value
+      
     if @props.Layout is 'vertical'
     then [
       c_Form
@@ -145,7 +173,7 @@ class PrjForm extends Component
                   then [
                     c_DatePicker
                       key: "select"
-                      onChange: @onChangeDate
+                      onChange: (date, dateString) -> onChangeDate date, dateString
                       style:
                         width: '396px'
                       placeholder: "请输入#{c.keys}"
@@ -154,14 +182,14 @@ class PrjForm extends Component
                   then [
                     c_Cascader
                       key: "Cascader"
-                      onChange: @onChangeAddress
+                      onChange: (value) -> onChangeAddress value
                       options: @options
                       placeholder: "请输入#{c.keys}"
                   ]
                   else if c.type is 'select'
                   then [
                     c_Select
-                      onChange: @onChangeSelect
+                      onChange: (value) -> onChangeSelect value
                       key: 'Select'
                       defaultValue: '支付宝'
                       style:
@@ -178,7 +206,7 @@ class PrjForm extends Component
                   then [
                     c_Input
                       key: 'Input'
-                      onBlur: @onChange
+                      onBlur: (value) -> onChange value
                       addonAfter: @selectAfter
                       placeholder: '请输入租赁时间'
                   ]
@@ -186,7 +214,7 @@ class PrjForm extends Component
                   then [
                     c_InputNumber
                       key: 'InputNumber'
-                      onBlur: @onChange
+                      onBlur: (value) -> onChange value
                       style:
                         width: '196px'
                       min: '0'
@@ -196,7 +224,7 @@ class PrjForm extends Component
                   ]
                   else [
                     c_Input
-                      onBlur: @onChange
+                      onBlur: (value) -> onChange value
                       key: "AutoComp"
                       placeholder: "请输入#{c.keys}"
                   ]
@@ -226,7 +254,7 @@ class PrjForm extends Component
                 then [
                   c_DatePicker
                     key: "select"
-                    onChange: @onChangeDate
+                    onChange: (date, dateString) -> onChangeDate date, dateString
                     style:
                       width: '396px'
                     placeholder: "请输入#{c.keys}"
@@ -235,7 +263,7 @@ class PrjForm extends Component
                 then [
                   c_Cascader
                     key: "Cascader"
-                    onChange: @onChangeAddress
+                    onChange: (value) -> onChangeAddress value
                     options: @options
                     placeholder: "请输入#{c.keys}"
                 ]
@@ -244,7 +272,7 @@ class PrjForm extends Component
                   c_Select
                     key: 'Select'
                     defaultValue: '支付宝'
-                    onChange: @onChangeSelect
+                    onChange: (value) -> onChangeSelect value
                     style:
                       width: '120px'
                   ,
@@ -262,7 +290,7 @@ class PrjForm extends Component
                 then [
                   c_Input
                     key: 'Input'
-                    onBlur: @onChange
+                    onBlur: (value) -> onChange value
                     placeholder: '请输入租赁时间'
                     addonAfter: @selectAfter
                 ]
@@ -270,7 +298,7 @@ class PrjForm extends Component
                 then [
                   c_InputNumber
                     key: 'InputNumber'
-                    onBlur: @onChange
+                    onBlur: (value) -> onChange value
                     style:
                       width: '196px'
                     min: '0'
@@ -280,7 +308,7 @@ class PrjForm extends Component
                 ]
                 else [
                   c_Input
-                    onBlur: @onChange
+                    onBlur: (value) -> onChange value
                     key: "AutoComp"
                     placeholder: "请输入#{c.keys}"
                 ]

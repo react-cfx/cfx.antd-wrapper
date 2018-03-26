@@ -21,6 +21,18 @@ export default =>
     [
       c_FormPrj
         key: 'FormPrj'
+        Change: (
+          (value) -> console.log value.target.value
+        ).bind @
+        ChangeDate: (
+          (date,dateString) -> console.log date,dateString
+        ).bind @
+        ChangeAddress: (
+          (value) -> console.log value
+        ).bind @
+        ChangeSelect: (
+          (value) -> console.log value
+        ).bind @
         Layout: 'vertical'
         title: [
             keys: 'normal'
@@ -42,6 +54,18 @@ export default =>
             type: 'number'
         ]
       c_FormPrj
+        Change: (
+          (value) -> console.log value.target.value
+        ).bind @
+        ChangeDate: (
+          (date,dateString) -> console.log date,dateString
+        ).bind @
+        ChangeAdress: (
+          (value) -> console.log value
+        ).bind @
+        ChangeSelect: (
+          (value) -> console.log value
+        ).bind @
         btnright: '下一步'
         key: 'FormPrj1'
         title: [
