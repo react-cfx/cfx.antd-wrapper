@@ -121,7 +121,7 @@ class FormPrj extends Component
       else (ChangeDate) =>
         console.log 'pls run ChangeDate function!'
         console.log ChangeDate
-    onChangeDate = (date, dateString) ->
+    onChangeDate = (date,dateString) ->
       ChangeDate date,dateString
 
     Change =
@@ -130,8 +130,8 @@ class FormPrj extends Component
       else (Change) =>
         console.log 'pls run Change function!'
         console.log Change
-    onChange = (value) ->
-      Change value
+    onChange = (value,key) ->
+      Change value,key
       
     if @props.Layout is 'vertical'
     then [
@@ -173,7 +173,7 @@ class FormPrj extends Component
                   then [
                     c_DatePicker
                       key: "select"
-                      onChange: (date, dateString) -> onChangeDate date, dateString
+                      onChange: (date,dateString) -> onChangeDate date,dateString
                       style:
                         width: '396px'
                       placeholder: "请输入#{c.keys}"
@@ -254,7 +254,7 @@ class FormPrj extends Component
                 then [
                   c_DatePicker
                     key: "select"
-                    onChange: (date, dateString) -> onChangeDate date, dateString
+                    onChange: (date,dateString) -> onChangeDate date,dateString
                     style:
                       width: '396px'
                     placeholder: "请输入#{c.keys}"
@@ -308,7 +308,7 @@ class FormPrj extends Component
                 ]
                 else [
                   c_Input
-                    onBlur: (value) -> onChange value
+                    onBlur: (value) -> onChange value,c.key
                     key: "AutoComp"
                     placeholder: "请输入#{c.keys}"
                 ]

@@ -22,21 +22,22 @@ export default =>
       c_FormPrj
         key: 'FormPrj'
         Change: (
-          (value) -> console.log value.target.value
+          (value) -> console.log { "#{key}":"#{value.target.value}"}
         ).bind @
         ChangeDate: (
-          (date,dateString) -> console.log date,dateString
+          (date,dateString) -> console.log { "#{key}":"#{dateString}"}
         ).bind @
         ChangeAddress: (
-          (value) -> console.log value
+          (value) -> console.log { "#{key}":"#{value}"}
         ).bind @
         ChangeSelect: (
-          (value) -> console.log value
+          (value) -> console.log { "#{key}":"#{value}"}
         ).bind @
         Layout: 'vertical'
         title: [
             keys: 'normal'
             type: 'normal'
+            key: 'normal'
           ,
             keys: 'date'
             type: 'date'
@@ -56,22 +57,23 @@ export default =>
         
       c_FormPrj
         Change: (
-          (value) -> console.log value.target.value
+          (value,key) -> console.log { "#{key}":"#{value.target.value}" }
         ).bind @
         ChangeDate: (
-          (date,dateString) -> console.log date,dateString
+          (key,date,dateString) -> console.log { "#{key}":"#{dateString}"}
         ).bind @
-        ChangeAdress: (
-          (value) -> console.log value
+        ChangeAddress: (
+          (value,key) -> console.log { "#{key}":"#{value}"}
         ).bind @
         ChangeSelect: (
-          (value) -> console.log value
+          (value) -> console.log { "#{key}":"#{value}"}
         ).bind @
         btnright: '下一步'
         key: 'FormPrj1'
         title: [
             keys: 'normal'
             type: 'normal'
+            key: 'normal'
           ,
             keys: 'date'
             type: 'date'
