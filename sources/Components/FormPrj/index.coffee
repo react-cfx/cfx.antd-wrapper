@@ -130,7 +130,7 @@ class FormPrj extends Component
                   then [
                     c_DatePicker
                       key: "select"
-                      onChange: (date,dateString) -> onChangeDate date,dateString
+                      onChange: (date,dateString) -> onChangeDate date,dateString,c.key
                       style:
                         width: '396px'
                       placeholder: "请输入#{c.keys}"
@@ -139,14 +139,14 @@ class FormPrj extends Component
                   then [
                     c_Cascader
                       key: "Cascader"
-                      onChange: (value) -> onChangeAddress value
+                      onChange: (value) -> onChangeAddress value,c.key
                       options: @props.options
                       placeholder: "请输入#{c.keys}"
                   ]
                   else if c.type is 'select'
                   then [
                     c_Select
-                      onChange: (value) -> onChangeSelect value
+                      onChange: (value) -> onChangeSelect value,c.key
                       key: 'Select'
                       defaultValue: '支付宝'
                       style:
@@ -163,7 +163,7 @@ class FormPrj extends Component
                   then [
                     c_Input
                       key: 'Input'
-                      onBlur: (value) -> onChange value
+                      onBlur: (value) -> onChange value,c.key
                       addonAfter: @props.selectAfter
                       placeholder: '请输入租赁时间'
                   ]
@@ -171,7 +171,7 @@ class FormPrj extends Component
                   then [
                     c_InputNumber
                       key: 'InputNumber'
-                      onBlur: (value) -> onChange value
+                      onBlur: (value) -> onChange value,c.key
                       style:
                         width: '196px'
                       min: '0'
@@ -181,7 +181,7 @@ class FormPrj extends Component
                   ]
                   else [
                     c_Input
-                      onBlur: (value) -> onChange value
+                      onBlur: (value) -> onChange value,c.key
                       key: "AutoComp"
                       placeholder: "请输入#{c.keys}"
                   ]

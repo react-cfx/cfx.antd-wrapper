@@ -27,16 +27,16 @@ export default =>
       c_FormPrj
         key: 'FormPrj'
         Change: (
-          (value) -> console.log { "#{key}":"#{value.target.value}"}
+          (value,key) -> console.log { "#{key}":"#{value.target.value}"}
         ).bind @
         ChangeDate: (
-          (date,dateString) -> console.log { "#{key}":"#{dateString}"}
+          (date,dateString,key) -> console.log { "#{key}":"#{dateString}"}
         ).bind @
         ChangeAddress: (
-          (value) -> console.log { "#{key}":"#{value}"}
+          (value,key) -> console.log { "#{key}":"#{value}"}
         ).bind @
         ChangeSelect: (
-          (value) -> console.log { "#{key}":"#{value}"}
+          (value,key) -> console.log { "#{key}":"#{value}"}
         ).bind @
         options: [
             value: '湖北'
@@ -82,6 +82,7 @@ export default =>
           ,
             keys: 'date'
             type: 'date'
+            key: 'date'
           ,
             keys: 'address'
             type: 'address'
@@ -101,13 +102,13 @@ export default =>
           (value,key) -> console.log { "#{key}":"#{value.target.value}" }
         ).bind @
         ChangeDate: (
-          (key,date,dateString) -> console.log { "#{key}":"#{dateString}"}
+          (date,dateString,key) -> console.log { "#{key}":"#{dateString}"}
         ).bind @
         ChangeAddress: (
           (value,key) -> console.log { "#{key}":"#{value}"}
         ).bind @
         ChangeSelect: (
-          (value) -> console.log { "#{key}":"#{value}"}
+          (value,key) -> console.log { "#{key}":"#{value}"}
         ).bind @
         options: [
             value: '湖北'
@@ -132,6 +133,19 @@ export default =>
               ]
             ]
         ]
+        selectAfter:
+          c_Select
+            defaultValue: '月'
+            onChange: (value) => console.log value 
+            style:
+              width: '80px'
+          ,
+            c_Option
+              value: '日'
+            , '日'
+            c_Option
+              value: '年'
+            , '年'
         btnright: '下一步'
         key: 'FormPrj1'
         title: [
