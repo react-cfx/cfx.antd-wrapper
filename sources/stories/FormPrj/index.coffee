@@ -1,9 +1,12 @@
 import { storiesOf } from '@storybook/react'
 import { prefixDom } from 'cfx.dom'
 import FormPrj from '../../Components/FormPrj/index'
-
+import { Select } from 'antd'
+Option = Select.Option
 CFX = prefixDom {
   FormPrj
+  Select
+  Option
 }
 
 export default =>
@@ -16,6 +19,8 @@ export default =>
 
     {
       c_FormPrj
+      c_Select
+      c_Option
     } = CFX
 
     [
@@ -33,6 +38,42 @@ export default =>
         ChangeSelect: (
           (value) -> console.log { "#{key}":"#{value}"}
         ).bind @
+        options: [
+            value: '湖北'
+            label: '湖北'
+            children: [
+              value: '武汉'
+              label: '武汉'
+              children: [
+                value: '武昌'
+                label: '武昌'
+              ]
+            ]
+          ,
+            value: '四川'
+            label: '四川'
+            children: [
+              value: '成都'
+              label: '成都'
+              children: [
+                value: '高新区'
+                label: '高新区'
+              ]
+            ]
+        ]
+        selectAfter:
+          c_Select
+            defaultValue: '月'
+            onChange: (value) => console.log value 
+            style:
+              width: '80px'
+          ,
+            c_Option
+              value: '日'
+            , '日'
+            c_Option
+              value: '年'
+            , '年'
         Layout: 'vertical'
         title: [
             keys: 'normal'
@@ -68,6 +109,29 @@ export default =>
         ChangeSelect: (
           (value) -> console.log { "#{key}":"#{value}"}
         ).bind @
+        options: [
+            value: '湖北'
+            label: '湖北'
+            children: [
+              value: '武汉'
+              label: '武汉'
+              children: [
+                value: '武昌'
+                label: '武昌'
+              ]
+            ]
+          ,
+            value: '四川'
+            label: '四川'
+            children: [
+              value: '成都'
+              label: '成都'
+              children: [
+                value: '高新区'
+                label: '高新区'
+              ]
+            ]
+        ]
         btnright: '下一步'
         key: 'FormPrj1'
         title: [

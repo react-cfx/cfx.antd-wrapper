@@ -37,49 +37,6 @@ class FormPrj extends Component
       
     @
   
-  options: [
-      value: '湖北'
-      label: '湖北'
-      children: [
-        value: '武汉'
-        label: '武汉'
-        children: [
-          value: '武昌'
-          label: '武昌'
-        ]
-      ]
-    ,
-      value: '四川'
-      label: '四川'
-      children: [
-        value: '成都'
-        label: '成都'
-        children: [
-          value: '高新区'
-          label: '高新区'
-        ]
-      ]
-  ]
-  
-  {
-    c_Option
-    c_Select
-  } = CFX
-  
-  selectAfter:
-    c_Select
-      defaultValue: '月'
-      onChange: (value) => console.log value 
-      style:
-        width: '80px'
-    ,
-      c_Option
-        value: '日'
-      , '日'
-      c_Option
-        value: '年'
-      , '年'
-  
   render: ->
 
     {
@@ -103,8 +60,8 @@ class FormPrj extends Component
       else (ChangeSelect) =>
         console.log 'pls run ChangeSelect function!'
         console.log ChangeSelect
-    onChangeSelect = (value) ->
-      ChangeSelect value
+    onChangeSelect = (value,key) ->
+      ChangeSelect value,key
     
     ChangeAddress =
       if @props.ChangeAddress?
@@ -112,8 +69,8 @@ class FormPrj extends Component
       else (ChangeAddress) =>
         console.log 'pls run ChangeAddress function!'
         console.log ChangeAddress
-    onChangeAddress = (value) ->
-      ChangeAddress value
+    onChangeAddress = (value,key) ->
+      ChangeAddress value,key
     
     ChangeDate =
       if @props.ChangeDate?
@@ -121,8 +78,8 @@ class FormPrj extends Component
       else (ChangeDate) =>
         console.log 'pls run ChangeDate function!'
         console.log ChangeDate
-    onChangeDate = (date,dateString) ->
-      ChangeDate date,dateString
+    onChangeDate = (date,dateString,key) ->
+      ChangeDate date,dateString,key
 
     Change =
       if @props.Change?
@@ -183,7 +140,7 @@ class FormPrj extends Component
                     c_Cascader
                       key: "Cascader"
                       onChange: (value) -> onChangeAddress value
-                      options: @options
+                      options: @props.options
                       placeholder: "请输入#{c.keys}"
                   ]
                   else if c.type is 'select'
@@ -207,7 +164,7 @@ class FormPrj extends Component
                     c_Input
                       key: 'Input'
                       onBlur: (value) -> onChange value
-                      addonAfter: @selectAfter
+                      addonAfter: @props.selectAfter
                       placeholder: '请输入租赁时间'
                   ]
                   else if c.type is 'number'
@@ -254,7 +211,7 @@ class FormPrj extends Component
                 then [
                   c_DatePicker
                     key: "select"
-                    onChange: (date,dateString) -> onChangeDate date,dateString
+                    onChange: (date,dateString) -> onChangeDate date,dateString,c.key
                     style:
                       width: '396px'
                     placeholder: "请输入#{c.keys}"
@@ -263,8 +220,8 @@ class FormPrj extends Component
                 then [
                   c_Cascader
                     key: "Cascader"
-                    onChange: (value) -> onChangeAddress value
-                    options: @options
+                    onChange: (value) -> onChangeAddress value,c.key
+                    options: @props.options
                     placeholder: "请输入#{c.keys}"
                 ]
                 else if c.type is 'select'
@@ -272,7 +229,7 @@ class FormPrj extends Component
                   c_Select
                     key: 'Select'
                     defaultValue: '支付宝'
-                    onChange: (value) -> onChangeSelect value
+                    onChange: (value) -> onChangeSelect value,c.key
                     style:
                       width: '120px'
                   ,
@@ -290,15 +247,15 @@ class FormPrj extends Component
                 then [
                   c_Input
                     key: 'Input'
-                    onBlur: (value) -> onChange value
+                    onBlur: (value) -> onChange value,c.key
                     placeholder: '请输入租赁时间'
-                    addonAfter: @selectAfter
+                    addonAfter: @props.selectAfter
                 ]
                 else if c.type is 'number'
                 then [
                   c_InputNumber
                     key: 'InputNumber'
-                    onBlur: (value) -> onChange value
+                    onBlur: (value) -> onChange value,c.key
                     style:
                       width: '196px'
                     min: '0'
