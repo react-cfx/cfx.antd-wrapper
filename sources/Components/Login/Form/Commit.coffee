@@ -35,14 +35,14 @@ Commit = ({
     }
     , '登录'
 
-    decorator: decorator
-    name: 'remember'
-    props:
-      valuePropName: 'checked'
-      initialValue: true
-    children:
-      c_Checkbox {}
-      , '记住用户名'
+    # decorator: decorator
+    # name: 'remember'
+    # # props:
+    # #   valuePropName: 'checked'
+    # #   initialValue: true
+    # children:
+    #   c_Checkbox {}
+    #   , '记住用户名'
 
     c_div {
       ( nb 'loginFormForgot' )...
