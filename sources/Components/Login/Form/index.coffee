@@ -8,53 +8,56 @@ import Commit from './Commit'
 import nb from './style'
 
 CFX = prefixDom {
-  'div'
-  Form
-  UserName
-  PassWord
-  Commit
+	'div'
+	Form
+	UserName
+	PassWord
+	Commit
 }
 
 class LoginForm extends React.Component
 
-  handleSubmit: (e) =>
-    return @props.onSubmit e, @props.form if @props.onSubmit?
+	handleSubmit: (e) => 
+		e.preventDefault()
+		@props.form.validateFields (err, values) =>
+			console.log 'Received values of form: ', values unless err
+			
+			if @props.Commit?
+			then @props.Commit values
+			else undefined
 
-    e.preventDefault()
-    @props.form.validateFields (err, values) =>
-      console.log 'Received values of form: ', values unless err
+	render: ->
 
-  render: ->
-    {
-      c_div
-      c_Form
-      c_UserName
-      c_PassWord
-      c_Commit
-    } = CFX
+		{
+			c_div
+			c_Form
+			c_UserName
+			c_PassWord
+			c_Commit
+		} = CFX
 
-    { getFieldDecorator } = @props.form
+		{ getFieldDecorator } = @props.form
 
-    loginForm =
+		loginForm =
 
-      c_Form {
-        ( nb 'loginForm' )...        
-        onSubmit: @handleSubmit
-      }
-      ,
+			c_Form {
+				( nb 'loginForm' )...        
+				onSubmit: @handleSubmit
+			}
+			,
 
-        c_UserName
-          decorator: getFieldDecorator
+				c_UserName
+					decorator: getFieldDecorator
 
-        c_PassWord
-          decorator: getFieldDecorator
+				c_PassWord
+					decorator: getFieldDecorator
 
-        c_Commit
-          decorator: getFieldDecorator
+				c_Commit
+					decorator: getFieldDecorator
 
-    c_div
-      id: 'components-form-demo-normal-login'
-    ,
-      loginForm
+		c_div
+			id: 'components-form-demo-normal-login'
+		,
+			loginForm
 
 export default Form.create() LoginForm

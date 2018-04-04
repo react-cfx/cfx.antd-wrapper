@@ -46,8 +46,5 @@ export default =>
 
     { c_Login } = CFX
     c_Login
-      onSubmit: (e, form) =>
-        e.preventDefault()
-        form.validateFields (err, values) =>
-          console.log 'Received values of form: ',
-          values unless err
+      Commit: (values) =>
+        console.log { values }, '123'
