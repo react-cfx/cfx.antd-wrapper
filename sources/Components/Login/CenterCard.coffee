@@ -22,8 +22,8 @@ CenterCard = (props) =>
     ,
       c_LoginCard {
         (
-          if @props.onSubmit
-          then onSubmit: @props.onSubmit
+          if @props.submit
+          then submit: @props.submit
           else {}
         )...
       }

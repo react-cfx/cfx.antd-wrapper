@@ -40,8 +40,8 @@ LoginCard = enhance (props) =>
     ,
       c_Form {
         (
-          if @props.onSubmit
-          then onSubmit: @props.onSubmit
+          if @props.submit
+          then submit: @props.submit
           else {}
         )...
       }

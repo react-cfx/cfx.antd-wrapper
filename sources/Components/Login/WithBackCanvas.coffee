@@ -58,8 +58,8 @@ export default =>
         child:
           c_CenterCard {
             (
-              if @props.onSubmit
-              then onSubmit: @props.onSubmit
+              if @props.submit
+              then submit: @props.submit
               else {}
             )...
           }

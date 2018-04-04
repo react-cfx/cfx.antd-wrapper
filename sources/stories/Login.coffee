@@ -46,5 +46,5 @@ export default =>
 
     { c_Login } = CFX
     c_Login
-      Commit: (values) =>
+      submit: (values) =>
         console.log { values }, '123'

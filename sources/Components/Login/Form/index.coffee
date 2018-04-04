@@ -20,10 +20,10 @@ class LoginForm extends React.Component
 	handleSubmit: (e) => 
 		e.preventDefault()
 		@props.form.validateFields (err, values) =>
-			console.log 'Received values of form: ', values unless err
+			# console.log 'Received values of form: ', values unless err
 			
-			if @props.Commit?
-			then @props.Commit values
+			if @props.submit?
+			then @props.submit values
 			else undefined
 
 	render: ->
