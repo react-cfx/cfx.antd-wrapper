@@ -2,9 +2,9 @@
 import PageCenter from '../Layout/PageCenter'
 import LoginCard from './Card'
 
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 
-CFX = prefixDom {
+CFX = cfxify {
   PageCenter
   LoginCard
 }

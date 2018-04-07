@@ -3,15 +3,18 @@ import {
   Button
   Checkbox
 } from 'antd'
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import nb from './style'
+import LinkBtn from './LinkBtn'
+import Link from '../../../stories/Links'
 
-CFX = prefixDom {
+CFX = cfxify {
   'a'
   'div'
   Button
   Checkbox
   FormField
+  LinkBtn: LinkBtn Link()
 }
 
 Commit = ({
@@ -24,16 +27,18 @@ Commit = ({
     c_Button
     c_Checkbox
     c_FormField
+    c_LinkBtn
   } = CFX
 
   c_FormField {}
   ,
-    c_Button {
-      type: 'primary'
-      htmlType: 'submit'
-      ( nb 'loginFormButton' )...
-    }
-    , '登录'
+    c_LinkBtn {}
+    # c_Button {
+    #   type: 'primary'
+    #   htmlType: 'submit'
+    #   ( nb 'loginFormButton' )...
+    # }
+    # , '登录'
 
     # decorator: decorator
     # name: 'remember'

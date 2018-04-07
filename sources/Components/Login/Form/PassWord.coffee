@@ -3,9 +3,9 @@ import {
   Input
   Icon
 } from 'antd'
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 
-CFX = prefixDom {
+CFX = cfxify {
   Input
   Icon
   FormField

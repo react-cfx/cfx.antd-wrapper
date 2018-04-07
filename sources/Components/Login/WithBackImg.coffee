@@ -1,8 +1,8 @@
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import CenterCard from './CenterCard'
 import BackgroundImg from './background.jpg'
 
-CFX = prefixDom {
+CFX = cfxify {
   CenterCard
 }
 

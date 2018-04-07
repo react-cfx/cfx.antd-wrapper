@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "antd": "^3.0.3",
-    "cfx.dom": "^0.0.3",
+    "cfx.dom": "0.1.0",
+    "cfx.link": "0.0.5",
     "cfx.style": "^0.0.4",
     "normalize.css": "^7.0.0",
     "react": "^16.2.0",

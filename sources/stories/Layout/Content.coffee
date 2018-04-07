@@ -1,7 +1,7 @@
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import Content from '../../Components/Layout/Content'
 
-CFX = prefixDom {
+CFX = cfxify {
   Content
 }
 

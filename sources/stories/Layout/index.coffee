@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react'
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 
 import Content from './Content'
 
@@ -9,7 +9,7 @@ import PageTwoSider from './PageTwoSider'
 import ContentWithSider from './ContentWithSider'
 import PageContentWithinSider from './PageContentWithinSider'
 
-CFX = prefixDom {
+CFX = cfxify {
   Content
 
   PageOneSider
