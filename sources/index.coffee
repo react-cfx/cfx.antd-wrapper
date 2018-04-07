@@ -16,6 +16,8 @@ import Login, {
 import {
   Menu
 } from './Components/Navigation'
+import UserName from './Components/Login/Form/UserName'
+import PassWord from './Components/Login/Form/PassWord'
 
 export {
   FormField
@@ -29,4 +31,6 @@ export {
   WithBackImg
   WithBackCanvs
   Menu
+  UserName
+  PassWord
 }
