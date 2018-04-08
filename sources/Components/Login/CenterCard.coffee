@@ -17,14 +17,19 @@ CenterCard = (props) =>
   } = CFX
   
   render: ->
-
+    console.log @, '11122'
     c_PageCenter props
     ,
       c_LoginCard {
         (
           if @props.submit
           then submit: @props.submit
-          else {}
+          else {}         
+        )...
+        (
+          if @props.Link
+          then Link: @props.Link
+          else {}           
         )...
       }
 

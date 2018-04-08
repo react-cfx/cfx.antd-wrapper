@@ -35,14 +35,19 @@ LoginCard = enhance (props) =>
   } = CFX
 
   render: ->
-
+    
     c_Card props
     ,
       c_Form {
         (
           if @props.submit
           then submit: @props.submit
-          else {}
+          else {}         
+        )...
+        (
+          if @props.Link
+          then Link: @props.Link
+          else {}           
         )...
       }
 

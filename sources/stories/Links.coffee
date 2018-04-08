@@ -3,17 +3,16 @@ import { getLinks } from 'cfx.link'
 import cfxify from 'cfx.dom'
 
 export default (actions = {}) => getLinks
-  onSubmitToHouseList:
-    [
-      'Welcome'
-      'to Storybook'
-    ]
+  onSubmitLinks: [
+    'Layout'
+    'Content'
+  ]
 ,
   story: linkTo
 , (key) =>
 
   switch key
-    when 'HouseList'
+    when 'onSubmitLinks'
       action: (key) =>
         if actions[key]?
         then actions[key]()

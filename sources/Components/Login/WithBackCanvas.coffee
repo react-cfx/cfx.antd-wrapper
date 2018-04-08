@@ -26,6 +26,8 @@ export default =>
   } = CFX
 
   render: ->
+    
+    { Link } = @props
 
     Layers =
       background:
@@ -61,6 +63,11 @@ export default =>
               if @props.submit
               then submit: @props.submit
               else {}
+            )...
+            (
+              if @props.Link
+              then Link: @props.Link
+              else {}              
             )...
           }
 

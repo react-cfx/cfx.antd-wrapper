@@ -1,35 +1,49 @@
 import React, { Component } from 'react'
 import cfxify from 'cfx.dom'
-import getLinks from 'cfx.link'
+# import getLinks from 'cfx.link'
 import { Button } from 'antd'
 
 CFX = cfxify {
   Button
 }
-export default (Link) => ({
+
+{
+  c_Button
+} = CFX
+
+Btn = =>
+  c_Button
+    type: 'primary'
+    htmlType: 'submit'
+    style:
+      maxWidth: '300px'
+      float: 'right'
+      width: '100%'
+  , '登录'
+
+export default ({
   location
+  Link
 }) =>
-  CFX = CFX._.extends (
-    getLinks Link
-    ,
-      onSubmitToHouseList: '/addonSubmitToHouseList'
-  )
+  # console.log link, location
+  CFX = cfxify {
+    Btn
+  }
+  {
+    c_Btn
+  } = CFX
   
-  render: ->
-
+  if Link?
+    console.log '1'
+    CFX = CFX._.extends {
+      Link
+    }
     {
-      c_Button
-
-      c_onSubmitToHouseList
+      c_Link
     } = CFX
-
-    c_onSubmitToHouseList {}
+    c_Link {}
     ,
-      c_Button
-        type: 'primary'
-        htmlType: 'submit'
-        style:
-          maxWidth: '300px'
-          float: 'right'
-          width: '100%'
-      , '登录'
+      c_Btn {}
+  else
+    console.log '2'
+    c_Btn {}

@@ -52,8 +52,14 @@ class LoginForm extends React.Component
 				c_PassWord
 					decorator: getFieldDecorator
 
-				c_Commit
+				c_Commit {
 					decorator: getFieldDecorator
+					(
+						if @props.Link
+						then Link: @props.Link
+						else {}
+					)...
+				}
 
 		c_div
 			id: 'components-form-demo-normal-login'
