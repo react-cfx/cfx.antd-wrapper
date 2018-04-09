@@ -13,7 +13,7 @@ Commit = ({
   decorator
 }) =>
   render: ->
-    console.log 'submit->>>:', @
+
     CFX = cfxify {
       'a'
       'div'

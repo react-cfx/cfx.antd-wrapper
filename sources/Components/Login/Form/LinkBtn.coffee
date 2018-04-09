@@ -34,7 +34,6 @@ export default ({
   } = CFX
   
   if Link?
-    console.log '1'
     CFX = CFX._.extends {
       Link
     }
@@ -45,5 +44,4 @@ export default ({
     ,
       c_Btn {}
   else
-    console.log '2'
     c_Btn {}

@@ -17,7 +17,7 @@ CenterCard = (props) =>
   } = CFX
   
   render: ->
-    console.log @, '11122'
+
     c_PageCenter props
     ,
       c_LoginCard {
