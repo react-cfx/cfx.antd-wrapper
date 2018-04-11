@@ -17,10 +17,6 @@ export default =>
     defaultSelectedKeys: [ '1' ]
     theme: 'dark'
     mode: 'inline'
-    link: getLinks {
-      Link: Links
-      kind: 'Test'
-    }
     menus:
       'Option 1':
         k: '1'
@@ -33,6 +29,10 @@ export default =>
         i: 'user'
         'Tom':
           k: '3'
+          link: getLinks {
+            Link: Links
+            kind: 'Test'
+          }
         'Bill':
           k: '4'
         'Alex':

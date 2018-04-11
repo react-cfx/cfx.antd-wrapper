@@ -1,4 +1,4 @@
-# import { ddbs as dd } from 'ddeyes'
+import { ddbs as dd } from 'ddeyes'
 import React from 'react'
 import cfxify from 'cfx.dom'
 import { Menu, Icon } from 'antd'
@@ -66,11 +66,15 @@ _Menu = enhance (props) =>
             c_Icon type: i
             c_ALink
               Link: link
+              style:
+                color: 'white'
               name: c
           ]
           else [
             c_ALink
               Link: link
+              style:
+                color: 'white'
               name: c
           ]
         )...
@@ -79,8 +83,8 @@ _Menu = enhance (props) =>
       {
         lk
         c
-        others
         link
+        others
       }
       recMenu
     ) =>
@@ -157,6 +161,7 @@ _Menu = enhance (props) =>
               Dom.MenuItemGroup {
                 lk
                 c
+                link
                 others
               }, recMenu
             ]
@@ -165,6 +170,7 @@ _Menu = enhance (props) =>
                 k
                 c
                 i
+                link
                 others
               }, recMenu 
             ]
