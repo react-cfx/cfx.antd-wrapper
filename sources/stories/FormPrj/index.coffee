@@ -3,7 +3,7 @@ import cfxify from 'cfx.dom'
 import FormPrj from '../../Components/FormPrj/index'
 import { Select } from 'antd'
 Option = Select.Option
-CFX = prefixDom {
+CFX = cfxify {
 	FormPrj
 	Select
 	Option
