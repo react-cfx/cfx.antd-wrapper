@@ -1,7 +1,7 @@
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import { Layout } from 'antd'
 
-CFX = prefixDom {
+CFX = cfxify {
   Layout
 }
 

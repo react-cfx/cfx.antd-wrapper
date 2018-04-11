@@ -1,4 +1,4 @@
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import {
   Row
   Col
@@ -11,7 +11,7 @@ import {
 
 FormItem = Form.Item
 
-CFX = prefixDom {
+CFX = cfxify {
   'div' 
   Row
   Col

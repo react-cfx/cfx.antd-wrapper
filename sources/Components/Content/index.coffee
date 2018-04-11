@@ -1,8 +1,8 @@
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import { Card } from 'antd'
 import PageContent from '../Page/Content'
 
-CFX = prefixDom {
+CFX = cfxify {
   Card
   PageContent
 }

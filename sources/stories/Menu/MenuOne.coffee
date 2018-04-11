@@ -1,8 +1,8 @@
 import React from 'react'
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import Menu from '../../Components/Navigation/Menu'
 
-CFX = prefixDom {
+CFX = cfxify {
   Menu
 }
 
@@ -16,6 +16,7 @@ export default =>
     defaultSelectedKeys: [ '1' ]
     theme: 'dark'
     mode: 'inline'
+    link
     menus:
       'Option 1':
         k: '1'

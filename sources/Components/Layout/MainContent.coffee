@@ -1,10 +1,10 @@
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import { Layout, Breadcrumb } from 'antd'
 import nb from './style'
 { Header, Content, Footer } = Layout
 BreadcrumbItem = Breadcrumb.Item
 
-CFX = prefixDom {
+CFX = cfxify {
   'div'
   'p'
   'h1'
