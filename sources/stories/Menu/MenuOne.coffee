@@ -21,12 +21,18 @@ export default =>
       'Option 1':
         k: '1'
         i: 'pie-chart'
+        'Tom':
+          k: '6'
       'Option 2':
         k: '2'
         i: 'desktop'
       'User':
         k: 'sub1'
         i: 'user'
+        link: getLinks {
+          Link: Links
+          kind: 'Test'
+        }
         'Tom':
           k: '3'
           link: getLinks {

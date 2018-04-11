@@ -57,18 +57,22 @@ _Menu = enhance (props) =>
       link
     }) =>
       # dd "Create MenuItem Dom #{k}."
+
       c_MenuItem.apply null
       , [
         key: k
         (
           if i?
           then [
-            c_Icon type: i
-            c_ALink
-              Link: link
-              style:
-                color: 'white'
-              name: c
+            c_span {}
+            ,
+              c_Icon 
+                type: i
+              c_ALink
+                Link: link
+                style:
+                  color: 'white'
+                name: c
           ]
           else [
             c_ALink
