@@ -21,6 +21,11 @@ export default =>
 
 
     c_Table
+      # handleChange: (e) =>
+      #   value = e.target.value
+      #   @setState {
+      #     value
+      #   }
       addChildren: true
       # operating: false
       headlabel: (index, text) =>

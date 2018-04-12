@@ -26,6 +26,8 @@ class EditableCell extends Component
       value
     }
 
+  # getState: => @state
+
   check: () =>
     @setState {
       editable: false
@@ -70,6 +72,10 @@ class EditableCell extends Component
             c_Input
               key: 'Input'
               value: @state.value
+              onChange:
+                if @props.handleChange?
+                then @props.handleChange
+                else {}
               onChange: @handleChange
               onPressEnter: @check
             c_Icon {

@@ -203,6 +203,12 @@ class EditableTable extends Component
         columns: childrenHeader
         pagination: false
 
+  componentWillReceiveProps: (nextProps) ->
+    if nextProps.dataSource?
+      @setState
+        dataSource: nextProps.dataSource
+    @
+
   onCellChange: (key,dataIndex) =>
     (value) =>
       dataSource = [ @state.dataSource... ]
