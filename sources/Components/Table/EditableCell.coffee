@@ -1,4 +1,4 @@
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import React, { Component } from 'react'
 import nb from './style'
 import {
@@ -6,7 +6,7 @@ import {
   Icon
 } from 'antd'
 
-CFX = prefixDom {
+CFX = cfxify {
   'div'
   Input
   Icon

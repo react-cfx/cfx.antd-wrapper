@@ -1,5 +1,5 @@
 import { ddbs as dd } from 'ddeyes'
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import React, { Component } from 'react'
 import { linkTo } from '@storybook/addon-links'
 import EditableCell from './EditableCell'
@@ -16,7 +16,7 @@ import {
 
 FormItem = Form.Item
 
-CFX = prefixDom {
+CFX = cfxify {
   'a'
   'div'
   'span'

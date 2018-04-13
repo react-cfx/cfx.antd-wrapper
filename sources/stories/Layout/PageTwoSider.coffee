@@ -1,5 +1,5 @@
 import React from 'react'
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import { Layout } from 'antd'
 
 import MenuOne from '../Menu/MenuOne'
@@ -8,7 +8,7 @@ import MenuTwo from '../Menu/MenuTwo'
 import Content from './Content'
 import SiderContent from '../../Components/Layout/SiderContent'
 
-CFX = prefixDom {
+CFX = cfxify {
   MenuOne
   MenuTwo
   Content

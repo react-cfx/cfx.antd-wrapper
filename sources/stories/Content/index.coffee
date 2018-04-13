@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react'
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import Content from '../../Components/Content'
 
-CFX = prefixDom {
+CFX = cfxify {
 	'div'
 	Content
 }
@@ -36,7 +36,7 @@ export default =>
 					, 'HelloWorld!'
 				]
 			c_Content
-				key: 'Content'
+				key: 'Content1'
 				Content: [
 					c_div
 						key: 'div'

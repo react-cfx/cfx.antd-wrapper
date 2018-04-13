@@ -1,4 +1,4 @@
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 
 import LoginForm from './Form'
 import LoginCard from './Card'

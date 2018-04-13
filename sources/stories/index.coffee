@@ -5,30 +5,30 @@ import 'antd/dist/antd.css'
 
 import Welcome from './Welcome'
 
-import Login from './Login'
+
 import Menu from './Menu'
 import Layout from './Layout'
 import Table from './Table'
 import Steps from './Steps'
 import Cards from './Cards'
 import BtnModal from './BtnModal'
-import FormPrj from './FormPrj'
 import Content from './Content'
 import PageContent from './Page/PageContent'
 import Page from './Page'
 import Header from './Header'
+import Login from './Login'
+import FormPrj from './FormPrj/index'
 
 Welcome()
-
-Login()
 Menu()
 Layout()
 Table()
 Steps()
 Cards()
 BtnModal()
-FormPrj()
 Content()
 Page()
 PageContent()
 Header()
+Login()
+FormPrj()

@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react'
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 
 import {
   LoginForm
@@ -9,7 +9,7 @@ import {
   WithBackCanvas as Login
 } from '../Components/Login'
 
-CFX = prefixDom {
+CFX = cfxify {
   LoginForm
   LoginCard
   Login

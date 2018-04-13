@@ -1,8 +1,9 @@
 import React from 'react'
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import Menu from '../../Components/Navigation/Menu'
-
-CFX = prefixDom {
+import getLinks from '../../Components/UtilLink/ComLinkBtn'
+import Links from '../../Components/UtilLink/Links'
+CFX = cfxify {
   Menu
 }
 
@@ -20,14 +21,24 @@ export default =>
       'Option 1':
         k: '1'
         i: 'pie-chart'
+        'Tom':
+          k: '6'
       'Option 2':
         k: '2'
         i: 'desktop'
       'User':
         k: 'sub1'
         i: 'user'
+        link: getLinks {
+          Link: Links
+          kind: 'Test'
+        }
         'Tom':
           k: '3'
+          link: getLinks {
+            Link: Links
+            kind: 'Test'
+          }
         'Bill':
           k: '4'
         'Alex':

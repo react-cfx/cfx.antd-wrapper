@@ -1,23 +1,24 @@
-# import { ddbs as dd } from 'ddeyes'
+import { ddbs as dd } from 'ddeyes'
 import React from 'react'
-import { prefixDom } from 'cfx.dom'
+import cfxify from 'cfx.dom'
 import { Menu, Icon } from 'antd'
 SubMenu = Menu.SubMenu
 MenuItem = Menu.Item
 MenuItemGroup = Menu.ItemGroup
-
 import {
   mapProps
   compose
 } from 'recompose'
+import ALink from '../UtilLink/ComA'
 
-CFX = prefixDom {
+CFX = cfxify {
   'span'
   Icon
   Menu
   SubMenu
   MenuItemGroup
   MenuItem
+  ALink
 }
 
 hocMapProps = mapProps (ownerProps) =>
@@ -36,6 +37,7 @@ _Menu = enhance (props) =>
 
   {
     c_span
+    c_ALink
     c_Icon
     c_Menu
     c_SubMenu
@@ -52,24 +54,40 @@ _Menu = enhance (props) =>
       k
       i
       c
+      link
     }) =>
       # dd "Create MenuItem Dom #{k}."
+
       c_MenuItem.apply null
       , [
         key: k
         (
           if i?
           then [
-            c_Icon type: i
-            c_span {}, c
+            c_span {}
+            ,
+              c_Icon 
+                type: i
+              c_ALink
+                Link: link
+                style:
+                  color: 'white'
+                name: c
           ]
-          else [ c ]
+          else [
+            c_ALink
+              Link: link
+              style:
+                color: 'white'
+              name: c
+          ]
         )...
       ]
     MenuItemGroup: (
       {
         lk
         c
+        link
         others
       }
       recMenu
@@ -86,6 +104,7 @@ _Menu = enhance (props) =>
         k
         c
         i
+        link
         others
       }
       recMenu
@@ -102,12 +121,18 @@ _Menu = enhance (props) =>
               ,
                 c_Icon
                   type: i
-                c_span {}
-                , c
+                c_ALink
+                  Link: link
+                  style:
+                    color: 'white'
+                  name: c
             )
             else (
-              c_span {}
-              , c
+              c_ALink
+                Link: link
+                style:
+                  color: 'white'
+                name: c
             )
         ]
 
@@ -119,6 +144,7 @@ _Menu = enhance (props) =>
         k           # Key
         lk          # Lable Key
         ops         # Options
+        link
         others...
       } = menus["#{c}"]
       [
@@ -130,6 +156,7 @@ _Menu = enhance (props) =>
               k
               i
               c
+              link
             }
           ]
           else (
@@ -138,6 +165,7 @@ _Menu = enhance (props) =>
               Dom.MenuItemGroup {
                 lk
                 c
+                link
                 others
               }, recMenu
             ]
@@ -146,6 +174,7 @@ _Menu = enhance (props) =>
                 k
                 c
                 i
+                link
                 others
               }, recMenu 
             ]
