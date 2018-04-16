@@ -30,18 +30,19 @@ export default =>
       # operating: false
       headlabel: (index, text) =>
         c_a
+          key: "/#{index}"
           href: "/#{index}"
         , text
       # Divider: false
-      footlabel:
+      footlabel: (index, record) =>
         c_a
-          key: 'a'
-          href: "#"
+          key: "/#{index}"
+          href: "/#{index}"
           style: color: '#959595'
         , '详细'
       
       btn: '添加房源'
-      editPen: true
+      # editPen: true
       header:
         name: '姓名'
         age: '年龄'

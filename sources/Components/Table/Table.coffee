@@ -109,11 +109,11 @@ class EditableTable extends Component
               title: '操作'
               dataIndex: 'operation'
               width: '105px'
-              render: (text, record) =>
+              render: (index, record) =>
                 [
                     if @props.footlabel?
                     then [
-                      @props.footlabel
+                      @props.footlabel index, record
                     ]
                     else []
                     unless @props.Divider is false
@@ -159,14 +159,13 @@ class EditableTable extends Component
               title: '操作'
               dataIndex: 'operation'
               width: '105px'
-              render: (text, record) =>
+              render: (index, record) =>
                 [
                     if @props.footlabel?
                     then [
-                      @props.footlabel
+                      @props.footlabel index, record
                     ]
                     else []
-
                     c_Divider
                       key: 'Divider'
                       type: 'vertical'
