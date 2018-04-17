@@ -27,6 +27,8 @@ export default =>
       #     value
       #   }
       addChildren: true
+      onDelete: (record) =>
+        console.log record
       # operating: false
       headlabel: (index, text) =>
         c_a

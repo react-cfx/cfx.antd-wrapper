@@ -127,7 +127,10 @@ class EditableTable extends Component
                     c_Popconfirm
                       key: 'Popconfirm'
                       title: 'Sure to delete??'
-                      onConfirm: () => @onDelete record.key
+                      onConfirm: () =>
+                        if @props.onDelete?
+                        then @props.onDelete record
+                        else @onDelete record.key
                     ,
                       c_a
                         key: 'a'
@@ -144,7 +147,7 @@ class EditableTable extends Component
             render: (text, record, index) =>
               if @props.headlabel?
               then [
-                @props.headlabel index, record, text
+                @props.headlabel index, text
               ]
               else [
                 record["#{@FSheaderKey}"]
@@ -173,7 +176,10 @@ class EditableTable extends Component
                     c_Popconfirm
                       key: 'Popconfirm'
                       title: 'Sure to delete??'
-                      onConfirm: () => @onDelete record.key
+                      onConfirm: () =>
+                        if @props.onDelete?
+                        then @props.onDelete record
+                        else @onDelete record.key
                     ,
                       c_a
                         key: 'a'
@@ -245,6 +251,7 @@ class EditableTable extends Component
       disabled: record.name == 'Disabled User'
 
   render: () ->
+
     c_div {
       ( nb 'components_table_demo_nested' )...
     }
