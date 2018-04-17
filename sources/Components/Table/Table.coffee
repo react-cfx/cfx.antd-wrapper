@@ -147,7 +147,7 @@ class EditableTable extends Component
             render: (text, record, index) =>
               if @props.headlabel?
               then [
-                @props.headlabel index, text
+                @props.headlabel index, record, text
               ]
               else [
                 record["#{@FSheaderKey}"]
