@@ -20,8 +20,8 @@ export default =>
     } = CFX
 
     c_Table
-      # getDS: (dataSource) =>
-      #   console.log dataSource
+      getDS: (dataSource) =>
+        console.log dataSource
       # handleChange: (e) =>
       #   value = e.target.value
       #   @setState {

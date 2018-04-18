@@ -224,7 +224,9 @@ class EditableTable extends Component
         @setState {
           dataSource
         }
-        @props.getDS @state.dataSource if typeof @props.getDS? is 'function'
+        @props.getDS @state.dataSource if @props.getDS?
+        
+        # @props.getDS @state.dataSource if typeof @props.getDS? is 'function'
       )
       else []
 
