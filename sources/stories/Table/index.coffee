@@ -19,18 +19,19 @@ export default =>
       c_Table
     } = CFX
 
-
     c_Table
       # handleChange: (e) =>
       #   value = e.target.value
       #   @setState {
       #     value
       #   }
+      # onChange: (dataSource) =>
+      #   console.log dataSource
       addChildren: true
-      onDelete: (record) =>
-        console.log record
+      # onDelete: (record) =>
+      #   console.log record
       # operating: false
-      headlabel: (index, text) =>
+      headlabel: (index, record, text) =>
         c_a
           key: "/#{index}"
           href: "/#{index}"
@@ -44,7 +45,7 @@ export default =>
         , '详细'
       
       btn: '添加房源'
-      # editPen: true
+      editPen: true
       header:
         name: '姓名'
         age: '年龄'

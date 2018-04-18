@@ -214,7 +214,7 @@ class EditableTable extends Component
         dataSource: nextProps.dataSource
     @
 
-  onCellChange: (key,dataIndex) =>
+  onCellChange: (key, dataIndex) =>
     (value) =>
       dataSource = [ @state.dataSource... ]
       target = dataSource.find (item) => item.key is key
@@ -275,6 +275,11 @@ class EditableTable extends Component
           if @props.addChildren is true
           then expandedRowRender: @NestedTable
           else []
+        )...
+        (
+          if @props.onChange
+          then onChange: @props.onChange @state.dataSource
+          else {}
         )...
         rowSelection: @rowSelection
         dataSource: @state.dataSource

@@ -28,15 +28,14 @@ class EditableCell extends Component
 
   # getState: => @state
 
-  check: () =>
-    @setState {
+  check: =>
+    @setState
       editable: false
-    }
     if @props.onChange
     then @props.onChange @state.value
     else []
 
-  edit: () =>
+  edit: =>
     @setState {
       editable: true
     }
