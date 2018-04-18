@@ -277,8 +277,8 @@ class EditableTable extends Component
           else []
         )...
         (
-          if @props.onChange
-          then onChange: @props.onChange @state.dataSource
+          if @props.change
+          then change: @props.change @state.dataSource
           else {}
         )...
         rowSelection: @rowSelection
