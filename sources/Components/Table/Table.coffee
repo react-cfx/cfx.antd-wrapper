@@ -219,12 +219,13 @@ class EditableTable extends Component
       dataSource = [ @state.dataSource... ]
       target = dataSource.find (item) => item.key is key
       if target
-      then [
-        target[dataIndex] = value
+      then (
+        target[dataIndex] = value  
         @setState {
           dataSource
         }
-      ]
+        @props.getDS @state.dataSource if typeof @props.getDS? is 'function'
+      )
       else []
 
   onDelete: (key) =>
@@ -276,11 +277,11 @@ class EditableTable extends Component
           then expandedRowRender: @NestedTable
           else []
         )...
-        (
-          if @props.change
-          then change: @props.change @state.dataSource
-          else {}
-        )...
+        # (
+        #   if @props.change
+        #   then @props.change @state.dataSource
+        #   else {}
+        # )...
         rowSelection: @rowSelection
         dataSource: @state.dataSource
         columns: @column
