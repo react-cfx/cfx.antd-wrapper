@@ -1,6 +1,6 @@
 import cfxify from 'cfx.dom'
 import CenterCard from './CenterCard'
-import BackgroundImg from '../../../public/assets/background.jpg'
+import BackgroundImg from './background.jpg'
 
 CFX = cfxify {
   CenterCard

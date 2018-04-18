@@ -5,7 +5,7 @@ import FullPageLayers from '../Layout/FullPageLayers'
 
 import Particles from 'react-particles-js'
 import particlesConfig from './particlesConfig'
-import BackgroundImg from '../../../public/assets/background.jpg'
+import BackgroundImg from './background.jpg'
 
 CFX = cfxify {
   'img'
@@ -25,38 +25,54 @@ export default =>
     c_FullPageLayers
   } = CFX
 
-  Layers =
-    background:
-      layout:
-        style:
-          backgroundImage: "url(#{
-            if BackgroundImg.src?
-            then BackgroundImg.src
-            else BackgroundImg
-          })"
-      child:
-        c_Particles
+  render: ->
+    
+    { Link } = @props
+
+    Layers =
+      background:
+        layout:
           style:
-            position: 'absolute'
-            width: '100%'
-            minHeight: '100vh'
-          params: particlesConfig
+            backgroundImage: "url(#{
+              if BackgroundImg.src?
+              then BackgroundImg.src
+              else BackgroundImg
+            })"
+        child:
+          c_Particles
+            style:
+              position: 'absolute'
+              width: '100%'
+              minHeight: '100vh'
+            params: particlesConfig
 
-        # c_img
-        #   src:
-        #     if BackgroundImg.src?
-        #     then BackgroundImg.src
-        #     else BackgroundImg
-        #   style:
-        #     width: '100%'
-        #     minHeight: '100vh'
-        
-    centerCard:
-      withLayout: false
-      child: c_CenterCard {}
+          # c_img
+          #   src:
+          #     if BackgroundImg.src?
+          #     then BackgroundImg.src
+          #     else BackgroundImg
+          #   style:
+          #     width: '100%'
+          #     minHeight: '100vh'
+          
+      centerCard:
+        withLayout: false
+        child:
+          c_CenterCard {
+            (
+              if @props.submit
+              then submit: @props.submit
+              else {}
+            )...
+            (
+              if @props.Link
+              then Link: @props.Link
+              else {}              
+            )...
+          }
 
-  c_FullPageLayers
-    layers: [
-      Layers.background
-      Layers.centerCard
-    ]
+    c_FullPageLayers
+      layers: [
+        Layers.background
+        Layers.centerCard
+      ]

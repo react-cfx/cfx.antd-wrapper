@@ -8,51 +8,62 @@ import Commit from './Commit'
 import nb from './style'
 
 CFX = cfxify {
-  'div'
-  Form
-  UserName
-  PassWord
-  Commit
+	'div'
+	Form
+	UserName
+	PassWord
+	Commit
 }
 
 class LoginForm extends React.Component
 
-  handleSubmit: (e) =>
-    e.preventDefault()
-    @props.form.validateFields (err, values) =>
-      console.log 'Received values of form: ', values unless err
+	handleSubmit: (e) => 
+		e.preventDefault()
+		@props.form.validateFields (err, values) =>
+			# console.log 'Received values of form: ', values unless err
+			
+			if @props.submit?
+			then @props.submit values
+			else undefined
 
-  render: ->
-    {
-      c_div
-      c_Form
-      c_UserName
-      c_PassWord
-      c_Commit
-    } = CFX
+	render: ->
 
-    { getFieldDecorator } = @props.form
+		{
+			c_div
+			c_Form
+			c_UserName
+			c_PassWord
+			c_Commit
+		} = CFX
 
-    loginForm =
+		{ getFieldDecorator } = @props.form
 
-      c_Form {
-        onSubmit: @handleSubmit
-        ( nb 'loginForm' )...
-      }
-      ,
+		loginForm =
 
-        c_UserName
-          decorator: getFieldDecorator
+			c_Form {
+				( nb 'loginForm' )...        
+				onSubmit: @handleSubmit
+			}
+			,
 
-        c_PassWord
-          decorator: getFieldDecorator
+				c_UserName
+					decorator: getFieldDecorator
 
-        c_Commit
-          decorator: getFieldDecorator
+				c_PassWord
+					decorator: getFieldDecorator
 
-    c_div
-      id: 'components-form-demo-normal-login'
-    ,
-      loginForm
+				c_Commit {
+					decorator: getFieldDecorator
+					(
+						if @props.Link
+						then Link: @props.Link
+						else {}
+					)...
+				}
+
+		c_div
+			id: 'components-form-demo-normal-login'
+		,
+			loginForm
 
 export default Form.create() LoginForm
