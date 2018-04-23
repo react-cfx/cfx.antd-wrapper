@@ -77,14 +77,22 @@ class EditableTable extends Component
       title: "#{v}"
       dataIndex: "#{k}"
 
-    HeaderEdit = for k, v of @props.header
-      title: "#{v}"
-      dataIndex: "#{k}"
-      render: (text, record) =>
-        c_EditableCell
-          value: text
-          onChange: @onCellChange record.key, "#{k}"
-          editPen: @props.editPen
+    HeaderEdit = (
+      Object.keys @props.header
+    )
+    .reduce (r, c) =>
+      [
+        r...
+        title: @props.header[c]
+        dataIndex: c
+        render: (text, record) =>
+          c_EditableCell
+            value: text
+            onChange: @onCellChange record.key, c
+            # onChange: @onCellChange '3', 'name'
+            editPen: @props.editPen
+      ]
+    , []
 
     if header[0]?
     then header.shift()
@@ -224,6 +232,7 @@ class EditableTable extends Component
         @setState {
           dataSource
         }
+
         @props.getDS @state.dataSource if @props.getDS?
         
         # @props.getDS @state.dataSource if typeof @props.getDS? is 'function'
