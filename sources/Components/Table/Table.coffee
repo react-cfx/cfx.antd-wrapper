@@ -63,19 +63,54 @@ class EditableTable extends Component
     # , {}
     # forOf @props.header, (k, v) =>
 
-    dataSourcekeys = for k, v of @props.dataSource
-      "#{k}"
+    # dataSourcekeys = for k, v of @props.dataSource
+    #   "#{k}"
+    dataSourcekeys = @props.dataSource.reduce (r, c, i) =>
+      [
+        r...
+        "#{i}"
+      ]
+    , []
 
-    dataSourceVals = for k, v of @props.dataSource
-      "#{v}"
+    dataSourceVals = @props.dataSource.reduce (r, c, i) =>
+      [
+        r...
+        "#{c}"
+      ]
+    , []    
 
-    header = for k, v of @props.header
-      title: "#{v}"
-      dataIndex: "#{k}"
+    # dataSourceVals = for k, v of @props.dataSource
+    #   "#{v}"
 
-    childrenHeader1 = for k, v of @props.childrenHeader
-      title: "#{v}"
-      dataIndex: "#{k}"
+    # header = for k, v of @props.header
+    #   title: "#{v}"
+    #   dataIndex: "#{k}"
+
+    header = (
+      Object.keys @props.header
+    )
+    .reduce (r, c, i) =>
+      [
+        r...
+        title: @props.header[c]
+        dataIndex: "#{c}"
+      ]
+    , []
+
+    # childrenHeader1 = for k, v of @props.childrenHeader
+    #   title: "#{v}"
+    #   dataIndex: "#{k}"
+
+    childrenHeader1 = (
+      Object.keys @props.childrenHeader
+    )
+    .reduce (r, c, i) =>
+      [
+        r...
+        title: @props.childrenHeader[c]
+        dataIndex: "#{c}"
+      ]
+    , [] 
 
     HeaderEdit = (
       Object.keys @props.header
