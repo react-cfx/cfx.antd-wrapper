@@ -20,8 +20,8 @@ export default =>
     } = CFX
 
     c_Table
-      getDS: (dataSource) =>
-        console.log dataSource
+      # getDS: (dataSource) =>
+      #   console.log dataSource
 
       getDsOne: (target) =>
         console.log target, 'target'
@@ -73,20 +73,4 @@ export default =>
         phone: '12345678900'
         email: '12345678900@qq.com'
         address: '武汉'
-      dataSource: [
-          key: '1'
-          name: '张三'
-          age: '20'
-          sex: '男'
-          phone: '12345678900'
-          email: '12345678900@qq.com'
-          address: '武汉'
-        ,  
-          key: '2'
-          name: '李四'
-          age: '10'
-          sex: '女'
-          phone: '111111'
-          email: '2222222@qq.com'
-          address: '荆门'        
-      ]
+      dataSource: []

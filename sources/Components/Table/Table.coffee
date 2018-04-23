@@ -65,19 +65,23 @@ class EditableTable extends Component
 
     # dataSourcekeys = for k, v of @props.dataSource
     #   "#{k}"
-    dataSourcekeys = @props.dataSource.reduce (r, c, i) =>
-      [
-        r...
-        "#{i}"
-      ]
-    , []
 
-    dataSourceVals = @props.dataSource.reduce (r, c, i) =>
-      [
-        r...
-        "#{c}"
-      ]
-    , []    
+    if @props.dataSource?
+    then [
+      dataSourcekeys = @props.dataSource.reduce (r, c, i) =>
+        [
+          r...
+          "#{i}"
+        ]
+      , []
+      dataSourceVals = @props.dataSource.reduce (r, c, i) =>
+        [
+          r...
+          "#{c}"
+        ]
+      , []
+    ]
+    else []   
 
     # dataSourceVals = for k, v of @props.dataSource
     #   "#{v}"
@@ -100,17 +104,23 @@ class EditableTable extends Component
     # childrenHeader1 = for k, v of @props.childrenHeader
     #   title: "#{v}"
     #   dataIndex: "#{k}"
+    if @props.childrenHeader?
+    then [
+      childrenHeader1 = (
+        Object.keys @props.childrenHeader
+      )
+      .reduce (r, c, i) =>
+        [
+          r...
+          title: @props.childrenHeader[c]
+          dataIndex: "#{c}"
+        ]
+      , [] 
+    ]
+    else [
+      childrenHeader1 = []
+    ]
 
-    childrenHeader1 = (
-      Object.keys @props.childrenHeader
-    )
-    .reduce (r, c, i) =>
-      [
-        r...
-        title: @props.childrenHeader[c]
-        dataIndex: "#{c}"
-      ]
-    , [] 
 
     HeaderEdit = (
       Object.keys @props.header
