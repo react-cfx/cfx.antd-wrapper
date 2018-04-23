@@ -22,6 +22,9 @@ export default =>
     c_Table
       getDS: (dataSource) =>
         console.log dataSource
+
+      getDsOne: (target) =>
+        console.log target, 'target'
       # handleChange: (e) =>
       #   value = e.target.value
       #   @setState {

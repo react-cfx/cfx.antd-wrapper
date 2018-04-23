@@ -132,12 +132,30 @@ class EditableTable extends Component
     if header[0]?
     then header.shift()
     else []
+    # headerKey = for k, v of @props.header
+    #   "#{k}"
+    headerKey = (
+      Object.keys @props.header
+    )
+    .reduce (r, c, i) =>
+      [
+        r...
+        "#{c}"
+      ]
+    , []
 
-    headerKey = for k, v of @props.header
-      "#{k}"
+    # headerVal = for k, v of @props.header
+    #   "#{v}"
 
-    headerVal = for k, v of @props.header
-      "#{v}"
+    headerVal = (
+      Object.keys @props.header
+    )
+    .reduce (r, c, i) =>
+      [
+        r...
+        @props.header[c]
+      ]
+    , []
 
     @FSheaderKey = headerKey[0]
 
@@ -269,6 +287,7 @@ class EditableTable extends Component
         }
 
         @props.getDS @state.dataSource if @props.getDS?
+        @props.getDsOne target if @props.getDsOne
         
         # @props.getDS @state.dataSource if typeof @props.getDS? is 'function'
       )
