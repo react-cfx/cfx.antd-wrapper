@@ -74,3 +74,5 @@ export default =>
         email: '12345678900@qq.com'
         address: '武汉'
       dataSource: []
+      addDs: =>
+        console.log '123'
