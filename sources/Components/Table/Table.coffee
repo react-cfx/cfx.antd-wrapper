@@ -319,7 +319,9 @@ class EditableTable extends Component
       dataSource: [ @state.dataSource..., newDtata ]
       count: @state.count++
     }
-    @props.addDs()
+    if @props.addDs?
+    then @props.addDs()
+    else null
 
 
   rowSelection:
