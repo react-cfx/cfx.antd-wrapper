@@ -320,10 +320,15 @@ class EditableTable extends Component
       count: @state.count++
     }
 
-    if @props.addDs?
-    then @props.addDs newDtata
-    else null
-
+    # if @props.addDs?
+    # then @props.addDs newDtata
+    # else null
+  addDs: () =>
+    newDtata = {
+      @props.addsource...
+      key: "#{@state.count++}"
+    }
+    @props.addDs newDtata
 
   rowSelection:
     onChange: (selectedRowKeys, selectedRows) =>
@@ -346,7 +351,10 @@ class EditableTable extends Component
             style:
               float: 'right'
             key: 'Button'
-            onClick: @handleAdd
+            onClick:
+              if @props.addDs?
+              then @addDs
+              else @handleAdd
             type: 'primary'
           , @props.btn
       ]
