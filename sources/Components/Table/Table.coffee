@@ -51,7 +51,8 @@ class EditableTable extends Component
     super props
     @state =
       dataSource: props.dataSource
-      count: props.dataSource.length
+      # count: props.dataSource.length
+      count: 0
       # counts: 100
 
     # (
@@ -284,6 +285,7 @@ class EditableTable extends Component
     if nextProps.dataSource?
       @setState
         dataSource: nextProps.dataSource
+        count: nextProps.dataSource.length
     @
 
   onCellChange: (key, dataIndex) =>

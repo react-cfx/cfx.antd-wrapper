@@ -73,6 +73,13 @@ export default =>
         phone: '12345678900'
         email: '12345678900@qq.com'
         address: '武汉'
-      dataSource: []
-      addDs:(newData) =>
-        console.log newData
+      dataSource: [
+          name: '张三'
+          age: '20'
+          sex: '男'
+          phone: '12345678900'
+          email: '12345678900@qq.com'
+          address: '武汉'        
+      ]
+      # addDs:(newData) =>
+      #   console.log newData
