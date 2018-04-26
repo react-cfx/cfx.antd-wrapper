@@ -51,8 +51,8 @@ class EditableTable extends Component
     super props
     @state =
       dataSource: props.dataSource
-      count: 2
-      counts: 100
+      count: props.dataSource.length
+      # counts: 100
 
     # (
     #   Object.keys @props.header
@@ -327,7 +327,7 @@ class EditableTable extends Component
   addDs: () =>
     newData = {
       @props.addsource...
-      key: "#{@state.counts++}"
+      key: "#{@state.count++}"
     }
     @props.addDs newData
 
