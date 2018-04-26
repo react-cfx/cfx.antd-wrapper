@@ -52,6 +52,7 @@ class EditableTable extends Component
     @state =
       dataSource: props.dataSource
       count: 2
+      counts: 100
 
     # (
     #   Object.keys @props.header
@@ -310,25 +311,25 @@ class EditableTable extends Component
     }
 
   handleAdd: () =>
-    newDtata = {
+    newData = {
       @props.addsource...
       key: "#{@state.count++}"
     }
 
     @setState {
-      dataSource: [ @state.dataSource..., newDtata ]
+      dataSource: [ @state.dataSource..., newData ]
       count: @state.count++
     }
 
     # if @props.addDs?
-    # then @props.addDs newDtata
+    # then @props.addDs newData
     # else null
   addDs: () =>
-    newDtata = {
+    newData = {
       @props.addsource...
-      key: "#{@state.count++}"
+      key: "#{@state.counts++}"
     }
-    @props.addDs newDtata
+    @props.addDs newData
 
   rowSelection:
     onChange: (selectedRowKeys, selectedRows) =>
