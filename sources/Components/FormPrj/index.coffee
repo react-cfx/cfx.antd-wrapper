@@ -265,9 +265,13 @@ class FormPrj extends Component
                 ]
                 else [
                   c_Input
-                    onChange: (value) -> onChange value,c.key
+                    onChange: (value) -> onChange value, c.key
                     key: "AutoComp"
                     placeholder: "请输入#{c.keys}"
+                    defaultValue:
+                      if c.defaultValue
+                      then c.defaultValue
+                      else ''
                 ]
             ]
           , []

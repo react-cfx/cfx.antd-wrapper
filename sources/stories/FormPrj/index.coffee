@@ -28,38 +28,47 @@ export default =>
 					keys: '省'
 					type: 'normal'
 					key: 'Province'
+					# defaultValue: '1'
 				,
 					keys: '市'
 					type: 'normal'
 					key: 'City'
+					# defaultValue: '2'
 				,
 					keys: '区'
 					type: 'normal'
 					key: 'Area'
+					# defaultValue: '3'
 				,
 					keys: '街道'
 					type: 'normal'
 					key: 'Street'
+					# defaultValue: '4'
 				,
 					keys: '小区'
 					type: 'normal'
 					key: 'Community'
+					defaultValue: '5'
 				,
 					keys: '栋'
 					type: 'normal'
 					key: 'Building'
+					# defaultValue: '6'
 				,
 					keys: '单元'
 					type: 'normal'
 					key: 'Unit'
+					# defaultValue: '7'
 				,
 					keys: '楼层'
 					type: 'normal'
 					key: 'Floor'
+					# defaultValue: '8'
 				,
 					keys: '房号'
 					type: 'normal'
 					key: 'HouseId'
+					# defaultValue: '9'
 			]
 			Change: (e, key) ->
 				console.log e.target.value, key
