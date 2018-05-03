@@ -66,7 +66,7 @@ export default =>
         email: '邮箱1'
         address: '地址1'
       addsource:
-        # key: '1'
+        key: '1'
         name: '张三'
         age: '20'
         sex: '男'
@@ -81,5 +81,5 @@ export default =>
           email: '12345678900@qq.com'
           address: '武汉'        
       ]
-      # addDs:(newData) =>
-      #   console.log newData
+      addDs:(newData) =>
+        console.log newData

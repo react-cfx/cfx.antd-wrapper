@@ -283,6 +283,8 @@ class EditableTable extends Component
 
   componentWillReceiveProps: (nextProps) ->
     if nextProps.dataSource?
+      count = nextProps.dataSource.length
+      dd count
       @setState
         dataSource: nextProps.dataSource
         count: nextProps.dataSource.length
@@ -327,10 +329,17 @@ class EditableTable extends Component
     # then @props.addDs newData
     # else null
   addDs: () =>
-    newData = {
-      @props.addsource...
-      key: "#{@state.count++}"
-    }
+    newData =
+      if @props.addsource.key?
+      then {
+        @props.addsource...
+        key: @props.addsource.key
+      }
+      else {
+        @props.addsource...
+        key: "#{@state.count++}"
+      }
+
     @props.addDs newData
 
   rowSelection:
