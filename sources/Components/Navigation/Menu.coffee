@@ -64,10 +64,10 @@ _Menu = enhance (props) =>
         (
           if i?
           then [
+            c_Icon 
+              type: i
             c_span {}
             ,
-              c_Icon 
-                type: i
               c_ALink
                 Link: link
                 style:
@@ -117,10 +117,10 @@ _Menu = enhance (props) =>
           title:
             if i?
             then (
+              c_Icon
+                type: i
               c_span {}
               ,
-                c_Icon
-                  type: i
                 c_ALink
                   Link: link
                   style:
