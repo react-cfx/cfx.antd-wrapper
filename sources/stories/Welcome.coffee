@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'
 import { Welcome } from '@storybook/react/demo'
 
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 
 CFX = prefixDom { Welcome }
 

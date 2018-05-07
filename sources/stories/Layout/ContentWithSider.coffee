@@ -1,4 +1,5 @@
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
+
 import Menu from '../../Components/Navigation/Menu'
 import Content from '../../Components/Layout/Content'
 import SiderContent from '../../Components/Layout/SiderContent'

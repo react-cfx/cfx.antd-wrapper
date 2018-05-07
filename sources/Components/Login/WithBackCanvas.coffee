@@ -1,4 +1,5 @@
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
+
 import CenterCard from './CenterCard'
 import { Layout } from 'antd'
 import FullPageLayers from '../Layout/FullPageLayers'

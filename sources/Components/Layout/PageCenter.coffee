@@ -1,6 +1,6 @@
 # import { ddbs as dd } from 'ddeyes'
 
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import { Layout } from 'antd'
 import {
   mapProps

@@ -1,6 +1,6 @@
 import { Card } from 'antd'
 import Form from './Form'
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 
 import {
   mapProps

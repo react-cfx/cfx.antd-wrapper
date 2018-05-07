@@ -1,4 +1,4 @@
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 
 import Menu from '../Menu/MenuOne'
 import ContentWithSider from './ContentWithSider'

@@ -3,7 +3,7 @@ import {
   Button
   Checkbox
 } from 'antd'
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import nb from './style'
 
 CFX = prefixDom {

@@ -11,7 +11,7 @@ import Login, {
   LoginCard
   CenterCard
   WithBackImg
-  WithBackCanva
+  WithBackCanvas
 } from './Components/Login'
 import {
   Menu
@@ -27,6 +27,6 @@ export {
   LoginCard
   CenterCard
   WithBackImg
-  WithBackCanvs
+  WithBackCanvas
   Menu
 }

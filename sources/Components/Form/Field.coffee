@@ -1,7 +1,7 @@
 # import { ddbs as dd } from 'ddeyes'
 import { Form } from 'antd'
 FormItem = Form.Item
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import {
   mapProps
   compose

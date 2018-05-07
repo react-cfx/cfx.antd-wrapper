@@ -2,7 +2,7 @@
 import PageCenter from '../Layout/PageCenter'
 import LoginCard from './Card'
 
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 
 CFX = prefixDom {
   PageCenter

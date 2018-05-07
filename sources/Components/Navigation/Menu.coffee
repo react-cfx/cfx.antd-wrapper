@@ -1,6 +1,7 @@
 # import { ddbs as dd } from 'ddeyes'
 import React from 'react'
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
+
 import { Menu, Icon } from 'antd'
 SubMenu = Menu.SubMenu
 MenuItem = Menu.Item

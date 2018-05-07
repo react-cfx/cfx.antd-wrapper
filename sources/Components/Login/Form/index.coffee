@@ -1,6 +1,6 @@
 import React from 'react'
 import { Form } from 'antd'
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import UserName from './UserName'
 import PassWord from './PassWord'
 import Commit from './Commit'

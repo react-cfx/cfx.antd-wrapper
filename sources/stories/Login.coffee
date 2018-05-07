@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react'
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 
 import {
   LoginForm

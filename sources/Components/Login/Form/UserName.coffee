@@ -3,7 +3,7 @@ import {
   Input
   Icon
 } from 'antd'
-import { prefixDom } from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 
 CFX = prefixDom {
   Input

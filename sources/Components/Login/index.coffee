@@ -1,5 +1,3 @@
-import { prefixDom } from 'cfx.dom'
-
 import LoginForm from './Form'
 import LoginCard from './Card'
 import CenterCard from './CenterCard'
