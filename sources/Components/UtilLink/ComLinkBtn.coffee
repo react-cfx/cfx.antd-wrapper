@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 # import { ddbs as dd } from 'ddeyes'
 import prefixDom from 'cfx.react.dom'
-import getLinks from 'cfx.react.link'
+import getLinks from 'cfx.react.link/dist/main.js'
 
 CFX = prefixDom {}
 

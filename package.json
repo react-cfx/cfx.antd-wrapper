@@ -1,7 +1,7 @@
 {
   "name": "cfx.antd-wrapper-ch",
   "version": "0.0.0",
-  "main": "dist/bundle.js",
+  "main": "dist/main.js",
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
@@ -10,15 +10,16 @@
     "postinstall": "npm run build"
   },  
   "devDependencies": {
-    "@storybook/addon-info": "^3.2.19",
-    "@storybook/addon-options": "^3.2.19",
-    "@storybook/react": "^3.2.19",
+    "@storybook/addon-info": "^3.4.3",
+    "@storybook/addon-options": "^3.4.3",
+    "@storybook/react": "^3.4.3",
     "cfx.simple-build-tool": "0.0.12",
     "ddeyes": "0.2.1",
     "stylus": "^0.54.5"
   },
   "dependencies": {
     "antd": "^3.5.0",
+    "babel-core": "^6.26.3",
     "cfx.react.dom": "^0.0.4",
     "cfx.react.style": "^0.0.4",
     "cfx.require-plugin-coffee": "^0.2.1",
@@ -38,6 +39,6 @@
     "rollup-plugin-cleanup": "^3.0.0-beta.1",
     "rollup-plugin-image": "^1.0.2",
     "rollup-plugin-re": "^1.0.7",
-    "cfx.react.link": "0.0.6"
+    "cfx.react.link": "0.0.7"
   }
 }

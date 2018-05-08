@@ -1,5 +1,5 @@
 import { linkTo } from '@storybook/addon-links'
-import { getLinks } from 'cfx.react.link'
+import { getLinks } from 'cfx.react.link/dist/main.js'
 import prefixDom from 'cfx.react.dom'
 
 export default (actions = {}) => getLinks

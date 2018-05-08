@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import prefixDom from 'cfx.react.dom'
-import getLinks from 'cfx.react.link'
+import getLinks from 'cfx.react.link/dist/main.js'
 
 CFX = prefixDom {}
 
