@@ -1,13 +1,13 @@
 import React from 'react'
 import { Form } from 'antd'
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import UserName from './UserName'
 import PassWord from './PassWord'
 import Commit from './Commit'
 # import './index.css'
 import nb from './style'
 
-CFX = cfxify {
+CFX = prefixDom {
 	'div'
 	Form
 	UserName

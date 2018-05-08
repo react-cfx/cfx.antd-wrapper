@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import {
   Modal
   Button
@@ -12,7 +12,7 @@ import {
 
 FormItem = Form.Item
 
-CFX = cfxify {
+CFX = prefixDom {
   'div'
   'p'
   'a'

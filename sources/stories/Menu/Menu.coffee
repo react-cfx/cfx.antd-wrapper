@@ -1,12 +1,12 @@
 import React from 'react'
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import {
   Menu
   Icon
 } from 'antd'
 MenuItem = Menu.Item
 
-CFX = cfxify {
+CFX = prefixDom {
   Menu
   MenuItem
   Icon

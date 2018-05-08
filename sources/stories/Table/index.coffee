@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react'
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import { Table } from '../../Components/Table'
 
-CFX = cfxify {
+CFX = prefixDom {
   'a'
   Table
 }

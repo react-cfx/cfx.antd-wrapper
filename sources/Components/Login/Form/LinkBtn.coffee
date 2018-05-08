@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import cfxify from 'cfx.dom'
-# import getLinks from 'cfx.link'
+import prefixDom from 'cfx.react.dom'
 import { Button } from 'antd'
 
-CFX = cfxify {
+CFX = prefixDom {
   Button
 }
 
@@ -26,7 +25,7 @@ export default ({
   Link
 }) =>
   # console.log link, location
-  CFX = cfxify {
+  CFX = prefixDom {
     Btn
   }
   {

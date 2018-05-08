@@ -1,9 +1,9 @@
 import { storiesOf } from '@storybook/react'
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import FormPrj from '../../Components/FormPrj/index'
 import { Select } from 'antd'
 Option = Select.Option
-CFX = cfxify {
+CFX = prefixDom {
 	FormPrj
 	Select
 	Option

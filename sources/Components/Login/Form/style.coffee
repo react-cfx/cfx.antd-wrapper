@@ -1,4 +1,4 @@
-import styl from 'cfx.style'
+import styl from 'cfx.react.style'
 
 style =
   loginForm:

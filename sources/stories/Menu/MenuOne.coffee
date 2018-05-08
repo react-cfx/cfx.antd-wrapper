@@ -1,9 +1,9 @@
 import React from 'react'
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import Menu from '../../Components/Navigation/Menu'
 import getLinks from '../../Components/UtilLink/ComLinkBtn'
 import Links from '../../Components/UtilLink/Links'
-CFX = cfxify {
+CFX = prefixDom {
   Menu
 }
 

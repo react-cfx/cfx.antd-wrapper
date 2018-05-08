@@ -1,6 +1,6 @@
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 
-CFX = cfxify {
+CFX = prefixDom {
   'a'
 }
 
@@ -20,7 +20,7 @@ export default ({
   style
   children
 }) =>
-  CFX = cfxify {
+  CFX = prefixDom {
     ALink
   }
   

@@ -1,8 +1,8 @@
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import CenterCard from './CenterCard'
 import BackgroundImg from './background.jpg'
 
-CFX = cfxify {
+CFX = prefixDom {
   CenterCard
 }
 

@@ -1,13 +1,13 @@
 # import { ddbs as dd } from 'ddeyes'
 import { Form } from 'antd'
 FormItem = Form.Item
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import {
   mapProps
   compose
 } from 'recompose'
 
-CFX = cfxify {
+CFX = prefixDom {
   FormItem
 }
 

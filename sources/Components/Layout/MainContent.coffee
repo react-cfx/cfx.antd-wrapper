@@ -1,10 +1,10 @@
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import { Layout, Breadcrumb } from 'antd'
 import nb from './style'
 { Header, Content, Footer } = Layout
 BreadcrumbItem = Breadcrumb.Item
 
-CFX = cfxify {
+CFX = prefixDom {
   'div'
   'p'
   'h1'

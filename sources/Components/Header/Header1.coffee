@@ -1,10 +1,10 @@
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import React,{ Component } from 'react'
 import { Layout, Icon, Row, Col, Badge } from 'antd'
 import nb from './style'
 { Header, Content, Footer } = Layout
 
-CFX = cfxify {
+CFX = prefixDom {
   'div'
   Layout
   Icon

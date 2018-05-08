@@ -1,10 +1,10 @@
 import { storiesOf } from '@storybook/react'
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import Cards from '../../Components/Cards'
 import List from '../../Components/Cards/List'
 import { Card } from 'antd'
 
-CFX = cfxify {
+CFX = prefixDom {
   Card
   Cards
   List

@@ -1,7 +1,7 @@
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import Header from '../../Components/Page/Header'
 
-CFX = cfxify {
+CFX = prefixDom {
   Header
   'h1'
 }

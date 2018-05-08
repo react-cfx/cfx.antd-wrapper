@@ -2,6 +2,13 @@
   "name": "cfx.antd-wrapper-ch",
   "version": "0.0.0",
   "main": "dist/bundle.js",
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "rebuild": "gulp rebuild",
+    "test": "make rebuild; make server_storybook",
+    "postinstall": "npm run build"
+  },  
   "devDependencies": {
     "@storybook/addon-info": "^3.2.19",
     "@storybook/addon-options": "^3.2.19",
@@ -11,19 +18,26 @@
     "stylus": "^0.54.5"
   },
   "dependencies": {
-    "antd": "^3.0.3",
-    "cfx.dom": "^0.1.0",
-    "cfx.style": "^0.0.4",
-    "normalize.css": "^7.0.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-particles-js": "^2.1.0",
+    "antd": "^3.5.0",
+    "cfx.react.dom": "^0.0.4",
+    "cfx.react.style": "^0.0.4",
+    "cfx.require-plugin-coffee": "^0.2.1",
+    "cfx.rollup-plugin-coffee2": "^0.2.4",
+    "normalize.css": "^8.0.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-better-rollup": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sequence": "^1.0.0",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-particles-js": "^2.1.3",
     "recompose": "^0.27.0",
-    "reset-css": "^2.2.1",
+    "reset-css": "^3.0.0",
     "rollup": "^0.58.2",
-    "rollup-plugin-cleanup": "3.0.0-beta.1",
-    "rollup-plugin-image": "1.0.2",
+    "rollup-plugin-cleanup": "^3.0.0-beta.1",
+    "rollup-plugin-image": "^1.0.2",
     "rollup-plugin-re": "^1.0.7",
-    "cfx.link": "0.0.5"
+    "cfx.react.link": "0.0.6"
   }
 }

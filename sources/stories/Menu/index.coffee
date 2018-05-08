@@ -1,9 +1,9 @@
 import { storiesOf } from '@storybook/react'
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import MenuOne from './MenuOne'
 import MenuTwo from './MenuTwo'
 
-CFX = cfxify {
+CFX = prefixDom {
   MenuOne
   MenuTwo
 }

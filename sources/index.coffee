@@ -52,7 +52,7 @@ export {
   LoginCard
   CenterCard
   WithBackImg
-  WithBackCanvs
+  WithBackCanva
   Menu
   Table
   Steps

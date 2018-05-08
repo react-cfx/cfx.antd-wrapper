@@ -2,9 +2,9 @@ import { storiesOf } from '@storybook/react'
 import Header from '../Components/Header/Header'
 import MainContent from '../Components/Layout/MainContent'
 
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 
-CFX = cfxify { Header,MainContent }
+CFX = prefixDom { Header,MainContent }
 
 export default ->
 

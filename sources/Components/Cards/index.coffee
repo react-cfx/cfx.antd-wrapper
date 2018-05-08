@@ -1,4 +1,4 @@
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import { linkTo } from '@storybook/addon-links'
 import {
   Row
@@ -12,7 +12,7 @@ import {
 
 FormItem = Form.Item
 
-CFX = cfxify {
+CFX = prefixDom {
   'div' 
   Row
   Col

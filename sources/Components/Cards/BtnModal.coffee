@@ -1,7 +1,7 @@
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import Pop from './Modal'
 
-CFX = cfxify {
+CFX = prefixDom {
   Pop
 }
 

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import cfxify from 'cfx.dom'
-import getLinks from 'cfx.link'
+import prefixDom from 'cfx.react.dom'
+import getLinks from 'cfx.react.link'
 
-CFX = cfxify {}
+CFX = prefixDom {}
 
 export default (Link) => ({
   location

@@ -3,7 +3,7 @@ import {
   Button
   Checkbox
 } from 'antd'
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import nb from './style'
 import LinkBtn from './LinkBtn'
 import Link from '../../../stories/Links'
@@ -14,7 +14,7 @@ Commit = ({
 }) =>
   render: ->
 
-    CFX = cfxify {
+    CFX = prefixDom {
       'a'
       'div'
       Button

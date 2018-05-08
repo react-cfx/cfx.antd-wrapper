@@ -1,10 +1,10 @@
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import { Card } from 'antd'
 import Header from './Header'
 import Contents from '../Content'
 import PageContent from '../Page/Content'
 
-CFX = cfxify {
+CFX = prefixDom {
   'div'
   Card
   Header

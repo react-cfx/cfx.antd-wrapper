@@ -1,4 +1,4 @@
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import CenterCard from './CenterCard'
 import { Layout } from 'antd'
 import FullPageLayers from '../Layout/FullPageLayers'
@@ -7,7 +7,7 @@ import Particles from 'react-particles-js'
 import particlesConfig from './particlesConfig'
 import BackgroundImg from './background.jpg'
 
-CFX = cfxify {
+CFX = prefixDom {
   'img'
   Layout
   Particles

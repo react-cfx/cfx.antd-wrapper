@@ -1,8 +1,8 @@
-import cfxify from 'cfx.dom'
+import prefixDom from 'cfx.react.dom'
 import { Card } from 'antd'
 import PageContent from '../Page/Content'
 
-CFX = cfxify {
+CFX = prefixDom {
   Card
   PageContent
 }
