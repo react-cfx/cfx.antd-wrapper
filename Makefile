@@ -7,6 +7,7 @@ docker:
 		-ti \
 		-p 3080:80 \
 		-p 3088:8080 \
+		-p 3030:3000 \
 		-p 3000:8000 \
 		-v $$(pwd):/root/${pjName} \
 		mooxe/node \
@@ -14,9 +15,9 @@ docker:
 
 in:
 	docker exec \
-		-ti \·
+		-ti \
 		${pjName} \
-		/bin/bash		
+		/bin/bash
 
 export PATH := ./node_modules/.bin:$(PATH)
 

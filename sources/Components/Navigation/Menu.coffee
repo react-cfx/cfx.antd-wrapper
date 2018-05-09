@@ -117,15 +117,17 @@ _Menu = enhance (props) =>
           title:
             if i?
             then (
-              c_Icon
-                type: i
-              c_span {}
-              ,
-                c_ALink
-                  Link: link
-                  style:
-                    color: 'white'
-                  name: c
+              [
+                c_Icon
+                  type: i
+                c_span {}
+                ,
+                  c_ALink
+                    Link: link
+                    style:
+                      color: 'white'
+                    name: c
+              ]
             )
             else (
               c_ALink

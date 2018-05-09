@@ -9,7 +9,7 @@ style =
     borderBottom: '1px solid #e8e8e8'
   CircleContainer:
     width: '48px'
-    height: '64px'
+    height: '63px'
     marginRight: '20pt'
     backgroundColor: '#fff'
     float: 'right'
@@ -28,8 +28,11 @@ style =
     position: 'absolute'
     left: '30px'
   SettingContainer:
+    ':hover':
+      backgroundColor: 'gray'  
+    transition: 'background-color 0.5s'
     width: '48px'
-    height: '64px'
+    height: '63px'
     marginRight: '14pt'
     backgroundColor: '#fff'
     float: 'right'
@@ -40,11 +43,14 @@ style =
     fontSize: '20px'
     position: 'absolute'
     top: '23px'
-    right: '18px'
+    right: '14px'
     cursor: 'pointer'
   BellContainer:
+    ':hover':
+      backgroundColor: 'gray'
+      transition: 'background-color 0.5s'
     width: '48px'
-    height: '64px'
+    height: '63px'
     marginRight: '14pt'
     backgroundColor: '#fff'
     float: 'right'
