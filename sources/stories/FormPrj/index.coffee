@@ -29,13 +29,26 @@ export default =>
 					keys: '省'
 					type: 'select'
 					key: 'Province'
-					defaultValue: '1'
-					option:
-						value: '支付宝'
-						value: '微信'
+					defaultValue: '支付宝'
+					options: [
+						'支付宝'
+						'微信'
+						'现金'
+					]
 					style:
 						width: '110px'
 				,
+					keys: '省'
+					type: 'select'
+					key: 'Province'
+					options: [
+						'1'
+						'2'
+						'3'
+					]
+					style:
+						width: '110px'
+				,				
 					keys: '市'
 					type: 'normal'
 					key: 'City'

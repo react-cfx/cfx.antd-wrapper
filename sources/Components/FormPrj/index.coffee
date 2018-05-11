@@ -165,7 +165,7 @@ class FormPrj extends Component
                       key: 'Input'
                       onBlur: (value) -> onChange value,c.key
                       addonAfter: @props.selectAfter
-                      placeholder: '请输入租赁时间'
+                      placeholder: '请输入租赁时间'    
                   ]
                   else if c.type is 'number'
                   then [
@@ -215,7 +215,7 @@ class FormPrj extends Component
                 then [
                   c_DatePicker
                     key: "select"
-                    onChange: (date,dateString) -> onChangeDate date,dateString,c.key
+                    onChange: (date, dateString) -> onChangeDate date,dateString,c.key
                     style:
                       width: '396px'
                     placeholder: "请输入#{c.keys}"
@@ -232,32 +232,28 @@ class FormPrj extends Component
                 then [
                   c_Select
                     key: 'Select'
-                    defaultValue: '支付宝'
                     onChange:(value) ->
                       onChange value, c.key
                     style:
                       if c.style?
                       then c.style
-                      else {}  
-                    # (
-                    #   if c.style
-                    #   then [
-                    #     style: c.style
-                    #   ]
-                    #   else [
-                    #     style: c.style
-                    #   ]
-                    # )...
+                      else {}
+                    defaultValue:
+                      if c.defaultValue
+                      then c.defaultValue
+                      else ''
                   ,
-                    c_Option
-                      value: c.option.value
-                    , c.option.value
-                    # c_Option
-                    #   value: '微信'
-                    # , '微信'
-                    # c_Option
-                    #   value: '网上银行'
-                    # , '网上银行'
+                    if c.type is 'select'
+                    then [
+                      c.options.reduce (r, c)=>
+                        [
+                          r...
+                          c_Option
+                            value: c
+                          , c
+                        ]
+                      , []  
+                    ]
                 ]
                 else if c.type is 'inputSelect'
                 then [
