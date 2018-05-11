@@ -250,14 +250,14 @@ class FormPrj extends Component
                     # )...
                   ,
                     c_Option
-                      value: '支付宝'
-                    , '支付宝'
-                    c_Option
-                      value: '微信'
-                    , '微信'
-                    c_Option
-                      value: '网上银行'
-                    , '网上银行'
+                      value: c.option.value
+                    , c.option.value
+                    # c_Option
+                    #   value: '微信'
+                    # , '微信'
+                    # c_Option
+                    #   value: '网上银行'
+                    # , '网上银行'
                 ]
                 else if c.type is 'inputSelect'
                 then [

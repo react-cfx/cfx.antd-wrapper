@@ -30,6 +30,9 @@ export default =>
 					type: 'select'
 					key: 'Province'
 					defaultValue: '1'
+					option:
+						value: '支付宝'
+						value: '微信'
 					style:
 						width: '110px'
 				,
