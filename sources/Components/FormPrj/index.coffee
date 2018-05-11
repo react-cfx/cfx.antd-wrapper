@@ -87,8 +87,8 @@ class FormPrj extends Component
       else (Change) =>
         console.log 'pls run Change function!'
         console.log Change
-    onChange = (value,key) ->
-      Change value,key
+    onChange = (value, key) ->
+      Change value, key
       
     if @props.Layout is 'vertical'
     then [
@@ -171,7 +171,7 @@ class FormPrj extends Component
                   then [
                     c_InputNumber
                       key: 'InputNumber'
-                      onBlur: (value) -> onChange value,c.key
+                      onBlur: (value) -> onChange value, c.key
                       style:
                         width: '196px'
                       min: '0'
@@ -233,9 +233,21 @@ class FormPrj extends Component
                   c_Select
                     key: 'Select'
                     defaultValue: '支付宝'
-                    onChange: (value) -> onChangeSelect value,c.key
+                    onChange:(value) ->
+                      onChange value, c.key
                     style:
-                      width: '120px'
+                      if c.style?
+                      then c.style
+                      else {}  
+                    # (
+                    #   if c.style
+                    #   then [
+                    #     style: c.style
+                    #   ]
+                    #   else [
+                    #     style: c.style
+                    #   ]
+                    # )...
                   ,
                     c_Option
                       value: '支付宝'
@@ -269,7 +281,7 @@ class FormPrj extends Component
                 ]
                 else [
                   c_Input
-                    onChange: (value) -> onChange value, c.key
+                    onChange: (e) -> onChange e.target.value, c.key
                     key: "AutoComp"
                     placeholder: "请输入#{c.keys}"
                     defaultValue:

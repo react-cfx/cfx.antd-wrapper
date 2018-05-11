@@ -24,12 +24,14 @@ export default =>
 		} = CFX
 
 		c_FormPrj
-			Layout: 'vertical'
+			# Layout: 'vertical'
 			title: [
 					keys: '省'
-					type: 'normal'
+					type: 'select'
 					key: 'Province'
 					defaultValue: '1'
+					style:
+						width: '110px'
 				,
 					keys: '市'
 					type: 'normal'
@@ -71,8 +73,8 @@ export default =>
 					key: 'HouseId'
 					defaultValue: '9'
 			]
-			Change: (e, key) ->
-				console.log e.target.value, key 
+			Change: (value, key) ->
+				console.log value, key 
 
 		# [
 		#   c_FormPrj
