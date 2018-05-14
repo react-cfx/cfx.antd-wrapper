@@ -35,8 +35,8 @@ export default =>
 						'微信'
 						'现金'
 					]
-					style:
-						width: '110px'
+					# style:
+					# 	width: '110px'
 				,
 					keys: '省'
 					type: 'select'
