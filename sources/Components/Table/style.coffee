@@ -1,4 +1,4 @@
-import styl from 'cfx.react.style'
+import styl from 'cfx.react.style/dist/index'
 
 style =
 
