@@ -50,7 +50,7 @@ export default =>
 						width: '110px'
 				,				
 					keys: '市'
-					type: 'normal'
+					type: 'date'
 					key: 'City'
 					defaultValue: '2'
 				,
