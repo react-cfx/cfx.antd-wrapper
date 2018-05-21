@@ -181,7 +181,7 @@ class FormPrj extends Component
                   ]
                   else [
                     c_Input
-                      onBlur: (value) -> onChange value,c.key
+                      onChange: (e) -> onChange e.target.value,c.key
                       key: "AutoComp"
                       placeholder: "请输入#{c.keys}"
                       defaultValue:

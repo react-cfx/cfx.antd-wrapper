@@ -24,7 +24,7 @@ export default =>
 		} = CFX
 
 		c_FormPrj
-			# Layout: 'vertical'
+			Layout: 'vertical'
 			title: [
 					keys: '省'
 					type: 'select'
