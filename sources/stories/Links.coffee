@@ -7,12 +7,21 @@ export default (actions = {}) => getLinks
     'Layout'
     'Content'
   ]
+  Welcome: [
+    'Welcome'
+    'to Storybook'
+  ]
 ,
   story: linkTo
 , (key) =>
 
   switch key
     when 'onSubmitLinks'
+      action: (key) =>
+        if actions[key]?
+        then actions[key]()
+        else undefined
+    when 'Welcome'
       action: (key) =>
         if actions[key]?
         then actions[key]()

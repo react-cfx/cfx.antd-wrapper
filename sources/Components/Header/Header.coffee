@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import prefixDom from 'cfx.react.dom'
+import { domWithLink } from 'cfx.react.link.dom'
 import nb from './style'
 import {
   Icon
@@ -14,6 +15,7 @@ CFX = prefixDom {
   Icon
   Badge
   Header
+  domWithLink
 }
 
 class Header extends Component
@@ -25,13 +27,14 @@ class Header extends Component
     @
 
   render: ->
-    console.log 'Header:',@
+
     {
       c_div
       c_i
       c_Icon
       c_Badge
       c_Header
+      c_domWithLink
     } = CFX
 
     c_div {
@@ -45,11 +48,14 @@ class Header extends Component
         
       }
       ,
-        c_div {
-          key: 'circle'
-          ( nb 'Circle' )...
-          onClick: @props.onClick
-        }
+        c_domWithLink
+          Link: @props.Link
+          domObj: => 
+            c_div {
+              key: 'circle'
+              onClick: @props.onClick
+              ( nb 'Circle' )...
+            }
         c_i {
           key: 'word'
           ( nb 'Word' )...

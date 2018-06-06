@@ -30,10 +30,16 @@
     "cfx.react.link"
   ]
   devdep: [
+    "@babel/runtime"
+    "@storybook/addon- links"
+    "babel-core"
+    "@storybook/addon-info"
+    "@storybook/addon-options"
+    "@storybook/react"
     "autod"
-    "stylus"
-    "ddeyes"
     "cfx.simple-build-tool"
+    "ddeyes"
+    "stylus"
   ]
   exclude: [
     './node_modules'
