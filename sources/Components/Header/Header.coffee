@@ -65,19 +65,19 @@ class Header extends Component
         }
 
       ##
-      c_div {
-        key: 'bell'
-        ( nb 'BellContainer' )...
-      }   
-      ,
-        c_Badge
-          key: 'num'
-          count: 99
-        ,
-          c_Icon {
-            type:"bell"
-            ( nb 'Bell' )...
-          }
+      # c_div {
+      #   key: 'bell'
+      #   ( nb 'BellContainer' )...
+      # }   
+      # ,
+      #   c_Badge
+      #     key: 'num'
+      #     count: 99
+      #   ,
+      #     c_Icon {
+      #       type:"bell"
+      #       ( nb 'Bell' )...
+      #     }
             
 export default Header
 
