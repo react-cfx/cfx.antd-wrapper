@@ -234,6 +234,7 @@ class FormPrj extends Component
                     key: 'Select'
                     onChange:(value) ->
                       onChange value, c.key
+                    placeholder: "请输入#{c.keys}"  
                     style:
                       if c.style?
                       then c.style
