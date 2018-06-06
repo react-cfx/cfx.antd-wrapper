@@ -42,6 +42,7 @@ class Header extends Component
       c_div {
         key: 'CircleContainer'
         ( nb 'CircleContainer' )...
+        onClick: @props.onClick
       }
       ,
         c_div {
