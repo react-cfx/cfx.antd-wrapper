@@ -16,6 +16,5 @@ export default ->
     { c_Header } = CFX
 
     c_Header
-      name: '123'
       onClick: => console.log '123'
 
