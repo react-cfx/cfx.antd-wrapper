@@ -15,7 +15,7 @@ import BtnModal from './BtnModal'
 import Content from './Content'
 import PageContent from './Page/PageContent'
 import Page from './Page'
-import Header from './Header'
+import Header from './Header/index'
 import Login from './Login'
 import FormPrj from './FormPrj/index'
 

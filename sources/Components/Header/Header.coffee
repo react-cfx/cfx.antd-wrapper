@@ -23,9 +23,9 @@ class Header extends Component
       backgroundBell: '#fff'
       backgroundUser: '#fff'
     @
-  
-  render: ->
 
+  render: ->
+    console.log 'Header:',@
     {
       c_div
       c_i
@@ -42,12 +42,13 @@ class Header extends Component
       c_div {
         key: 'CircleContainer'
         ( nb 'CircleContainer' )...
-        onClick: @props.onClick
+        
       }
       ,
         c_div {
           key: 'circle'
           ( nb 'Circle' )...
+          onClick: @props.onClick
         }
         c_i {
           key: 'word'

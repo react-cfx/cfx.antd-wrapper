@@ -1,12 +1,12 @@
 import { storiesOf } from '@storybook/react'
 import prefixDom from 'cfx.react.dom'
-import Header from '../../Components/Header'
+import Header from '../../Components/Header/Header'
 
 CFX = prefixDom {
   Header
 }
 
-export default =>
+export default ->
 
   storiesOf 'Header', module
 
@@ -14,5 +14,8 @@ export default =>
   , =>
 
     { c_Header } = CFX
-    c_Header {}
+
+    c_Header
+      name: '123'
+      onClick: => console.log '123'
 
