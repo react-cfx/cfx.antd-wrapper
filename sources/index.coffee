@@ -12,7 +12,7 @@ import {
   PageContent
 } from './Components/Page'
 import ContentPage from './Components/Content'
-import Header from './Components/Header'
+import Header from './Components/Header/Header'
 import Login, {
   LoginForm
   LoginCard

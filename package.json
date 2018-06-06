@@ -1,7 +1,7 @@
 {
   "name": "cfx.antd-wrapper-ch",
-  "version": "0.0.2",
-  "main": "dist/main.js",
+  "version": "0.0.3",
+  "main": "dist/index.js",
   "scripts": {
     "autod": "autod",
     "clean": "gulp clean",

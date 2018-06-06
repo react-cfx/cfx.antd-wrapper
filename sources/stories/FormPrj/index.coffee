@@ -49,10 +49,15 @@ export default =>
 					style:
 						width: '110px'
 				,				
-					keys: '市'
-					type: 'date'
+					keys: '租期'
+					type: 'number'
 					key: 'City'
-					defaultValue: '2'
+					min: 1
+					max: 12
+					step: 1
+					defaultValue: '1'
+					width: '395.83px'
+					formatter: (value) => "#{value}（个月）"
 				,
 					keys: '区'
 					type: 'normal'

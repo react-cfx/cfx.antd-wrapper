@@ -268,13 +268,14 @@ class FormPrj extends Component
                 then [
                   c_InputNumber
                     key: 'InputNumber'
-                    onBlur: (value) -> onChange value, c.key
+                    onChange: (value) -> onChange value, c.key
+                    defaultValue: c.defaultValue
+                    min: c.min
+                    max: c.max
+                    step: c.step
                     style:
-                      width: '196px'
-                    min: '0'
-                    max: '6000'
-                    step: '50'
-                    formatter: (value) => "￥    #{value}"
+                      width: c.width
+                    formatter: c.formatter
                 ]
                 else [
                   c_Input
