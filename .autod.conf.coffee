@@ -31,7 +31,7 @@
   ]
   devdep: [
     "@babel/runtime"
-    "@storybook/addon- links"
+    "@storybook/addon-links"
     "babel-core"
     "@storybook/addon-info"
     "@storybook/addon-options"
