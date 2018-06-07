@@ -56,8 +56,9 @@ export default =>
 					max: 12
 					step: 1
 					defaultValue: '1'
-					width: '395.83px'
-					formatter: (value) => "#{value}（个月）"
+					width: '337.25px'
+					children: '月'
+					formatter: (value) => value
 				,
 					keys: '区'
 					type: 'normal'

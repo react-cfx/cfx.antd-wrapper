@@ -16,6 +16,7 @@ Option = Select.Option
 FormItem = Form.Item
 
 CFX = prefixDom {
+  'span'
   'div'
   Button
   Form
@@ -40,6 +41,7 @@ class FormPrj extends Component
   render: ->
 
     {
+      c_span
       c_div
       c_Form
       c_Button
@@ -199,7 +201,7 @@ class FormPrj extends Component
         onSubmit: @handleSubmit
         style:
           margin: '40px auto 0'
-          maxWidth: '500px'
+          maxWidth: '450px'
         (
           @props.title.reduce (r, c , i) =>
             [
@@ -268,7 +270,7 @@ class FormPrj extends Component
                 then [
                   c_InputNumber
                     key: 'InputNumber'
-                    onChange: (value) -> onChange value, c.key
+                    onChange: (value) -> onChange value.toString(), c.key
                     defaultValue: c.defaultValue
                     min: c.min
                     max: c.max
@@ -276,6 +278,11 @@ class FormPrj extends Component
                     style:
                       width: c.width
                     formatter: c.formatter
+
+                  c_span
+                    style:
+                      marginLeft: '5px'
+                  , c.children
                 ]
                 else [
                   c_Input
