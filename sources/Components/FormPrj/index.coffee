@@ -134,7 +134,7 @@ class FormPrj extends Component
                       key: "select"
                       onChange: (date,dateString) -> onChangeDate date, dateString, c.key
                       style:
-                        width: '396px'
+                        width: '356.25px'
                       placeholder: "请输入#{c.keys}"
                   ]
                   else if c.type is 'address'
@@ -219,7 +219,7 @@ class FormPrj extends Component
                     key: "select"
                     onChange: (date, dateString) -> onChange dateString, c.key
                     style:
-                      width: '396px'
+                      width: '356.25px'
                     placeholder: "请输入#{c.keys}"
                 ]
                 else if c.type is 'address'
@@ -228,6 +228,7 @@ class FormPrj extends Component
                     key: "Cascader"
                     onChange: (value) -> onChangeAddress value,c.key
                     options: @props.options
+                    defaultValue: c.defaultValue
                     placeholder: "请输入#{c.keys}"
                 ]
                 else if c.type is 'select'
@@ -279,10 +280,10 @@ class FormPrj extends Component
                       width: c.width
                     formatter: c.formatter
 
-                  c_span
-                    style:
-                      marginLeft: '5px'
-                  , c.children
+                  # c_span
+                  #   style:
+                  #     marginLeft: '5px'
+                  # , c.children
                 ]
                 else [
                   c_Input

@@ -39,15 +39,22 @@ export default =>
 					# 	width: '110px'
 				,
 					keys: '省'
-					type: 'select'
+					type: 'address'
 					key: 'Province'
-					options: [
-						'1'
-						'2'
-						'3'
-					]
-					style:
-						width: '110px'
+					title: [
+							# keys: '省'
+							# type: 'normal'
+							# key: 'province'
+							# defaultValue: @props.defaultValueProvince
+						# ,
+							# keys: '市'
+							# type: 'normal'
+							# key: 'city'
+							# defaultValue: @props.defaultValueCity
+						# ,
+							keys: '区'
+							type: 'address'
+							key: 'district'
 				,				
 					keys: '租期'
 					type: 'number'
