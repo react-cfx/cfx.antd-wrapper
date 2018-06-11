@@ -1,4 +1,4 @@
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import React, { Component } from 'react'
 import {
   Form
@@ -15,7 +15,7 @@ import {
 Option = Select.Option
 FormItem = Form.Item
 
-CFX = prefixDom {
+CFX = cfxify {
   'span'
   'div'
   Button

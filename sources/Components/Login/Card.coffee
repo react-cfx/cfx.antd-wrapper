@@ -1,13 +1,13 @@
 import { Card } from 'antd'
 import Form from './Form'
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 
 import {
   mapProps
   compose
 } from 'recompose'
 
-CFX = prefixDom {
+CFX = cfxify {
   Card
   Form
 }

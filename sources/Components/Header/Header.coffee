@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import { domWithLink } from 'cfx.react.link.dom'
 import nb from './style'
 import {
@@ -9,7 +9,7 @@ import {
 } from 'antd'
 { Header } = Layout
 
-CFX = prefixDom {
+CFX = cfxify {
   'div'
   'i'
   Icon

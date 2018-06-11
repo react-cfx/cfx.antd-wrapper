@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react'
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import Steps from '../../Components/Steps'
 
-CFX = prefixDom {
+CFX = cfxify {
   Steps
 }
 

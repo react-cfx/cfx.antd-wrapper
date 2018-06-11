@@ -1,5 +1,5 @@
 import { storiesOf } from '@storybook/react'
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import Link from './Links'
 import getLinks from './LoginGetLinks'
 
@@ -11,7 +11,7 @@ import {
   WithBackCanva as Login
 } from '../Components/Login'
 
-CFX = prefixDom {
+CFX = cfxify {
   LoginForm
   LoginCard
   Login

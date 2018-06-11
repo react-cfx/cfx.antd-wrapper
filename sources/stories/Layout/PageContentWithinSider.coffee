@@ -1,10 +1,10 @@
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 
 import Menu from '../Menu/MenuOne'
 import ContentWithSider from './ContentWithSider'
 import SiderContent from '../../Components/Layout/SiderContent'
 
-CFX = prefixDom {
+CFX = cfxify {
   Menu
   ContentWithSider
   SiderContent

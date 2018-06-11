@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 # import { ddbs as dd } from 'ddeyes'
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import getLinks from 'cfx.react.link'
 
-CFX = prefixDom {}
+CFX = cfxify {}
 
 export default ({ Link,kind }) => ({
 	location

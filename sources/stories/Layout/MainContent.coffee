@@ -1,7 +1,7 @@
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import MainContent from '../../Components/Layout/MainContent'
 
-CFX = prefixDom {
+CFX = cfxify {
   MainContent
 }
 

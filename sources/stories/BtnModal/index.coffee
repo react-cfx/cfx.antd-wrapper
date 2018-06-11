@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react'
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import BtnModal from '../../Components/Cards/BtnModal'
 
-CFX = prefixDom {
+CFX = cfxify {
   'div'
   BtnModal
 }
