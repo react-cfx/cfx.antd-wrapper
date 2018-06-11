@@ -1,7 +1,9 @@
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import Header from '../../Components/Page/Header'
+import { getLinks } from 'cfx.react.link.dom'
+import Links from '../Links'
 
-CFX = prefixDom {
+CFX = cfxify {
   Header
   'h1'
 }
@@ -13,6 +15,14 @@ export default =>
   } = CFX
 
   c_Header
+    Link1:
+      getLinks
+        Link: Links
+        kind: 'Welcome'
+    # Link2:
+    #   getLinks
+    #     Link: Links
+    #     kind: 'Welcome'
     breadcrumb: [
       'User'
       'lzr123456'

@@ -1,8 +1,8 @@
 import React from 'react'
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import Menu from '../../Components/Navigation/Menu'
 
-CFX = prefixDom {
+CFX = cfxify {
   Menu
 }
 

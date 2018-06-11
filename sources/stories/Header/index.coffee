@@ -1,9 +1,9 @@
 import { storiesOf } from '@storybook/react'
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import Header from '../../Components/Header/Header'
 import { getLinks } from 'cfx.react.link.dom'
 import Links from '../../stories/Links'
-CFX = prefixDom {
+CFX = cfxify {
   Header
 }
 

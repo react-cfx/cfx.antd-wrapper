@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import {
   Steps
   Icon
 } from 'antd'
 Step = Steps.Step
 
-CFX = prefixDom {
+CFX = cfxify {
   Steps
   Step
   Icon

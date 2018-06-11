@@ -1,10 +1,10 @@
-import prefixDom from 'cfx.react.dom'
+import cfxify from 'cfx.react.dom'
 import { Card } from 'antd'
 import Header from './Header'
 import Contents from '../Content'
 import PageContent from '../Page/Content'
 
-CFX = prefixDom {
+CFX = cfxify {
   'div'
   Card
   Header
@@ -19,6 +19,7 @@ export default (props) =>
     breadcrumb
     Content
     many
+    Links
   } = props
 
   {
@@ -34,6 +35,7 @@ export default (props) =>
       key: 'Header'
       title: title
       breadcrumb: breadcrumb
+      Links: Links
 
     (
       if many?
