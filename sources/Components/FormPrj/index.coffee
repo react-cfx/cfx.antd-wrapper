@@ -218,6 +218,7 @@ class FormPrj extends Component
                   c_DatePicker
                     key: "select"
                     onChange: (date, dateString) -> onChange dateString, c.key
+                    defaultValue: c.defaultValue
                     style:
                       width: '356.25px'
                     placeholder: "请输入#{c.keys}"
