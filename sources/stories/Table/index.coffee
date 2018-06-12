@@ -20,35 +20,21 @@ export default =>
     } = CFX
 
     c_Table
-      # getDS: (dataSource) =>
-      #   console.log dataSource
-
+      # rowSelection: true
       getDsOne: (target) =>
         console.log target, 'target'
-      # handleChange: (e) =>
-      #   value = e.target.value
-      #   @setState {
-      #     value
-      #   }
-      # onChange: (dataSource) =>
-      #   console.log dataSource
       addChildren: true
-      # onDelete: (record) =>
-      #   console.log record
-      # operating: false
       headlabel: (index, record, text) =>
         c_a
           key: "/#{index}"
           href: "/#{index}"
         , text
-      # Divider: false
       footlabel: (index, record) =>
         c_a
           key: "/#{index}"
           href: "/#{index}"
           style: color: '#959595'
         , '详细'
-      
       btn: '添加房源'
       editPen: true
       header:

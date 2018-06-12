@@ -51,23 +51,7 @@ class EditableTable extends Component
     super props
     @state =
       dataSource: props.dataSource
-      # count: props.dataSource.length
       count: 0
-      # counts: 100
-
-    # (
-    #   Object.keys @props.header
-    # ).reduce (r, c) =>
-    #   {
-    #     r...
-    #     "#{c}": @props.header["#{c}"]
-    #   }
-    # , {}
-    # forOf @props.header, (k, v) =>
-
-    # dataSourcekeys = for k, v of @props.dataSource
-    #   "#{k}"
-
     if @props.dataSource?
     then [
       dataSourcekeys = @props.dataSource.reduce (r, c, i) =>
@@ -83,15 +67,7 @@ class EditableTable extends Component
         ]
       , []
     ]
-    else []   
-
-    # dataSourceVals = for k, v of @props.dataSource
-    #   "#{v}"
-
-    # header = for k, v of @props.header
-    #   title: "#{v}"
-    #   dataIndex: "#{k}"
-
+    else []
     header = (
       Object.keys @props.header
     )
@@ -102,10 +78,6 @@ class EditableTable extends Component
         dataIndex: "#{c}"
       ]
     , []
-
-    # childrenHeader1 = for k, v of @props.childrenHeader
-    #   title: "#{v}"
-    #   dataIndex: "#{k}"
     if @props.childrenHeader?
     then [
       childrenHeader1 = (
@@ -136,7 +108,6 @@ class EditableTable extends Component
           c_EditableCell
             value: text
             onChange: @onCellChange record.key, c
-            # onChange: @onCellChange '3', 'name'
             editPen: @props.editPen
       ]
     , []
@@ -144,8 +115,6 @@ class EditableTable extends Component
     if header[0]?
     then header.shift()
     else []
-    # headerKey = for k, v of @props.header
-    #   "#{k}"
     headerKey = (
       Object.keys @props.header
     )
@@ -155,10 +124,6 @@ class EditableTable extends Component
         "#{c}"
       ]
     , []
-
-    # headerVal = for k, v of @props.header
-    #   "#{v}"
-
     headerVal = (
       Object.keys @props.header
     )
@@ -225,11 +190,6 @@ class EditableTable extends Component
               else [
                 record["#{@FSheaderKey}"]
               ]
-
-              ###
-              aTag = @props.aTag text, record, index # aTag = (text, record, index) => aTag<Component>
-              ###
-
             header...
             unless @props.operating is false
               title: '操作'
@@ -300,11 +260,8 @@ class EditableTable extends Component
         @setState {
           dataSource
         }
-
         @props.getDS @state.dataSource if @props.getDS?
         @props.getDsOne target if @props.getDsOne
-
-        # @props.getDS @state.dataSource if typeof @props.getDS? is 'function'
       )
       else []
 
@@ -324,10 +281,6 @@ class EditableTable extends Component
       dataSource: [ @state.dataSource..., newData ]
       count: @state.count++
     }
-
-    # if @props.addDs?
-    # then @props.addDs newData
-    # else null
   addDs: () =>
     newData =
       if @props.addsource.key?
@@ -377,17 +330,14 @@ class EditableTable extends Component
           then expandedRowRender: @NestedTable
           else []
         )...
-        # (
-        #   if @props.change
-        #   then @props.change @state.dataSource
-        #   else {}
-        # )...
-        rowSelection: @rowSelection
+        (
+          if @props.rowSelection is true
+          then rowSelection: @rowSelection
+          else []
+        )...
+        # rowSelection: @rowSelection
         dataSource: @state.dataSource
         columns: @column
-          # if @props.editPen is true
-          # then @columns
-          # else
         ( nb 'components_table_demo_nested' )...
       }
 
