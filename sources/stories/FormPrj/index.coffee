@@ -38,10 +38,10 @@ export default =>
 					# style:
 					# 	width: '110px'
 				,
-					keys: '省'
-					type: 'address'
-					key: 'Province'
-					title: [
+					# keys: '省'
+					# type: 'address'
+					# key: 'Province'
+					# title: [
 							# keys: '省'
 							# type: 'normal'
 							# key: 'province'
@@ -52,9 +52,9 @@ export default =>
 							# key: 'city'
 							# defaultValue: @props.defaultValueCity
 						# ,
-							keys: '区'
-							type: 'address'
-							key: 'district'
+							# keys: '区'
+							# type: 'address'
+							# key: 'district'
 				,				
 					keys: '租期'
 					type: 'number'
