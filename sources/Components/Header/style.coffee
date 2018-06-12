@@ -42,6 +42,7 @@ style =
   Setting:
     fontSize: '20px'
     position: 'absolute'
+    color: 'gray'
     top: '23px'
     right: '14px'
     cursor: 'pointer'

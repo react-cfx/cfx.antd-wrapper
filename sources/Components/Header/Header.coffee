@@ -62,16 +62,19 @@ class Header extends Component
         }
         , 'Admin'
       ## 
-      c_div {
-        key: 'SettingContainer'
-        ( nb 'SettingContainer' )...
-      }     
-      ,
-        c_Icon {
-          type: 'setting'
-          ( nb 'Setting' )...
-        }
-
+      c_domWithLink
+        Link: @props.SettingLink
+        onClick: @props.settingClick
+        domObj: =>
+          c_div {
+            key: 'SettingContainer'
+            ( nb 'SettingContainer' )...
+          }
+          ,
+            c_Icon {
+              type: 'setting'
+              ( nb 'Setting' )...
+            }
       ##
       # c_div {
       #   key: 'bell'
