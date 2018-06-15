@@ -2,7 +2,8 @@ import cfxify from 'cfx.react.dom'
 import { Layout,Breadcrumb } from 'antd'
 { Header, Content, Footer } = Layout
 BreadcrumbItem = Breadcrumb.Item
-import { domWithLink,getLinks } from 'cfx.react.link.dom'
+import { getLinks } from 'cfx.react.link.dom'
+import ComA from '../UtilLink/ComA'
 
 CFX = cfxify {
   'p'
@@ -11,7 +12,7 @@ CFX = cfxify {
   Layout
   Breadcrumb
   BreadcrumbItem
-  domWithLink
+  ComA
 }
 
 export default ({
@@ -32,7 +33,7 @@ export default ({
     c_Layout
     c_Breadcrumb
     c_BreadcrumbItem
-    c_domWithLink 
+    c_ComA
   } = CFX
   render: ->
     c_Layout
@@ -56,17 +57,21 @@ export default ({
                   c_BreadcrumbItem
                     key: "breadcrumb_#{i}"
                   ,
-                    c_domWithLink
-                      Link: 
-                        getLinks
-                          Link: @props.Links
-                          kind: c.level
-                      domObj: =>
-                        c_span
-                          key: "span_#{i}"
-                        ,
-                          c.item
-
+                    c_ComA
+                      Link: getLinks
+                        Link: @props.Links
+                        kind: c.level
+                      name: c.item
+                    # c_domWithLink
+                    #   Link: 
+                    #     getLinks
+                    #       Link: @props.Links
+                    #       kind: c.level
+                    #   domObj: =>
+                    #     c_span
+                    #       key: "span_#{i}"
+                    #       ,
+                    #         c.item
                 ]
               , []
             )...

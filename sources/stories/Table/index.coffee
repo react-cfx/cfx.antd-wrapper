@@ -17,9 +17,7 @@ export default =>
     {
       c_a
       c_Table
-    } = CFX
-
-    c_Table
+    } = CFX    c_Table
       # rowSelection: true
       getDsOne: (target) =>
         console.log target, 'target'
