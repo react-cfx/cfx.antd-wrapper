@@ -20,7 +20,10 @@ export default =>
     } = CFX
 
     c_Table
-      # rowSelection: true
+      onChange: (, selectedRowKeys, selectedRows) =>
+        console.log selectedRowKeys, selectedRows, '312312312312312'
+
+      rowSelection: true
       getDsOne: (target) =>
         console.log target, 'target'
       addChildren: true
@@ -65,7 +68,21 @@ export default =>
           sex: '男'
           phone: '12345678900'
           email: '12345678900@qq.com'
-          address: '武汉'        
+          address: '武汉'
+        ,
+          name: '张三'
+          age: '20'
+          sex: '男'
+          phone: '12345678900'
+          email: '12345678900@qq.com'
+          address: '武汉' 
+        ,
+          name: '张三'
+          age: '20'
+          sex: '男'
+          phone: '12345678900'
+          email: '12345678900@qq.com'
+          address: '武汉'                     
       ]
       addDs:(newData) =>
         console.log newData

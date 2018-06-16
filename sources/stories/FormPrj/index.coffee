@@ -26,17 +26,8 @@ export default =>
     c_FormPrj
       # Layout: 'vertical'
       title: [
-          keys: '省'
-          type: 'select'
-          key: 'Province'
-          defaultValue: '支付宝'
-          options: [
-            '支付宝'
-            '微信'
-            '现金'
-          ]
-        ,
-          keys: '省'
-          type: 'address'
-          key: 'Province'
+        keys: '签约日期'
+        type: 'date'
+        key: 'contractData'
+        defaultValue: '2015-02-2'
       ]

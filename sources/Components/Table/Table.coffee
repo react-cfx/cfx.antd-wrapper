@@ -295,14 +295,16 @@ class EditableTable extends Component
 
     @props.addDs newData
 
-  rowSelection:
+  rowSelection: (self) =>
     onChange: (selectedRowKeys, selectedRows) =>
+      self.props.onChange selectedRowKeys, selectedRows
       console.log("selectedRowKeys: #{selectedRowKeys}", 'selectedRows: ', selectedRows)
+
     getCheckboxProps: (record) =>
       disabled: record.name == 'Disabled User'
 
   render: () ->
-
+    console.log @
     c_div {
       ( nb 'components_table_demo_nested' )...
     }
@@ -324,21 +326,23 @@ class EditableTable extends Component
           , @props.btn
       ]
       else []
-      c_Table {
-        (
-          if @props.addChildren is true
-          then expandedRowRender: @NestedTable
-          else []
-        )...
-        (
-          if @props.rowSelection is true
-          then rowSelection: @rowSelection
-          else []
-        )...
-        # rowSelection: @rowSelection
-        dataSource: @state.dataSource
-        columns: @column
-        ( nb 'components_table_demo_nested' )...
-      }
+      c_Table.apply @, [
+        {
+          (
+            if @props.addChildren is true
+            then expandedRowRender: @NestedTable
+            else []
+          )...
+          (
+            if @props.rowSelection is true
+            then rowSelection: @rowSelection @
+            else []
+          )...
+          # rowSelection: @rowSelection
+          dataSource: @state.dataSource
+          columns: @column
+          ( nb 'components_table_demo_nested' )...
+        }
+      ]
 
 export default EditableTable
