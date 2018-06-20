@@ -332,8 +332,8 @@ class EditableTable extends Component
         )...
         (
           if @props.rowSelection is true
-          then rowSelection: @rowSelection
-          else []
+          then []
+          else rowSelection: @rowSelection
         )...
         # rowSelection: @rowSelection
         dataSource: @state.dataSource
