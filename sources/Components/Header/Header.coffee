@@ -61,13 +61,13 @@ class Header extends Component
                 key: 'word'
                 ( nb 'Word' )...
               }
-              , '李强'
+              , @props.name
         # c_i {
           # key: 'word'
           # ( nb 'Word' )...
         # }
         # , '李强'
-      ## 
+      ##
       c_domWithLink
         Link: @props.SettingLink
         onClick: @props.settingClick
