@@ -20,7 +20,7 @@ export default =>
     } = CFX
 
     c_Table
-      onChange: (, selectedRowKeys, selectedRows) =>
+      onChange: (selectedRowKeys, selectedRows) =>
         console.log selectedRowKeys, selectedRows, '312312312312312'
 
       rowSelection: true

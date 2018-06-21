@@ -300,8 +300,13 @@ class EditableTable extends Component
       self.props.onChange selectedRowKeys, selectedRows
       console.log("selectedRowKeys: #{selectedRowKeys}", 'selectedRows: ', selectedRows)
 
+    selectedRowKeys: self.props.selectedRowKeys
+
     getCheckboxProps: (record) =>
       disabled: record.name == 'Disabled User'
+
+    onSelectInvert: (selectedRows) =>
+      console.log 'onSelectInvert', selectedRows
 
   render: () ->
     console.log @

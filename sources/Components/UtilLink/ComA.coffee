@@ -1,15 +1,15 @@
 import cfxify from 'cfx.react.dom'
 
 CFX = cfxify {
-  'a'
+  'span'
 }
 
 {
-  c_a
+  c_span
 } = CFX
 
 ALink = ({ Style,Name }) =>
-  c_a
+  c_span
     style: Style
   , Name
 
