@@ -1,6 +1,5 @@
 import cfxify from 'cfx.react.dom'
 import React, { Component } from 'react'
-import moment from 'moment'
 import {
   Form
   Input
@@ -149,18 +148,30 @@ class FormPrj extends Component
                   else if c.type is 'select'
                   then [
                     c_Select
-                      onChange: (value) -> onChangeSelect value, c.key
                       key: 'Select'
-                      defaultValue: '支付宝'
+                      onChange:(value) ->
+                        onChange value, c.key
+                      placeholder: "请输入#{c.keys}"  
                       style:
-                        width: '120px'
+                        if c.style?
+                        then c.style
+                        else {}
+                      defaultValue:
+                        if c.defaultValue
+                        then c.defaultValue
+                        else ''
                     ,
-                      c_Option
-                        value: '微信'
-                      , '微信'
-                      c_Option
-                        value: '网上银行'
-                      , '网上银行'
+                      if c.type is 'select'
+                      then [
+                        c.options.reduce (r, c)=>
+                          [
+                            r...
+                            c_Option
+                              value: c
+                            , c
+                          ]
+                        , []  
+                      ]
                   ]
                   else if c.type is 'inputSelect'
                   then [
@@ -216,27 +227,19 @@ class FormPrj extends Component
               ,
                 if c.type is 'date'
                 then [
-                  c_DatePicker {
+                  c_DatePicker
                     key: "select"
                     onChange: (date, dateString) -> onChange dateString, c.key
-                    (
-                      if c.defaultValue
-                      then {
-                        defaultValue: moment c.defaultValue, 'YYYY/MM/DD'
-                      }
-                      else {}
-                    )...
-                    
+                    defaultValue: c.defaultValue
                     style:
                       width: '356.25px'
                     placeholder: "请输入#{c.keys}"
-                  }
                 ]
                 else if c.type is 'address'
                 then [
                   c_Cascader
                     key: "Cascader"
-                    onChange: (value) -> onChangeAddress value, c.key
+                    onChange: (value) -> onChangeAddress value,c.key
                     options: @props.options
                     defaultValue: c.defaultValue
                     placeholder: "请输入#{c.keys}"

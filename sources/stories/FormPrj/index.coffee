@@ -27,7 +27,10 @@ export default =>
       # Layout: 'vertical'
       title: [
         keys: '签约日期'
-        type: 'date'
-        key: 'contractData'
-        defaultValue: '2015-02-2'
+        type: 'select'
+        options: [
+          '1'
+          '2'
+        ]
+        defaultValue: '1'
       ]
