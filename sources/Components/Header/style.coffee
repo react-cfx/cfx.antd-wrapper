@@ -1,5 +1,5 @@
 import styl from 'cfx.react.style/dist/index'
-
+import random from './random'
 
 style = 
   Container:
@@ -15,18 +15,23 @@ style =
     float: 'right'
     position: 'relative'
   Circle:
-    width: '20px'
-    height: '20px'
+    width: '32px'
+    height: '32px'
     display: 'inline-block'
-    marginRight: '4pt'
-    borderRadius: '10px'
-    backgroundColor: 'gray'
+    borderRadius: '16px'
+    textAlign: 'center'
+    color: 'white'
+    fontSize: '12px'
+    lineHeight: '32px'
+    backgroundColor: "rgb(#{random 0,255},#{random 0,255},#{random 0,255})"
     position: 'absolute'
-    top: '22px'
+    top: '16px'
     cursor: 'pointer'
-  Word:
-    position: 'absolute'
-    left: '30px'
+  # Word:
+  #   position: 'absolute'
+  #   color: 'white'
+  #   fontSize: '12px'
+  #   # left: '3px'
   SettingContainer:
     ':hover':
       backgroundColor: 'gray'  

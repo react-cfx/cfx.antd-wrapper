@@ -19,6 +19,7 @@ export default ->
     c_Header
       onClick: => console.log '123'
       settingClick: => console.log 'abc'
+      name: '李强'
       Link: getLinks
         Link: Links()
         kind: 'Welcome'

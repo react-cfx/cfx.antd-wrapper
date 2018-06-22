@@ -45,6 +45,7 @@
     "gulp": "~3.9.1",
     "gulp-better-rollup": "~3.1.0",
     "gulp-rename": "~1.2.3",
+    "cfx.service": "0.1.2",
     "gulp-sequence": "~1.0.0",
     "normalize.css": "~8.0.0",
     "react": "~16.4.0",

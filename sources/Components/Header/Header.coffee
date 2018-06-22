@@ -11,7 +11,7 @@ import {
 
 CFX = cfxify {
   'div'
-  'i'
+  'small'
   Icon
   Badge
   Header
@@ -30,7 +30,7 @@ class Header extends Component
 
     {
       c_div
-      c_i
+      c_small
       c_Icon
       c_Badge
       c_Header
@@ -56,12 +56,18 @@ class Header extends Component
               onClick: @props.onClick
               ( nb 'Circle' )...
             }
-        c_i {
-          key: 'word'
-          ( nb 'Word' )...
-        }
-        , 'Admin'
-      ## 
+            , 
+              c_small {
+                key: 'word'
+                ( nb 'Word' )...
+              }
+              , '李强'
+        # c_i {
+          # key: 'word'
+          # ( nb 'Word' )...
+        # }
+        # , '李强'
+      ##
       c_domWithLink
         Link: @props.SettingLink
         onClick: @props.settingClick
