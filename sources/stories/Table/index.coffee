@@ -17,16 +17,29 @@ export default =>
     {
       c_a
       c_Table
-    } = CFX    c_Table
-      # rowSelection: true
+    } = CFX
+
+    c_Table
+      onChange: (selectedRowKeys, selectedRows) =>
+        console.log selectedRowKeys, selectedRows, '312312312312312'
+      # editPen: true
+      rowSelection: true
       getDsOne: (target) =>
         console.log target, 'target'
       addChildren: true
+      tableLink: [
+        1
+        3
+        4
+      ]
       headlabel: (index, record, text) =>
         c_a
           key: "/#{index}"
-          href: "/#{index}"
+          onClick: =>
+            console.log 'record', record
+          # href: "/#{index}"
         , text
+
       footlabel: (index, record) =>
         c_a
           key: "/#{index}"
@@ -34,7 +47,7 @@ export default =>
           style: color: '#959595'
         , '详细'
       btn: '添加房源'
-      editPen: true
+      # editPen: true
       header:
         name: '姓名'
         age: '年龄'
@@ -58,12 +71,26 @@ export default =>
         email: '12345678900@qq.com'
         address: '武汉'
       dataSource: [
-          name: '张三'
+          name: '张三1'
           age: '20'
           sex: '男'
           phone: '12345678900'
           email: '12345678900@qq.com'
-          address: '武汉'        
+          address: '武汉'
+        ,
+          name: '张三2'
+          age: '20'
+          sex: '男'
+          phone: '12345678900'
+          email: '12345678900@qq.com'
+          address: '武汉' 
+        ,
+          name: '张三3'
+          age: '20'
+          sex: '男'
+          phone: '12345678900'
+          email: '12345678900@qq.com'
+          address: '武汉'                     
       ]
       addDs:(newData) =>
         console.log newData

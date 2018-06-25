@@ -1,5 +1,6 @@
 import cfxify from 'cfx.react.dom'
 import React, { Component } from 'react'
+import moment from 'moment'
 import {
   Form
   Input
@@ -227,13 +228,21 @@ class FormPrj extends Component
               ,
                 if c.type is 'date'
                 then [
-                  c_DatePicker
+                  c_DatePicker {
                     key: "select"
                     onChange: (date, dateString) -> onChange dateString, c.key
-                    defaultValue: c.defaultValue
+                    (
+                      if c.defaultValue
+                      then {
+                        defaultValue: moment c.defaultValue, 'YYYY/MM/DD'
+                      }
+                      else {}
+                    )...
+                    
                     style:
                       width: '356.25px'
                     placeholder: "请输入#{c.keys}"
+                  }
                 ]
                 else if c.type is 'address'
                 then [

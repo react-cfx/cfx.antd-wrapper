@@ -111,32 +111,59 @@ class EditableTable extends Component
             editPen: @props.editPen
       ]
     , []
+    console.log 'HeaderEdit', HeaderEdit
+    if @props.columnsLink?
+      @props.columnsLink.reduce (r, c, i) =>
+        [
+          r...
+          HeaderEdit[@props.columnsLink[i]] = {
+            title: HeaderEdit[@props.columnsLink[i]].title
+            dataIndex: HeaderEdit[@props.columnsLink[i]].dataIndex
+            render: (text, record, index) =>
+              @props.headlabel index, record, text     
+          }
+        ]
+      , []
 
-    if header[0]?
-    then header.shift()
-    else []
-    headerKey = (
-      Object.keys @props.header
-    )
-    .reduce (r, c, i) =>
-      [
-        r...
-        "#{c}"
-      ]
-    , []
-    headerVal = (
-      Object.keys @props.header
-    )
-    .reduce (r, c, i) =>
-      [
-        r...
-        @props.header[c]
-      ]
-    , []
+    if @props.columnsLink?
+      @props.columnsLink.reduce (r, c, i) =>
+        [
+          r...
+          header[@props.columnsLink[i]] = {
+            title: header[@props.columnsLink[i]].title
+            dataIndex: header[@props.columnsLink[i]].dataIndex
+            render: (text, record, index) =>
+              @props.headlabel index, record, text     
+          }
+        ]
+      , []    
 
-    @FSheaderKey = headerKey[0]
 
-    @FSheaderVal = headerVal[0]
+    # if header[0]?
+    # then header.shift()
+    # else []
+    # headerKey = (
+    #   Object.keys @props.header
+    # )
+    # .reduce (r, c, i) =>
+    #   [
+    #     r...
+    #     "#{c}"
+    #   ]
+    # , []
+    # headerVal = (
+    #   Object.keys @props.header
+    # )
+    # .reduce (r, c, i) =>
+    #   [
+    #     r...
+    #     @props.header[c]
+    #   ]
+    # , []
+
+    # @FSheaderKey = headerKey[0]
+
+    # @FSheaderVal = headerVal[0]
 
     @column = [
         (
@@ -180,16 +207,16 @@ class EditableTable extends Component
             else []
           ]
           else [
-            title: headerVal[0]
-            dataIndex: headerKey[0]
-            render: (text, record, index) =>
-              if @props.headlabel?
-              then [
-                @props.headlabel index, record, text
-              ]
-              else [
-                record["#{@FSheaderKey}"]
-              ]
+            # title: headerVal[0]
+            # dataIndex: headerKey[0]
+            # render: (text, record, index) =>
+            #   if @props.headlabel?
+            #   then [
+            #     @props.headlabel index, record, text
+            #   ]
+            #   else [
+            #     record["#{@FSheaderKey}"]
+            #   ]
             header...
             unless @props.operating is false
               title: '操作'
@@ -295,14 +322,21 @@ class EditableTable extends Component
 
     @props.addDs newData
 
-  rowSelection:
+  rowSelection: (self) =>
     onChange: (selectedRowKeys, selectedRows) =>
+      self.props.onChange selectedRowKeys, selectedRows
       console.log("selectedRowKeys: #{selectedRowKeys}", 'selectedRows: ', selectedRows)
+
+    selectedRowKeys: self.props.selectedRowKeys
+
     getCheckboxProps: (record) =>
       disabled: record.name == 'Disabled User'
 
-  render: () ->
+    onSelectInvert: (selectedRows) =>
+      console.log 'onSelectInvert', selectedRows
 
+  render: () ->
+    console.log @
     c_div {
       ( nb 'components_table_demo_nested' )...
     }
@@ -324,21 +358,23 @@ class EditableTable extends Component
           , @props.btn
       ]
       else []
-      c_Table {
-        (
-          if @props.addChildren is true
-          then expandedRowRender: @NestedTable
-          else []
-        )...
-        (
-          if @props.rowSelection is true
-          then []
-          else rowSelection: @rowSelection
-        )...
-        # rowSelection: @rowSelection
-        dataSource: @state.dataSource
-        columns: @column
-        ( nb 'components_table_demo_nested' )...
-      }
+      c_Table.apply @, [
+        {
+          (
+            if @props.addChildren is true
+            then expandedRowRender: @NestedTable
+            else []
+          )...
+          (
+            if @props.rowSelection is true
+            then rowSelection: @rowSelection @
+            else []
+          )...
+          # rowSelection: @rowSelection
+          dataSource: @state.dataSource
+          columns: @column
+          ( nb 'components_table_demo_nested' )...
+        }
+      ]
 
 export default EditableTable
