@@ -1,15 +1,46 @@
-pattern = RegExp "[\u4E00-\u9FA5]+"
-str = "中文字符"
-if pattern.test str
-  console.log 'hello'
-else
-  console.log 'sorry'
+import { Component } from 'react'
+import cfxify from 'cfx.react.dom'
 
-# isType = (str, pattern) =>
-#   if pattern.test str
-#     console.log '这是中文'
-#   else 
-#     console.log '不是中文'
-    
-isType "中文字符",RegExp "[\u4E00-\u9FA5]+"
-    
+import {
+  Table
+} from 'antd'
+
+CFX = cfxify {
+  Table
+}
+
+class table extends Component
+  constructor: (props) -> 
+    super props
+  
+  columns = [
+      title: 'Name'
+      dataIndex: 'name'
+      key: 'name'
+    ,
+      title: 'Age'
+      dataIndex: 'age'
+      key: 'age'
+    ,
+      title: 'Address'
+      dataIndex: 'address'
+      key: 'address'
+  ]
+
+  data = [
+      key: '1'
+      name: 'John Brown'
+      age: 32
+      address: 'New York No. 1 Lake Park'
+    ,
+      key: '2'
+      name: 'John Brown'
+      age: 32
+      address: 'New York No. 1 Lake Park'
+    ,
+      key: '3'
+      name: 'John Brown'
+      age: 32
+      address: 'New York No. 1 Lake Park'
+  ]
+  

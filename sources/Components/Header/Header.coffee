@@ -61,7 +61,7 @@ class Header extends Component
                 key: 'word'
                 ( nb 'Word' )...
               }
-              , @props.name
+              , '李强'
         # c_i {
           # key: 'word'
           # ( nb 'Word' )...

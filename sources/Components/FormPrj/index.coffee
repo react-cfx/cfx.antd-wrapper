@@ -148,18 +148,30 @@ class FormPrj extends Component
                   else if c.type is 'select'
                   then [
                     c_Select
-                      onChange: (value) -> onChangeSelect value, c.key
                       key: 'Select'
-                      defaultValue: '支付宝'
+                      onChange:(value) ->
+                        onChange value, c.key
+                      placeholder: "请输入#{c.keys}"  
                       style:
-                        width: '120px'
+                        if c.style?
+                        then c.style
+                        else {}
+                      defaultValue:
+                        if c.defaultValue
+                        then c.defaultValue
+                        else ''
                     ,
-                      c_Option
-                        value: '微信'
-                      , '微信'
-                      c_Option
-                        value: '网上银行'
-                      , '网上银行'
+                      if c.type is 'select'
+                      then [
+                        c.options.reduce (r, c)=>
+                          [
+                            r...
+                            c_Option
+                              value: c
+                            , c
+                          ]
+                        , []  
+                      ]
                   ]
                   else if c.type is 'inputSelect'
                   then [

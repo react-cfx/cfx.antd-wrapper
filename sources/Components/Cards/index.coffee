@@ -25,55 +25,56 @@ CFX = cfxify {
 }
 
 export default ({
-  props...
+  title
+  CardContent
+  HeaderDivider
+  FooterDivider
 }) =>
+  {
+    c_div
+    c_Row
+    c_Col
+    c_Divider
+    c_Form
+    c_FormItem
+    c_Input
+    c_Button
+  } = CFX
 
-  render: ->
-    {
-      CardContent
-      HeaderDivider
-      FooterDivider
-    } = props
-
-    {
-      c_div
-      c_Row
-      c_Col
-      c_Divider
-      c_Form
-      c_FormItem
-      c_Input
-      c_Button
-    } = CFX
-
-    c_div {}
-    ,
+  c_div {}
+  ,
+    c_div.apply @, [
+      style:
+        minHeight: '50px'
+    , 
       c_div
         style:
-          minHeight: '50px'
-      ,    
-        c_div
-          style:
-            fontSize: '16px'
-            float: 'left'
-            color: 'rgba(0, 0, 0, .85)'
-            fontWeight: '500'
-        , @props.title
-      if HeaderDivider
-      then [
-        c_Divider
-          key: '2'
-      ]
-      else []
-      if CardContent
-      then [
-        CardContent
-      ]
-      else []
+          fontSize: '16px'
+          marginBottom: '30px'
+          color: 'rgba(0, 0, 0, .85)'
+          fontWeight: '500'
+      , title
+      (
+        if HeaderDivider
+        then [
+          c_Divider {}
+        ]
+        else []
+      )...
       
-      if FooterDivider
-      then [
-        c_Divider
-          key: '1'
-      ]
-      else []
+      (
+        if CardContent
+        then [
+          CardContent
+        ]
+        else []
+      )...
+      
+      (
+        if FooterDivider
+        then [
+          c_Divider {}
+        ]
+        else []
+      )...
+    ]
