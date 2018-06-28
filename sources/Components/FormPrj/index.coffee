@@ -90,8 +90,8 @@ class FormPrj extends Component
       else (Change) =>
         console.log 'pls run Change function!'
         console.log Change
-    onChange = (value, key) ->
-      Change value, key
+    onChange = (value, key, keys) ->
+      Change value, key, keys
       
     if @props.Layout is 'vertical'
     then [
@@ -196,7 +196,7 @@ class FormPrj extends Component
                   ]
                   else [
                     c_Input
-                      onChange: (e) -> onChange e.target.value,c.key
+                      onChange: (e) -> onChange e.target.value, c.key, c.keys
                       key: "AutoComp"
                       placeholder: "请输入#{c.keys}"
                       defaultValue:
@@ -309,7 +309,7 @@ class FormPrj extends Component
                 ]
                 else [
                   c_Input
-                    onChange: (e) -> onChange e.target.value, c.key
+                    onChange: (e) -> onChange e.target.value, c.key, c.keys
                     key: "AutoComp"
                     placeholder: "请输入#{c.keys}"
                     defaultValue:
