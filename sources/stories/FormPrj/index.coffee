@@ -34,3 +34,5 @@ export default =>
         ]
         defaultValue: '1'
       ]
+      Change: (value) ->
+        console.log value

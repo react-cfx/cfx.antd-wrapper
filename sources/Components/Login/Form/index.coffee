@@ -60,10 +60,14 @@ class LoginForm extends React.Component
 						else {}
 					)...
 				}
+				c_div {
+					( nb 'loginFormForgot')...
+				}
+				, "版本: #{@props.version}"
 
 		c_div
 			id: 'components-form-demo-normal-login'
 		,
-			loginForm
+			loginForm	
 
 export default Form.create() LoginForm

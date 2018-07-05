@@ -111,7 +111,7 @@ class EditableTable extends Component
             editPen: @props.editPen
       ]
     , []
-    console.log 'HeaderEdit', HeaderEdit
+
     if @props.columnsLink?
       @props.columnsLink.reduce (r, c, i) =>
         [
@@ -229,9 +229,13 @@ class EditableTable extends Component
                       @props.footlabel index, record
                     ]
                     else []
-                    c_Divider
-                      key: 'Divider'
-                      type: 'vertical'
+                    unless @props.Divider is false
+                    then [
+                      c_Divider
+                        key: 'Divider'
+                        type: 'vertical'
+                    ]
+                    else []
                   ,
                     c_Popconfirm
                       key: 'Popconfirm'
@@ -265,6 +269,21 @@ class EditableTable extends Component
         style:
           marginLeft: '67px'
         dataSource: args[0].Children
+        # dataSource: [
+        #     name: '张三'
+        #     age: '2'
+        #     sex: '男'
+        #     phone: '1300000'
+        #     email: '123@qq.com'
+        #     address: '武汉'
+        #   ,
+        #     name: '李四'
+        #     age: '2'
+        #     sex: '男'
+        #     phone: '1300000'
+        #     email: '123@qq.com'
+        #     address: '武汉'
+        # ]
         columns: childrenHeader
         pagination: false
 

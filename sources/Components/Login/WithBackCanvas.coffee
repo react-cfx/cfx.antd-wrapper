@@ -69,6 +69,11 @@ export default =>
               then Link: @props.Link
               else {}              
             )...
+            (
+              if @props.version
+              then version: @props.version
+              else {}              
+            )...            
           }
 
     c_FullPageLayers

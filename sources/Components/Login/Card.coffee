@@ -49,6 +49,11 @@ LoginCard = enhance (props) =>
           then Link: @props.Link
           else {}           
         )...
+        (
+          if @props.version
+          then version: @props.version
+          else {}           
+        )...        
       }
 
 export default LoginCard

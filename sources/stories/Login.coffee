@@ -49,5 +49,6 @@ export default =>
     { c_Login } = CFX
     c_Login
       Link: getLinks Link
+      version: '0.0.1'
       submit: (values) =>
         console.log { values }, '123'
