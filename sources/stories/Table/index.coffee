@@ -39,6 +39,7 @@ export default =>
           # href: "/#{index}"
         , text
       Divider: false
+      delete: '解除'
       # footlabel: (index, record) =>
       #   c_a
       #     key: "/#{index}"

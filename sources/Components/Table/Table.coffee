@@ -202,7 +202,12 @@ class EditableTable extends Component
                         href: '#'
                         style:
                           color: '#F00'
-                      , '删除'
+                      , 
+                        (
+                          if @props.delete?
+                            @props.delete
+                          else '删除'
+                        )...
                 ]
             else []
           ]
@@ -250,7 +255,12 @@ class EditableTable extends Component
                         href: '#'
                         style:
                           color: '#F00'
-                      , '删除'
+                      ,
+                        (
+                          if @props.delete?
+                            @props.delete
+                          else '删除'
+                        )...                      
                 ]
             else []
           ]
