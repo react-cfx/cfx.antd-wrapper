@@ -354,7 +354,7 @@ class EditableTable extends Component
   rowSelection: (self) =>
     onChange: (selectedRowKeys, selectedRows) =>
       self.props.onChange selectedRowKeys, selectedRows
-      console.log("selectedRowKeys: #{selectedRowKeys}", 'selectedRows: ', selectedRows)
+      # console.log("selectedRowKeys: #{selectedRowKeys}", 'selectedRows: ', selectedRows)
 
     selectedRowKeys: self.props.selectedRowKeys
 
@@ -365,7 +365,7 @@ class EditableTable extends Component
       console.log 'onSelectInvert', selectedRows
 
   render: () ->
-    console.log @
+    # console.log @
     c_div {
       ( nb 'components_table_demo_nested' )...
     }
