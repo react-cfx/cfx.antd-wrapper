@@ -302,10 +302,10 @@ class FormPrj extends Component
                       width: c.width
                     formatter: c.formatter
 
-                  # c_span
-                  #   style:
-                  #     marginLeft: '5px'
-                  # , c.children
+                  c_span
+                    style:
+                      marginLeft: '5px'
+                  , c.children
                 ]
                 else [
                   c_Input

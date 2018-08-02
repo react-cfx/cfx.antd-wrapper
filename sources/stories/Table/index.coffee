@@ -20,6 +20,7 @@ export default =>
     } = CFX
 
     c_Table
+      operating: false
       onChange: (selectedRowKeys, selectedRows) =>
         console.log selectedRowKeys, selectedRows, '312312312312312'
       # editPen: true
@@ -28,8 +29,7 @@ export default =>
         console.log target, 'target'
       addChildren: true
       columnsLink: [
-        1
-        2
+        0
       ]
       headlabel: (index, record, text) =>
         c_a
