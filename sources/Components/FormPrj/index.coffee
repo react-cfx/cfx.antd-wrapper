@@ -214,7 +214,7 @@ class FormPrj extends Component
         onSubmit: @handleSubmit
         style:
           margin: '40px auto 0'
-          maxWidth: '450px'
+          maxWidth: '500px'
         (
           @props.title.reduce (r, c , i) =>
             [

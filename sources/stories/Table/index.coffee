@@ -25,18 +25,19 @@ export default =>
         console.log selectedRowKeys, selectedRows, '312312312312312'
       # editPen: true
       rowSelection: true
-      getDsOne: (target) =>
-        console.log target, 'target'
+      getDsOne: (target, key, dataIndex) =>
+        console.log dataIndex
       addChildren: true
-      columnsLink: [
+      columnsLinks: [
         0
+        1
       ]
-      headlabel: (index, record, text) =>
+      headlabel: (index, record, text, dataIndex) =>
         c_a
           key: "/#{index}"
           onClick: =>
-            console.log 'record', record
-          # href: "/#{index}"
+            console.log 'dataIndex', dataIndex
+          # href: "/#{index}"     
         , text
       Divider: false
       delete: '解除'

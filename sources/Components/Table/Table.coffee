@@ -120,7 +120,7 @@ class EditableTable extends Component
             title: HeaderEdit[@props.columnsLink[i]].title
             dataIndex: HeaderEdit[@props.columnsLink[i]].dataIndex
             render: (text, record, index) =>
-              @props.headlabel index, record, text     
+              @props.headlabel index, record, text, HeaderEdit[@props.columnsLink[i]].dataIndex
           }
         ]
       , []
