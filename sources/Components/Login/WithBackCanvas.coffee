@@ -59,11 +59,12 @@ export default =>
         withLayout: false
         child:
           c_CenterCard {
-            (
-              if @props.submit
-              then submit: @props.submit
-              else {}
-            )...
+            Change: (value) => @props.Change value
+            # (
+            #   if @props.submit
+            #   then submit: @props.submit
+            #   else {}
+            # )...
             (
               if @props.Link
               then Link: @props.Link

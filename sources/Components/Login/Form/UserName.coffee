@@ -13,6 +13,7 @@ CFX = cfxify {
 
 UserName = ({
   decorator
+  Change
 }) =>
   {
     c_Icon
@@ -31,6 +32,7 @@ UserName = ({
       ]
     children:
       c_Input
+        onChange: (e) -> Change e.target.value
         prefix: c_Icon
           type: 'user'
           style: fontSize: 13
