@@ -29,21 +29,24 @@ export default =>
     c_LoginForm
       Change: (value) ->
         console.log value
-
+      PChange: (value) ->
+        console.log value
   .add 'LoginCard'
   , =>
     { c_LoginCard } = CFX
     c_LoginCard
       Change: (value) ->
         console.log value
-
+      PChange: (value) ->
+        console.log value
   .add 'CenterCard'
   , =>
     { c_CenterCard } = CFX
     c_CenterCard
       Change: (value) ->
         console.log value
-
+      PChange: (value) ->
+        console.log value
   .add 'WithBackImg'
   , =>
     { c_WithBackImg } = CFX
@@ -56,6 +59,8 @@ export default =>
     c_Login
       Link: getLinks Link
       Change: (value) ->
+        console.log value
+      PChange: (value) ->
         console.log value
       version: '0.0.1'
       # submit: (values) =>

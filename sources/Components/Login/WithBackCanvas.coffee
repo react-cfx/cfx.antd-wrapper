@@ -60,6 +60,8 @@ export default =>
         child:
           c_CenterCard {
             Change: (value) => @props.Change value
+            PChange: (value) => @props.PChange value
+            
             # (
             #   if @props.submit
             #   then submit: @props.submit

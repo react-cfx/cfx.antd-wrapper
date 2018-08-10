@@ -29,6 +29,10 @@ class LoginForm extends React.Component
 		if @props.Change?
 		then @props.Change value
 		else {}
+	PChange: (value) =>
+		if @props.PChange?
+		then @props.PChange value
+		else {}
 	render: ->
 
 		{
@@ -55,7 +59,7 @@ class LoginForm extends React.Component
 					# @props.onChange value
 				c_PassWord
 					decorator: getFieldDecorator
-					Change: (value) => @Change value
+					PChange: (value) => @PChange value
 					# @props.onChange value
 				c_Commit {
 					decorator: getFieldDecorator

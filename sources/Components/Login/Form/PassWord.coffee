@@ -13,7 +13,7 @@ CFX = cfxify {
 
 PassWord = ({
   decorator
-  Change
+  PChange
 }) =>
 
   {
@@ -33,7 +33,7 @@ PassWord = ({
       ]
     children:
       c_Input
-        onChange: (e) -> Change e.target.value
+        onChange: (e) -> PChange e.target.value
         prefix: c_Icon
           type: 'lock'
           style: fontSize: 13
