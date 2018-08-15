@@ -28,7 +28,7 @@ export default =>
       getDsOne: (target, key, dataIndex) =>
         console.log dataIndex
       addChildren: true
-      columnsLinks: [
+      columnsLink: [
         0
         1
       ]

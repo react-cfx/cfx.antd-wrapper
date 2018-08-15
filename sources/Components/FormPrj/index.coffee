@@ -291,16 +291,22 @@ class FormPrj extends Component
                 ]
                 else if c.type is 'number'
                 then [
-                  c_InputNumber
+                  c_InputNumber {
                     key: 'InputNumber'
                     onChange: (value) -> onChange value.toString(), c.key
                     defaultValue: c.defaultValue
                     min: c.min
                     max: c.max
                     step: c.step
+                    (
+                      if c.value
+                      then value: c.value
+                      else {}
+                    )...
                     style:
                       width: c.width
                     formatter: c.formatter
+                  }
 
                   c_span
                     style:
