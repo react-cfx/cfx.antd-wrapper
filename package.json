@@ -9,7 +9,7 @@
     "rebuild": "gulp rebuild",
     "test": "make rebuild; make server_storybook",
     "postinstall": "npm run build"
-  },  
+  },
   "devDependencies": {
     "@babel/runtime": "^7.0.0-beta.49",
     "@storybook/addon-info": "^3.4.6",
@@ -40,12 +40,12 @@
     "cfx.react.style": "~0.0.10",
     "cfx.require-plugin-coffee": "~0.2.10",
     "cfx.rollup-plugin-coffee2": "~0.2.10",
+    "cfx.service": "0.1.2",
     "ddeyes": "~0.2.8",
     "del": "~3.0.0",
     "gulp": "~3.9.1",
     "gulp-better-rollup": "~3.1.0",
     "gulp-rename": "~1.2.3",
-    "cfx.service": "0.1.2",
     "gulp-sequence": "~1.0.0",
     "normalize.css": "~8.0.0",
     "react": "~16.4.0",

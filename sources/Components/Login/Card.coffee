@@ -39,11 +39,13 @@ LoginCard = enhance (props) =>
     c_Card props
     ,
       c_Form {
-        (
-          if @props.submit
-          then submit: @props.submit
-          else {}         
-        )...
+        Change: (value) => @props.Change value
+        PChange: (value) => @props.PChange value
+        # (
+        #   if @props.submit
+        #   then submit: @props.submit
+        #   else {}         
+        # )...
         (
           if @props.Link
           then Link: @props.Link

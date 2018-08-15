@@ -17,15 +17,22 @@ CFX = cfxify {
 
 class LoginForm extends React.Component
 
-	handleSubmit: (e) => 
-		e.preventDefault()
-		@props.form.validateFields (err, values) =>
-			# console.log 'Received values of form: ', values unless err
+	# handleSubmit: (e) => 
+	# 	e.preventDefault()
+	# 	@props.form.validateFields (err, values) =>
+	# 		# console.log 'Received values of form: ', values unless err
 			
-			if @props.submit?
-			then @props.submit values
-			else undefined
-
+	# 		if @props.submit?
+	# 		then @props.submit values
+	# 		else undefined
+	Change: (value) =>
+		if @props.Change?
+		then @props.Change value
+		else {}
+	PChange: (value) =>
+		if @props.PChange?
+		then @props.PChange value
+		else {}
 	render: ->
 
 		{
@@ -48,10 +55,12 @@ class LoginForm extends React.Component
 
 				c_UserName
 					decorator: getFieldDecorator
-
+					Change: (value) => @Change value
+					# @props.onChange value
 				c_PassWord
 					decorator: getFieldDecorator
-
+					PChange: (value) => @PChange value
+					# @props.onChange value
 				c_Commit {
 					decorator: getFieldDecorator
 					(
