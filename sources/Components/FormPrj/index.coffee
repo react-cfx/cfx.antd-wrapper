@@ -255,11 +255,16 @@ class FormPrj extends Component
                 ]
                 else if c.type is 'select'
                 then [
-                  c_Select
+                  c_Select {
                     key: 'Select'
                     onChange:(value) ->
                       onChange value, c.key, c.keys, c.unit
-                    placeholder: "请输入#{c.keys}"  
+                    placeholder: "请输入#{c.keys}"
+                    (
+                      if c.value
+                        value: c.value
+                      else {}
+                    )...
                     style:
                       if c.style?
                       then c.style
@@ -268,6 +273,7 @@ class FormPrj extends Component
                       if c.defaultValue
                       then c.defaultValue
                       else ''
+                  }
                   ,
                     if c.type is 'select'
                     then [
