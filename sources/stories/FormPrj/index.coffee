@@ -27,8 +27,10 @@ export default =>
       # Layout: 'vertical'
       title: [
         keys: '签约日期'
-        type: 'number'
-        children: '月'
+        type: 'date'
+        key: 'contractData'
+        value: "2010-10-10"
+        # defaultValue: @props.defValContractData
       ]
       Change: (value) ->
         console.log value

@@ -230,6 +230,14 @@ class FormPrj extends Component
                 then [
                   c_DatePicker {
                     key: "select"
+                    (
+                      if c.value
+                      then {
+                        value: moment c.value, 'YYYY/MM/DD'
+                      }
+                      else {}
+                    )...
+                    
                     onChange: (date, dateString) -> onChange dateString, c.key
                     (
                       if c.defaultValue
