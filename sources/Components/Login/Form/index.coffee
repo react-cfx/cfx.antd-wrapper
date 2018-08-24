@@ -4,6 +4,7 @@ import cfxify from 'cfx.react.dom'
 import UserName from './UserName'
 import PassWord from './PassWord'
 import Commit from './Commit'
+import button from './button'
 # import './index.css'
 import nb from './style'
 
@@ -13,26 +14,28 @@ CFX = cfxify {
 	UserName
 	PassWord
 	Commit
+	button
 }
 
 class LoginForm extends React.Component
 
-	# handleSubmit: (e) => 
-	# 	e.preventDefault()
-	# 	@props.form.validateFields (err, values) =>
-	# 		# console.log 'Received values of form: ', values unless err
-			
-	# 		if @props.submit?
-	# 		then @props.submit values
-	# 		else undefined
-	Change: (value) =>
-		if @props.Change?
-		then @props.Change value
-		else {}
-	PChange: (value) =>
-		if @props.PChange?
-		then @props.PChange value
-		else {}
+
+	handleSubmit: (e) => 
+		console.log 'this is run antd form '
+		e.preventDefault()
+		@props.form.validateFields (err, values) =>
+			if @props.submit?
+				@props.submit values
+			else undefined
+
+	handleClick: (e) =>
+		e.preventDefault()
+		console.log 'this is run wrapp click'
+		@props.form.validateFields (err, values) =>
+			if @props.click?
+				@props.click values
+			else undefined
+
 	render: ->
 
 		{
@@ -40,7 +43,8 @@ class LoginForm extends React.Component
 			c_Form
 			c_UserName
 			c_PassWord
-			c_Commit
+			# c_Commit
+			c_button
 		} = CFX
 
 		{ getFieldDecorator } = @props.form
@@ -52,23 +56,22 @@ class LoginForm extends React.Component
 				onSubmit: @handleSubmit
 			}
 			,
-
 				c_UserName
 					decorator: getFieldDecorator
-					Change: (value) => @Change value
-					# @props.onChange value
 				c_PassWord
 					decorator: getFieldDecorator
-					PChange: (value) => @PChange value
-					# @props.onChange value
-				c_Commit {
+
+				c_button {
 					decorator: getFieldDecorator
-					(
-						if @props.Link
-						then Link: @props.Link
-						else {}
-					)...
+					onClick: @handleClick
 				}
+				
+				# c_Commit {
+				# 	decorator: getFieldDecorator
+				# 	Link: @props.Link
+				# 	kind: @props.kind
+				# }
+
 				c_div {
 					( nb 'loginFormForgot')...
 				}
@@ -78,5 +81,6 @@ class LoginForm extends React.Component
 			id: 'components-form-demo-normal-login'
 		,
 			loginForm	
+
 
 export default Form.create() LoginForm

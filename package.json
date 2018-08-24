@@ -1,6 +1,6 @@
 {
   "name": "cfx.antd-wrapper-ch",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "main": "dist/index.js",
   "scripts": {
     "autod": "autod",
@@ -32,7 +32,7 @@
     "@storybook/addon-notes": "~3.4.10",
     "@storybook/addon-options": "~3.4.10",
     "@storybook/react": "~3.4.10",
-    "antd": "~3.8.2",
+    "antd": "~3.6.1",
     "babel-core": "~6.26.3",
     "cfx.react.dom": "~0.0.12",
     "cfx.react.link": "~0.0.12",

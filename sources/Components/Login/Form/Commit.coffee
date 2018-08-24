@@ -37,6 +37,7 @@ Commit = ({
     ,
       c_LinkBtn
         Link: @props.Link
+        kind: @props.kind
       # c_Button {
       #   type: 'primary'
       #   htmlType: 'submit'

@@ -59,24 +59,23 @@ export default =>
         withLayout: false
         child:
           c_CenterCard {
-            Change: (value) => @props.Change value
-            PChange: (value) => @props.PChange value
-            
             # (
             #   if @props.submit
             #   then submit: @props.submit
             #   else {}
             # )...
-            (
-              if @props.Link
-              then Link: @props.Link
-              else {}              
-            )...
+            Link: @props.Link
+            kind: @props.kind
             (
               if @props.version
               then version: @props.version
               else {}              
-            )...            
+            )... 
+            (
+              if @props.click
+              then click: @props.click
+              else {}
+            )...           
           }
 
     c_FullPageLayers

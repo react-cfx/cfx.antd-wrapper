@@ -1,46 +1,32 @@
 import React, { Component } from 'react'
 import cfxify from 'cfx.react.dom'
+import { domWithLink, getLinks } from 'cfx.react.link.dom'
 import { Button } from 'antd'
 
 CFX = cfxify {
   Button
+  domWithLink
 }
 
 {
   c_Button
+  c_domWithLink
 } = CFX
 
-Btn = =>
-  c_Button
-    type: 'primary'
-    htmlType: 'submit'
-    style:
-      maxWidth: '300px'
-      float: 'right'
-      width: '100%'
-  , '登录'
-
 export default ({
-  location
+  kind
   Link
 }) =>
-  # console.log link, location
-  CFX = cfxify {
-    Btn
-  }
-  {
-    c_Btn
-  } = CFX
-  
-  if Link?
-    CFX = CFX._.extends {
-      Link
-    }
-    {
-      c_Link
-    } = CFX
-    c_Link {}
-    ,
-      c_Btn {}
-  else
-    c_Btn {}
+  c_domWithLink
+    Link: getLinks
+      kind: kind
+      Link: Link
+    domObj: =>
+      c_Button
+        type: 'primary'
+        style:
+          maxWidth: '300px'
+          float: 'right'
+          width: '100%'
+        htmlType: 'submit'
+      , '登录'
