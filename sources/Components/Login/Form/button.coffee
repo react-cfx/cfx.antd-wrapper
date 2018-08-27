@@ -18,6 +18,7 @@ export default ({
     type: 'primary'
     style:
       maxWidth: '300px'
+      zIndex: '999'
       float: 'right'
       width: '100%'
     onClick: onClick

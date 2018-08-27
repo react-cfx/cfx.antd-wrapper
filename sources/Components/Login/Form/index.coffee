@@ -43,7 +43,7 @@ class LoginForm extends React.Component
 			c_Form
 			c_UserName
 			c_PassWord
-			# c_Commit
+			c_Commit
 			c_button
 		} = CFX
 
@@ -66,11 +66,7 @@ class LoginForm extends React.Component
 					onClick: @handleClick
 				}
 				
-				# c_Commit {
-				# 	decorator: getFieldDecorator
-				# 	Link: @props.Link
-				# 	kind: @props.kind
-				# }
+				c_Commit {}
 
 				c_div {
 					( nb 'loginFormForgot')...
