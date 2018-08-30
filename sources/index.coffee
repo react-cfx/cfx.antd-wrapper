@@ -31,6 +31,7 @@ import Steps from './Components/Steps'
 import Cards from './Components/Cards'
 import BtnModal from './Components/Cards/BtnModal'
 import List from './Components/Cards/List'
+import Dropdown from './Components/Dropdown'
 
 export {
   Page
@@ -55,4 +56,5 @@ export {
   Table
   Steps
   Cards
+  Dropdown
 }
