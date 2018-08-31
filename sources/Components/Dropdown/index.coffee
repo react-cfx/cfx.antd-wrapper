@@ -22,11 +22,10 @@ CFX = cfxify {
 } = CFX
 
 export default ({
-  onClick
+  onClick = =>
   trigger = 'click' # 'click' 'hover'
   children = []
   name = ''
-  style = {}
 }) =>
   menu = 
     c_Menu
@@ -35,7 +34,6 @@ export default ({
     ,
       (
         children.reduce (r, c, i) ->
-          console.log r
           [
             r...
             c_MenuItem
@@ -46,7 +44,6 @@ export default ({
       )...
   
   c_Dropdown {
-    style: style
     overlay: menu
     trigger: [ trigger ]
   }

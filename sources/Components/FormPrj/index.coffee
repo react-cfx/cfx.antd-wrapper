@@ -148,7 +148,7 @@ class FormPrj extends Component
                   ]
                   else if c.type is 'select'
                   then [
-                    c_Select
+                    c_Select {
                       key: 'Select'
                       onChange:(value) ->
                         onChange value, c.key
@@ -157,10 +157,16 @@ class FormPrj extends Component
                         if c.style?
                         then c.style
                         else {}
+                      (
+                        if c.value
+                          value: c.value
+                        else {}
+                      )...                        
                       defaultValue:
                         if c.defaultValue
                         then c.defaultValue
                         else ''
+                    }
                     ,
                       if c.type is 'select'
                       then [
@@ -171,7 +177,7 @@ class FormPrj extends Component
                               value: c
                             , c
                           ]
-                        , []  
+                        , []                   
                       ]
                   ]
                   else if c.type is 'inputSelect'
