@@ -27,4 +27,9 @@ export default ->
         getLinks
           Link: Links()
           kind: 'Welcome'
+      exitLink:
+        getLinks
+          Link: Links
+          kind: 'Welcome'
+      exit: '退出'
 

@@ -11,8 +11,6 @@ CFX = cfxify {
   FormField
 }
 
-
-
 UserName = ({
   decorator
 }) =>
@@ -29,7 +27,7 @@ UserName = ({
     props:
       rules: [
         required: true
-        message: '请输入邮箱 / 手机号 / 用户名。'
+        message: '请输入邮箱 / 手机号 / 用户名。'          
       ]
     children:
       c_Input

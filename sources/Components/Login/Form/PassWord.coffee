@@ -10,11 +10,16 @@ CFX = cfxify {
   Icon
   FormField
 }
-
+# validator = (rule, value, cb) =>
+#   console.log 'validator --->>>>', value
+#   if value is '123'
+#     cb '哈哈哈哈哈哈'
+#   cb() 
 PassWord = ({
   decorator
+  validator
 }) =>
-
+  
   {
     c_Icon
     c_Input
@@ -27,8 +32,8 @@ PassWord = ({
     name: 'password'
     props:
       rules: [
-        required: true
         message: '请输入正确的密码!'
+        validator: validator
       ]
     children:
       c_Input

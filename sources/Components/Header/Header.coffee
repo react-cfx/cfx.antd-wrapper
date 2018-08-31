@@ -12,6 +12,7 @@ import {
 CFX = cfxify {
   'div'
   'small'
+  'span'
   Icon
   Badge
   Header
@@ -30,6 +31,7 @@ class Header extends Component
 
     {
       c_div
+      c_span
       c_small
       c_Icon
       c_Badge
@@ -61,7 +63,7 @@ class Header extends Component
                 key: 'word'
                 ( nb 'Word' )...
               }
-              , '李强'
+              , @props.msg
         # c_i {
           # key: 'word'
           # ( nb 'Word' )...
@@ -81,7 +83,18 @@ class Header extends Component
               type: 'setting'
               ( nb 'Setting' )...
             }
-      ##
+
+      c_domWithLink
+        Link: @props.exitLink
+        # onClick: @props.settingClick
+        domObj: =>
+          c_span {
+            key: 'a'
+            onClick: @props.exitClick
+            ( nb 'exit' )...
+          }
+          , @props.exit
+      #
       # c_div {
       #   key: 'bell'
       #   ( nb 'BellContainer' )...

@@ -35,7 +35,11 @@ class LoginForm extends React.Component
 			if @props.click?
 				@props.click values
 			else undefined
-
+	validator = (rule, value, cb) =>
+		console.log 'validator --->>>>', value
+		# if value is '123'
+		# 	cb '哈哈哈哈哈哈'
+		# cb()
 	render: ->
 
 		{
@@ -50,7 +54,6 @@ class LoginForm extends React.Component
 		{ getFieldDecorator } = @props.form
 
 		loginForm =
-
 			c_Form {
 				( nb 'loginForm' )...        
 				onSubmit: @handleSubmit
@@ -60,10 +63,16 @@ class LoginForm extends React.Component
 					decorator: getFieldDecorator
 				c_PassWord
 					decorator: getFieldDecorator
-
+					validator: @validator
 				c_button {
 					decorator: getFieldDecorator
 					onClick: @handleClick
+					name: 'onSubmit'
+					props:
+						rules: [
+							message: '账号密码错误!'
+							# validator: @validator
+						]
 				}
 				
 				c_Commit {}
