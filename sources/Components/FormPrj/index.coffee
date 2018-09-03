@@ -107,19 +107,22 @@ class FormPrj extends Component
             marginLeft: '-8px'
             marginRight: '-8px'
         ,
-          @props.title.reduce (r,c,i) =>
+          @props.title.reduce (r, c, i) =>
             [
               r...
               c_Col
                 key: "#{i}"
                 sm:
                   span: 24
+                  offset: 2
                 md:
                   span: 12
+                  offset: 2
                 lg:
                   span: 8
+                  offset: 2
                 xl:
-                  span: 6
+                  span: 5
                   offset: 2
                 style:
                   paddingLeft: '8px'

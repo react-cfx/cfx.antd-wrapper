@@ -24,12 +24,27 @@ export default =>
     } = CFX
 
     c_FormPrj
-      # Layout: 'vertical'
+      Layout: 'vertical'
       title: [
-        keys: '签约日期'
-        type: 'date'
-        key: 'contractData'
-        value: "2010-10-10"
+          keys: '签约日期'
+          type: 'date'
+          key: 'contractData'
+          value: "2010-10-10"
+        ,
+          keys: '签约日期'
+          type: 'date'
+          key: 'contractData'
+          value: "2010-10-10"
+        ,
+          keys: '签约日期'
+          type: 'date'
+          key: 'contractData'
+          value: "2010-10-10"
+        ,
+          keys: '签约日期'
+          type: 'date'
+          key: 'contractData'
+          value: "2010-10-10"            
         # defaultValue: @props.defValContractData
       ]
       Change: (value) ->
