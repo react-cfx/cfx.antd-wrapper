@@ -332,6 +332,7 @@ class FormPrj extends Component
                   }
 
                   c_span
+                    key: 'span'
                     style:
                       marginLeft: '5px'
                   , c.children

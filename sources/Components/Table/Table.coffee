@@ -273,7 +273,7 @@ class EditableTable extends Component
 
     @NestedTable = (args...) ->
 
-      dd { args }
+      # dd { args }
 
       c_Table
         style:
@@ -300,7 +300,7 @@ class EditableTable extends Component
   componentWillReceiveProps: (nextProps) ->
     if nextProps.dataSource?
       count = nextProps.dataSource.length
-      dd count
+      # dd count
       @setState
         dataSource: nextProps.dataSource
         count: nextProps.dataSource.length
