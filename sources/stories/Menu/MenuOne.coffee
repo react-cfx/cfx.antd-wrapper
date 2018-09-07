@@ -1,7 +1,7 @@
 import React from 'react'
 import cfxify from 'cfx.react.dom'
 import Menu from '../../Components/Navigation/Menu'
-import getLinks from '../../Components/UtilLink/ComLinkBtn'
+# import getLinks from '../../Components/UtilLink/ComLinkBtn'
 import Links from '../../Components/UtilLink/Links'
 CFX = cfxify {
   Menu
@@ -29,16 +29,12 @@ export default =>
       'User':
         k: 'sub1'
         i: 'user'
-        link: getLinks {
-          Link: Links
-          kind: 'Test'
-        }
+        link: Links
+        kind: 'Test' 
         'Tom':
           k: '3'
-          link: getLinks {
-            Link: Links
-            kind: 'Test'
-          }
+          link: Links
+          kind: 'Test' 
         'Bill':
           k: '4'
         'Alex':

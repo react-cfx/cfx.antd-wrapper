@@ -15,10 +15,10 @@ export default =>
   } = CFX
 
   c_Header
-    Link1:
-      getLinks
-        Link: Links
-        kind: 'Welcome'
+    # Link1:
+    #   getLinks
+    Link: Links
+    kind: 'Welcome'
     # Link2:
     #   getLinks
     #     Link: Links

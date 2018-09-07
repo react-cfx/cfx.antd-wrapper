@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react'
 import cfxify from 'cfx.react.dom'
 import Page from '../../Components/Page/Page'
 import { getLinks } from 'cfx.react.link.dom'
-import Links from '../Links'
+import Link from '../Links'
 CFX = cfxify {
   'div'
   Page
@@ -34,7 +34,7 @@ export default =>
           item: '第三级'
           level: 'Welcome'
       ]
-      Links: Links()
+      Link: Link
       many: [
           label:
             c_div {}

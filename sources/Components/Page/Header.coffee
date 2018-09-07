@@ -35,6 +35,7 @@ export default ({
     c_BreadcrumbItem
     c_ComA
   } = CFX
+  
   render: ->
     c_Layout
       style:
@@ -58,9 +59,8 @@ export default ({
                     key: "breadcrumb_#{i}"
                   ,
                     c_ComA
-                      Link: getLinks
-                        Link: @props.Links
-                        kind: c.level
+                      Link: @props.Link
+                      kind: c.level
                       name: c.item
                     # c_domWithLink
                     #   Link: 

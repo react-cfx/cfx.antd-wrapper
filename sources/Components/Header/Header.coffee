@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import cfxify from 'cfx.react.dom'
-import { domWithLink } from 'cfx.react.link.dom'
+import domWithLink from 'cfx.react.link.dom'
 import nb from './style'
 import {
   Icon
@@ -52,10 +52,11 @@ class Header extends Component
       ,
         c_domWithLink
           Link: @props.Link
+          kind: @props.kind
+          onClick: @props.onClick
           domObj: => 
             c_div {
               key: 'circle'
-              onClick: @props.onClick
               ( nb 'Circle' )...
             }
             , 
@@ -72,6 +73,7 @@ class Header extends Component
       ##
       c_domWithLink
         Link: @props.SettingLink
+        kind: @props.SettingKind
         onClick: @props.settingClick
         domObj: =>
           c_div {
@@ -86,11 +88,11 @@ class Header extends Component
 
       c_domWithLink
         Link: @props.exitLink
-        # onClick: @props.settingClick
+        kind: @props.exitKind
+        onClick: @props.exitClick
         domObj: =>
           c_span {
             key: 'a'
-            onClick: @props.exitClick
             ( nb 'exit' )...
           }
           , @props.exit

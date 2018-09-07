@@ -19,7 +19,7 @@ export default (props) =>
     breadcrumb
     Content
     many
-    Links
+    Link
   } = props
 
   {
@@ -35,7 +35,7 @@ export default (props) =>
       key: 'Header'
       title: title
       breadcrumb: breadcrumb
-      Links: Links
+      Link: Link
 
     (
       if many?

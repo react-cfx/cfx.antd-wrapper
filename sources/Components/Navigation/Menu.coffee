@@ -55,6 +55,7 @@ _Menu = enhance (props) =>
       i
       c
       link
+      kind
     }) =>
       # dd "Create MenuItem Dom #{k}."
 
@@ -70,6 +71,7 @@ _Menu = enhance (props) =>
             ,
               c_ALink
                 Link: link
+                kind: kind
                 style:
                   color: 'white'
                 name: c
@@ -77,6 +79,7 @@ _Menu = enhance (props) =>
           else [
             c_ALink
               Link: link
+              kind: kind
               style:
                 color: 'white'
               name: c
@@ -88,6 +91,7 @@ _Menu = enhance (props) =>
         lk
         c
         link
+        kind
         others
       }
       recMenu
@@ -105,6 +109,7 @@ _Menu = enhance (props) =>
         c
         i
         link
+        kind
         others
       }
       recMenu
@@ -124,6 +129,7 @@ _Menu = enhance (props) =>
                 ,
                   c_ALink
                     Link: link
+                    kind: kind
                     style:
                       color: 'white'
                     name: c
@@ -132,6 +138,7 @@ _Menu = enhance (props) =>
             else (
               c_ALink
                 Link: link
+                kind: kind
                 style:
                   color: 'white'
                 name: c
@@ -147,6 +154,7 @@ _Menu = enhance (props) =>
         lk          # Lable Key
         ops         # Options
         link
+        kind
         others...
       } = menus["#{c}"]
       [
@@ -159,6 +167,7 @@ _Menu = enhance (props) =>
               i
               c
               link
+              kind
             }
           ]
           else (
@@ -168,6 +177,7 @@ _Menu = enhance (props) =>
                 lk
                 c
                 link
+                kind
                 others
               }, recMenu
             ]
@@ -177,6 +187,7 @@ _Menu = enhance (props) =>
                 c
                 i
                 link
+                kind
                 others
               }, recMenu 
             ]
