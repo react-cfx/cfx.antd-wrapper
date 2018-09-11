@@ -2,7 +2,6 @@ import cfxify from 'cfx.react.dom'
 import { Layout,Breadcrumb } from 'antd'
 { Header, Content, Footer } = Layout
 BreadcrumbItem = Breadcrumb.Item
-import { getLinks } from 'cfx.react.link.dom'
 import ComA from '../UtilLink/ComA'
 
 CFX = cfxify {

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react'
 import cfxify from 'cfx.react.dom'
 import Link from './Links'
-import getLinks from './LoginGetLinks'
+# import getLinks from './LoginGetLinks'
 
 import {
   LoginForm
@@ -25,7 +25,9 @@ export default =>
 
   .add 'LoginForm'
   , =>
+
     { c_LoginForm } = CFX
+
     c_LoginForm
       Change: (value) ->
         console.log value
@@ -57,11 +59,13 @@ export default =>
 
     { c_Login } = CFX
     c_Login
-      Link: getLinks Link
+      Link: Link
+      # loginKind: 'Welcome'
+      registerKind: 'Welcome'
       Change: (value) ->
         console.log value
       PChange: (value) ->
         console.log value
       version: '0.0.1'
-      # submit: (values) =>
-      #   console.log { values }, '123'
+      submit: (values) =>
+        console.log { values }, '123'

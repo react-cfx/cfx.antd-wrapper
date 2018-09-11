@@ -1,6 +1,5 @@
 import cfxify from 'cfx.react.dom'
 import Header from '../../Components/Page/Header'
-import { getLinks } from 'cfx.react.link.dom'
 import Links from '../Links'
 
 CFX = cfxify {

@@ -27,7 +27,8 @@ CenterCard = (props) =>
         #   else {}         
         # )...
         Link: @props.Link
-        kind: @props.kind
+        # loginKind: @props.loginKind
+        registerKind: @props.registerKind
         (
           if @props.version
           then version: @props.version

@@ -36,7 +36,7 @@
     "babel-core": "~6.26.3",
     "cfx.react.dom": "~0.0.14",
     "cfx.react.link": "~0.0.14",
-    "cfx.react.link.dom": "~0.0.14",
+    "cfx.react.link.dom": "~0.0.15",
     "cfx.react.style": "~0.0.14",
     "cfx.require-plugin-coffee": "~0.2.10",
     "cfx.rollup-plugin-coffee2": "~0.2.10",

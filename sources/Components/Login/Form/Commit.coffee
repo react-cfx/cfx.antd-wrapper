@@ -7,7 +7,7 @@ import cfxify from 'cfx.react.dom'
 import nb from './style'
 import LinkBtn from './LinkBtn'
 import Link from '../../../stories/Links'
-import getLinks from '../../../stories/LoginGetLinks'
+import domWithLink from 'cfx.react.link.dom'
 
 Commit = ({
   decorator
@@ -17,33 +17,27 @@ Commit = ({
     CFX = cfxify {
       'a'
       'div'
+      'span'
       Button
       Checkbox
       FormField
       LinkBtn
-      getLinks
+      domWithLink
     }
 
     {
       c_a
       c_div
+      c_span
       c_Button
       c_Checkbox
       c_FormField
       c_LinkBtn
+      c_domWithLink
     } = CFX
 
     c_FormField {}
     ,
-    #   c_LinkBtn
-    #     Link: @props.Link
-    #     kind: @props.kind
-      # c_Button {
-      #   type: 'primary'
-      #   htmlType: 'submit'
-      #   ( nb 'loginFormButton' )...
-      # }
-      # , '登录'
 
       # decorator: decorator
       # name: 'remember'
@@ -65,8 +59,14 @@ Commit = ({
 
         ' or '
 
-        c_a
-          href: ''
-        , '注册'
+        c_domWithLink
+          kind: @props.registerKind
+          Link: @props.Link
+          onClick: => 
+            console.log ''
+          domObj: =>
+            c_span
+              key: 'span'
+            , '注册'
 
 export default Commit

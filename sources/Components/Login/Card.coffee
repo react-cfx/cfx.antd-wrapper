@@ -40,7 +40,8 @@ LoginCard = enhance (props) =>
     ,
       c_Form {
         Link: @props.Link
-        kind: @props.kind
+        # loginKind: @props.loginKind
+        registerKind: @props.registerKind
         # (
         #   if @props.submit
         #   then submit: @props.submit

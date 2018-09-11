@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import cfxify from 'cfx.react.dom'
-import { domWithLink, getLinks } from 'cfx.react.link.dom'
+import domWithLink from 'cfx.react.link.dom'
 import { Button } from 'antd'
 
 CFX = cfxify {
@@ -16,11 +16,15 @@ CFX = cfxify {
 export default ({
   kind
   Link
+  name
+  pageClick
 }) =>
   c_domWithLink
-    Link: getLinks
-      kind: kind
-      Link: Link
+    kind: kind
+    Link: Link
+    if pageClick
+    then onClick: => pageClick()
+    else {}
     domObj: =>
       c_Button
         type: 'primary'
@@ -29,4 +33,4 @@ export default ({
           float: 'right'
           width: '100%'
         htmlType: 'submit'
-      , '登录'
+      , name

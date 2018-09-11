@@ -75,8 +75,11 @@ class LoginForm extends React.Component
 						]
 				}
 				
-				c_Commit {}
-
+				c_Commit
+					Link: @props.Link
+					registerKind: @props.registerKind
+					# loginKind: @props.loginKind
+					click: @props.click
 				c_div {
 					( nb 'loginFormForgot')...
 				}

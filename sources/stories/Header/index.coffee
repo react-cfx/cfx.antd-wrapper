@@ -1,7 +1,6 @@
 import { storiesOf } from '@storybook/react'
 import cfxify from 'cfx.react.dom'
 import Header from '../../Components/Header/Header'
-import { getLinks } from 'cfx.react.link.dom'
 import Links from '../../stories/Links'
 CFX = cfxify {
   Header

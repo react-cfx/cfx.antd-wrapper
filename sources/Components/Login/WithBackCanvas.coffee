@@ -27,7 +27,7 @@ export default =>
 
   render: ->
     
-    { Link } = @props
+    # { Link } = @props
 
     Layers =
       background:
@@ -65,7 +65,8 @@ export default =>
             #   else {}
             # )...
             Link: @props.Link
-            kind: @props.kind
+            # loginKind: @props.loginKind
+            registerKind: @props.registerKind
             (
               if @props.version
               then version: @props.version
