@@ -5,7 +5,7 @@ docker:
 		--name ${pjName} \
 		--rm \
 		-ti \
-		-p 3000:8000 \
+		-p 3330:8000 \
 		-v $$(pwd):/root/${pjName} \
 		mooxe/node \
 		/bin/bash
