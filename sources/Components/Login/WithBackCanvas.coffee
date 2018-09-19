@@ -8,79 +8,81 @@ import particlesConfig from './particlesConfig'
 import BackgroundImg from './background.jpg'
 
 CFX = cfxify {
-  'img'
-  Layout
-  Particles
-  CenterCard
-  FullPageLayers
+	'img'
+	Layout
+	Particles
+	CenterCard
+	FullPageLayers
 }
 
 export default =>
 
-  {
-    c_Layout
-    c_CenterCard
-    c_Particles
-    c_img
-    c_FullPageLayers
-  } = CFX
+	{
+		c_Layout
+		c_CenterCard
+		c_Particles
+		c_img
+		c_FullPageLayers
+	} = CFX
 
-  render: ->
-    
-    # { Link } = @props
+	render: ->
+		
+		# { Link } = @props
 
-    Layers =
-      background:
-        layout:
-          style:
-            backgroundImage: "url(#{
-              if BackgroundImg.src?
-              then BackgroundImg.src
-              else BackgroundImg
-            })"
-        child:
-          c_Particles
-            style:
-              position: 'absolute'
-              width: '100%'
-              minHeight: '100vh'
-            params: particlesConfig
+		Layers =
+			background:
+				layout:
+					style:
+						backgroundImage: "url(#{
+							if BackgroundImg.src?
+							then BackgroundImg.src
+							else BackgroundImg
+						})"
+				child:
+					c_Particles
+						style:
+							position: 'absolute'
+							width: '100%'
+							minHeight: '100vh'
+						params: particlesConfig
 
-          # c_img
-          #   src:
-          #     if BackgroundImg.src?
-          #     then BackgroundImg.src
-          #     else BackgroundImg
-          #   style:
-          #     width: '100%'
-          #     minHeight: '100vh'
-          
-      centerCard:
-        withLayout: false
-        child:
-          c_CenterCard {
-            # (
-            #   if @props.submit
-            #   then submit: @props.submit
-            #   else {}
-            # )...
-            Link: @props.Link
-            # loginKind: @props.loginKind
-            registerKind: @props.registerKind
-            (
-              if @props.version
-              then version: @props.version
-              else {}              
-            )... 
-            (
-              if @props.click
-              then click: @props.click
-              else {}
-            )...           
-          }
+					# c_img
+					#   src:
+					#     if BackgroundImg.src?
+					#     then BackgroundImg.src
+					#     else BackgroundImg
+					#   style:
+					#     width: '100%'
+					#     minHeight: '100vh'
+					
+			centerCard:
+				withLayout: false
+				child:
+					c_CenterCard {
+						# (
+						#   if @props.submit
+						#   then submit: @props.submit
+						#   else {}
+						# )...
+						Link: @props.Link
+						registerKind: @props.registerKind
+						value: @props.value
+						values: @props.values
+						Change: @props.Change
+						(
+							if @props.version
+							then version: @props.version
+							else {}              
+						)... 
+						(
+							if @props.click
+							then click: @props.click
+							else {}
+						)...           
+					}
 
-    c_FullPageLayers
-      layers: [
-        Layers.background
-        Layers.centerCard
-      ]
+		c_FullPageLayers
+			layers: [
+				Layers.background
+				Layers.centerCard
+			]

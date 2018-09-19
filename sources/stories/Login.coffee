@@ -29,6 +29,8 @@ export default =>
     { c_LoginForm } = CFX
 
     c_LoginForm
+      Link: Link
+      registerKind: 'Welcome'
       Change: (value) ->
         console.log value
       PChange: (value) ->
@@ -37,6 +39,8 @@ export default =>
   , =>
     { c_LoginCard } = CFX
     c_LoginCard
+      Link: Link
+      registerKind: 'Welcome'
       Change: (value) ->
         console.log value
       PChange: (value) ->
@@ -45,6 +49,8 @@ export default =>
   , =>
     { c_CenterCard } = CFX
     c_CenterCard
+      Link: Link
+      registerKind: 'Welcome'
       Change: (value) ->
         console.log value
       PChange: (value) ->
@@ -52,7 +58,9 @@ export default =>
   .add 'WithBackImg'
   , =>
     { c_WithBackImg } = CFX
-    c_WithBackImg {}
+    c_WithBackImg
+      Link: Link
+      registerKind: 'Welcome'
 
   .add 'Login'
   , =>
@@ -60,10 +68,12 @@ export default =>
     { c_Login } = CFX
     c_Login
       Link: Link
-      # loginKind: 'Welcome'
       registerKind: 'Welcome'
-      Change: (value) ->
-        console.log value
+      values: [
+        '平台管理员'
+        '渠道用户'
+      ]
+      value: 1
       PChange: (value) ->
         console.log value
       version: '0.0.1'

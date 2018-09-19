@@ -8,12 +8,18 @@ CFX = cfxify {
 
 export default =>
 
-  { c_CenterCard } = CFX
+  { 
+    c_CenterCard
+  } = CFX
 
-  c_CenterCard
-    style:
-      backgroundImage: "url(#{
-        if BackgroundImg.src?
-        then BackgroundImg.src
-        else BackgroundImg
-      })"
+  render: ->
+
+    c_CenterCard
+      style:
+        backgroundImage: "url(#{
+          if BackgroundImg.src?
+          then BackgroundImg.src
+          else BackgroundImg
+        })"
+      Link: @props.Link
+      registerKind: @props.registerKind

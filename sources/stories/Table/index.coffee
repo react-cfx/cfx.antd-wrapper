@@ -20,7 +20,7 @@ export default =>
     } = CFX
 
     c_Table
-      operating: false
+      operating: ""
       onChange: (selectedRowKeys, selectedRows) =>
         console.log selectedRowKeys, selectedRows, '312312312312312'
       # editPen: true

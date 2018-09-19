@@ -5,16 +5,19 @@ import UserName from './UserName'
 import PassWord from './PassWord'
 import Commit from './Commit'
 import button from './button'
+import Cascder from './Cascder'
 # import './index.css'
 import nb from './style'
 
 CFX = cfxify {
 	'div'
+	'a'
 	Form
 	UserName
 	PassWord
 	Commit
 	button
+	Cascder
 }
 
 class LoginForm extends React.Component
@@ -43,12 +46,14 @@ class LoginForm extends React.Component
 	render: ->
 
 		{
+			c_a
 			c_div
 			c_Form
 			c_UserName
 			c_PassWord
 			c_Commit
 			c_button
+			c_Cascder
 		} = CFX
 
 		{ getFieldDecorator } = @props.form
@@ -64,6 +69,11 @@ class LoginForm extends React.Component
 				c_PassWord
 					decorator: getFieldDecorator
 					validator: @validator
+				c_Cascder
+					key: 'Dropdown'
+					value: @props.value
+					values: @props.values
+					Change: @props.Change
 				c_button {
 					decorator: getFieldDecorator
 					onClick: @handleClick
@@ -78,8 +88,6 @@ class LoginForm extends React.Component
 				c_Commit
 					Link: @props.Link
 					registerKind: @props.registerKind
-					# loginKind: @props.loginKind
-					click: @props.click
 				c_div {
 					( nb 'loginFormForgot')...
 				}
