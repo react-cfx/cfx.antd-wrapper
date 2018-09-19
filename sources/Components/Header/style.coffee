@@ -52,11 +52,13 @@ style =
     right: '14px'
     cursor: 'pointer'
   exit:
-    fontSize: '10px'
+   ':hover':
+      color: 'red' 
+    fontSize: '12px'
     position: 'absolute'
     color: 'gray'
-    top: '15px'
-    right: '50px'
+    top: '3px'
+    right: '40px'
     cursor: 'pointer'
   BellContainer:
     ':hover':
