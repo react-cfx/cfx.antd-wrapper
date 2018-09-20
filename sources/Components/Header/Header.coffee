@@ -54,7 +54,7 @@ class Header extends Component
           Link: @props.Link
           kind: @props.kind
           onClick: =>
-            @props.onClick
+            @props.onClick()
           domObj: => 
             c_div {
               key: 'circle'
@@ -76,7 +76,7 @@ class Header extends Component
         Link: @props.SettingLink
         kind: @props.SettingKind
         onClick: =>
-          @props.settingClick
+          @props.settingClick()
         domObj: =>
           c_div {
             key: 'SettingContainer'
@@ -92,7 +92,7 @@ class Header extends Component
         Link: @props.exitLink
         kind: @props.exitKind
         onClick: =>
-          @props.exitClick
+          @props.exitClick()
         domObj: =>
           c_span {
             key: 'a'
