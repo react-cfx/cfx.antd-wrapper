@@ -21,24 +21,25 @@ export default =>
 
     c_Table
       operating: ""
+      # selectedRowKeys: ['1']
       onChange: (selectedRowKeys, selectedRows) =>
         console.log selectedRowKeys, selectedRows, '312312312312312'
-      # editPen: true
+      editPen: true
       rowSelection: true
       getDsOne: (target, key, dataIndex) =>
         console.log dataIndex
       addChildren: true
-      columnsLink: [
-        0
-        1
-      ]
-      headlabel: (index, record, text, dataIndex) =>
-        c_a
-          key: "/#{index}"
-          onClick: =>
-            console.log 'dataIndex', dataIndex
-          # href: "/#{index}"     
-        , text
+      # columnsLink: [
+      #   0
+      #   1
+      # ]
+      # headlabel: (index, record, text, dataIndex) =>
+      #   c_a
+      #     key: "/#{index}"
+      #     onClick: =>
+      #       console.log 'dataIndex', dataIndex
+      #     # href: "/#{index}"     
+      #   , text
       Divider: false
       delete: '解除'
       # footlabel: (index, record) =>

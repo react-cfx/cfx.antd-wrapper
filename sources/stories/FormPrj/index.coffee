@@ -24,7 +24,7 @@ export default =>
     } = CFX
 
     c_FormPrj
-      Layout: 'vertical'
+      # Layout: 'vertical'
       title: [
           keys: '签约日期'
           type: 'date'
@@ -36,16 +36,31 @@ export default =>
           key: 'contractData'
           value: "2010-10-10"
         ,
-          keys: '签约日期'
-          type: 'date'
-          key: 'contractData'
-          value: "2010-10-10"
+          keys: '签约日期1'
+          type: 'b'
+          key: 'c'
         ,
           keys: '签约日期'
-          type: 'date'
-          key: 'contractData'
-          value: "2010-10-10"            
-        # defaultValue: @props.defValContractData
+          type: 'b'
+          key: 'c'
+          defaultValue: '134'
+          message: '请输入'
+          verification: (value, callback) =>
+            if value isnt '1'
+              callback '请输入正确的日期'
+            else
+              callback()          
+        ,
+          keys: '签约日期'
+          type: 'a'
+          key: 'a'
+          message: '请输入1'
+          verification: (value, callback) =>
+            if value isnt '1'
+              callback '请输入正确的日期1'
+            else
+              callback()   
       ]
       Change: (value) ->
         console.log value
+      

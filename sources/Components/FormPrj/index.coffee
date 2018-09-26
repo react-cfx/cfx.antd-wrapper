@@ -11,6 +11,7 @@ import {
   Cascader
   Select
   InputNumber
+  option
 } from 'antd'
 
 Option = Select.Option
@@ -38,9 +39,13 @@ class FormPrj extends Component
     @state =
       
     @
+  # verification: (rule , value ,callback) =>
+  #   console.log 'value', value
+  #   @props.verification value, callback
   
   render: ->
-
+    console.log '@', @
+    { getFieldDecorator } = @props.form
     {
       c_span
       c_div
@@ -338,14 +343,31 @@ class FormPrj extends Component
                   , c.children
                 ]
                 else [
-                  c_Input
-                    onChange: (e) -> onChange e.target.value, c.key, c.keys, c.unit
-                    key: "AutoComp"
-                    placeholder: "请输入#{c.keys}"
-                    defaultValue:
-                      if c.defaultValue
-                      then c.defaultValue
-                      else ''
+                  if c.verification
+                    getFieldDecorator("confirm#{i}",{
+                      initialValue: c.defaultValue
+                      rules: [
+                          required: true
+                          message: c.message
+                        ,
+                          validator: (rule , value ,callback) =>
+                            c.verification value, callback
+                      ]
+                    })(
+                        c_Input
+                          onChange: (e) -> onChange e.target.value, c.key, c.keys, c.unit
+                          key: "AutoComp"
+                          placeholder: "请输入#{c.keys}"
+                    )
+                  else
+                    c_Input
+                      onChange: (e) -> onChange e.target.value, c.key, c.keys, c.unit
+                      key: "AutoComp"
+                      placeholder: "请输入#{c.keys}"
+                      initialvalue:
+                        if c.defaultValue
+                        then c.defaultValue
+                        else ''
                 ]
             ]
           , []
@@ -367,5 +389,5 @@ class FormPrj extends Component
               else []
       ]
     ]
-
+FormPrj = Form.create()(FormPrj)
 export default FormPrj
