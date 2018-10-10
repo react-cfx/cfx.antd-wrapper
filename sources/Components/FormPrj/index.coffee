@@ -44,7 +44,6 @@ class FormPrj extends Component
   #   @props.verification value, callback
   
   render: ->
-    console.log '@', @
     { getFieldDecorator } = @props.form
     {
       c_span
@@ -358,12 +357,14 @@ class FormPrj extends Component
                           onChange: (e) -> onChange e.target.value, c.key, c.keys, c.unit
                           key: "AutoComp"
                           placeholder: "请输入#{c.keys}"
+                          style: c.style
                     )
                   else
                     c_Input
                       onChange: (e) -> onChange e.target.value, c.key, c.keys, c.unit
                       key: "AutoComp"
                       placeholder: "请输入#{c.keys}"
+                      style: c.style
                       initialvalue:
                         if c.defaultValue
                         then c.defaultValue

@@ -38,13 +38,13 @@ export default =>
 							then BackgroundImg.src
 							else BackgroundImg
 						})"
-				child:
-					c_Particles
-						style:
-							position: 'absolute'
-							width: '100%'
-							minHeight: '100vh'
-						params: particlesConfig
+				child: ''
+					# c_Particles
+					# 	style:
+					# 		position: 'absolute'
+					# 		width: '100%'
+					# 		minHeight: '100vh'
+					# 	params: particlesConfig
 
 					# c_img
 					#   src:

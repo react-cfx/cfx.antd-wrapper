@@ -191,17 +191,26 @@ class EditableTable extends Component
                   ,
                     c_Popconfirm
                       key: 'Popconfirm'
-                      title: 'Sure to delete??'
+                      title:
+                        if @props.popconfirmTitle
+                        then @props.popconfirmTitle
+                        else 'Sure to delete??'
                       onConfirm: () =>
                         if @props.onDelete?
                         then @props.onDelete record
                         else @onDelete record.key
                     ,
-                      c_a
+                      c_a {
                         key: 'a'
                         href: '#'
+                        (
+                          if @props.popClick
+                          then onClick: => @props.popClick record
+                          else {}
+                        )...
                         style:
                           color: '#F00'
+                      }
                       , 
                         (
                           if @props.delete?
@@ -244,17 +253,26 @@ class EditableTable extends Component
                   ,
                     c_Popconfirm
                       key: 'Popconfirm'
-                      title: 'Sure to delete??'
+                      title:
+                        if @props.popconfirmTitle
+                        then @props.popconfirmTitle
+                        else 'Sure to delete??'
                       onConfirm: () =>
                         if @props.onDelete?
                         then @props.onDelete record
                         else @onDelete record.key
                     ,
-                      c_a
+                      c_a {
                         key: 'a'
                         href: '#'
+                        (
+                          if @props.popClick
+                          then onClick: => @props.popClick record
+                          else {}
+                        )...                        
                         style:
                           color: '#F00'
+                      }
                       ,
                         (
                           if @props.delete?

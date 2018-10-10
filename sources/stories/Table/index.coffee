@@ -29,6 +29,8 @@ export default =>
       getDsOne: (target, key, dataIndex) =>
         console.log dataIndex
       addChildren: true
+      popClick:(record) =>
+        console.log 'record', record
       # columnsLink: [
       #   0
       #   1

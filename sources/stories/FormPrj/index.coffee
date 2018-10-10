@@ -59,7 +59,7 @@ export default =>
             if value isnt '1'
               callback '请输入正确的日期1'
             else
-              callback()   
+              callback()
       ]
       Change: (value) ->
         console.log value
