@@ -75,10 +75,11 @@ class Header extends Component
       c_domWithLink
         Link: @props.SettingLink
         kind: @props.SettingKind
-        onClick: =>
-          @props.settingClick()
+        # onClick: =>
+        #   @props.settingClick()
         domObj: =>
           c_div {
+            onClick: @props.settingClick
             key: 'SettingContainer'
             ( nb 'SettingContainer' )...
           }

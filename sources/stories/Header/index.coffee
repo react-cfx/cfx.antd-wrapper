@@ -17,13 +17,12 @@ export default ->
 
     c_Header
       onClick: => console.log '123'
-      settingClick: => console.log 'abc'
+      # settingClick: => console.log 'abc'
       exitClick: => console.log 'hello world'
+      settingClick: => console.log '2222'
       name: '李强'
       Link: Links
       kind: 'Welcome'
-      SettingLink: Links
-      SettingKind: 'Welcome'
       exitLink: Links
       exitKind: 'Welcome'
       exit: '退出'
