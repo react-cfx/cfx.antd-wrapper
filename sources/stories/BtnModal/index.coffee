@@ -24,6 +24,8 @@ export default =>
       type: 'primary'
       BtnTitle: '按钮'
       ModalTitle: '这是一个标题'
+      handleOk: ->
+        console.log 'ok'
       ModalContent:
         c_div {}
         , 'HelloWorld!!!'    

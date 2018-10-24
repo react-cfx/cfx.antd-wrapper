@@ -34,6 +34,7 @@ PassWord = ({
       rules: [
         message: '请输入正确的密码!'
         validator: validator
+        required: true
       ]
     children:
       c_Input

@@ -17,6 +17,8 @@ export default ->
       shape: @props.shape
       icon: @props.icon
       type: @props.type
+      style: @props.style
+      handleOk: @props.handleOk
       BtnTitle: @props.BtnTitle
       ModalTitle: @props.ModalTitle
       ModalContent: @props.ModalContent

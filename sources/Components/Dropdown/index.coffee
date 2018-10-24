@@ -26,6 +26,7 @@ export default ({
   trigger = 'click' # 'click' 'hover'
   children = []
   name = ''
+  style = marginLeft: '8px'
 }) =>
   menu = 
     c_Menu
@@ -48,9 +49,9 @@ export default ({
     trigger: [ trigger ]
   }
   ,
-    c_Button
-      style:
-        marginLeft: '8px'
+    c_Button {
+      style
+    }
     , 
       name
       c_Icon

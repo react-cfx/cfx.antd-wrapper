@@ -88,18 +88,22 @@ class Header extends Component
               type: 'setting'
               ( nb 'Setting' )...
             }
-
       c_domWithLink
         Link: @props.exitLink
         kind: @props.exitKind
         onClick: =>
           @props.exitClick()
         domObj: =>
-          c_span {
+          c_div {
+            key: 'exitContainer'
+            ( nb 'exitContainer' )...
+          }
+          ,
+            c_span {
             key: 'a'
             ( nb 'exit' )...
-          }
-          , @props.exit
+            }
+            , @props.exit          
       #
       # c_div {
       #   key: 'bell'

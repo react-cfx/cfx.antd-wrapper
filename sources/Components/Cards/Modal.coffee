@@ -38,6 +38,7 @@ class PopModal extends Component
       visible: true
 
   handleOk: (e) =>
+    @props.handleOk()
     @setState
       visible: false
       

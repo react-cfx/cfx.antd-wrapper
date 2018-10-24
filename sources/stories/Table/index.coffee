@@ -44,12 +44,12 @@ export default =>
       #   , text
       Divider: false
       delete: '解除'
-      # footlabel: (index, record) =>
-      #   c_a
-      #     key: "/#{index}"
-      #     href: "/#{index}"
-      #     style: color: '#959595'
-      #   , '详细'
+      footlabel: (key, record, index) =>
+        c_a
+          key: "/#{index}"
+          href: "/#{index}"
+          style: color: '#959595'
+        , '详细'
       btn: '添加房源'
       # editPen: true
       header:

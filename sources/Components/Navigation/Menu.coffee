@@ -73,6 +73,9 @@ _Menu = enhance (props) =>
                 Link: link
                 kind: kind
                 style:
+                  display: 'inline-block'
+                  width: '95%'
+                  height: '100%'                
                   color: 'white'
                 name: c
           ]
