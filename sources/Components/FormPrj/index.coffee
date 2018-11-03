@@ -12,8 +12,9 @@ import {
   Select
   InputNumber
   option
+  Radio
 } from 'antd'
-
+RadioGroup = Radio.Group
 Option = Select.Option
 FormItem = Form.Item
 
@@ -31,13 +32,15 @@ CFX = cfxify {
   Select
   Option
   InputNumber
+  Radio
+  RadioGroup
 }
 
 class FormPrj extends Component
   constructor: (props) ->
     super props
     @state =
-      
+
     @
   # verification: (rule , value ,callback) =>
   #   console.log 'value', value
@@ -59,6 +62,8 @@ class FormPrj extends Component
       c_Select
       c_Option
       c_InputNumber
+      c_Radio
+      c_RadioGroup
     } = CFX
     
     ChangeSelect =
@@ -206,7 +211,7 @@ class FormPrj extends Component
                       max: '6000'
                       step: '50'
                       formatter: (value) => "￥    #{value}"
-                  ]
+                  ]            
                   else [
                     c_Input
                       onChange: (e) -> onChange e.target.value, c.key, c.unit
@@ -340,6 +345,24 @@ class FormPrj extends Component
                     style:
                       marginLeft: '5px'
                   , c.children
+                ]
+                else if c.type is 'radio'
+                then [
+                  c_RadioGroup {
+                    key: 'RadioGroup'
+                    onChange: (e) -> onChange e.target.value, c.key
+                    value: c.currentValue
+                  }
+                  ,
+                    c.value.reduce (r, c) =>
+                      [
+                        r...
+                        c_Radio
+                          key: c
+                          value: c
+                        , c
+                      ]
+                    , []   
                 ]
                 else [
                   if c.verification

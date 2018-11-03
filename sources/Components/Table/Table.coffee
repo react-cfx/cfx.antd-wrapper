@@ -377,7 +377,9 @@ class EditableTable extends Component
     selectedRowKeys: self.props.selectedRowKeys
 
     getCheckboxProps: (record) =>
-      disabled: record.name == 'Disabled User'
+      if self.props.getCheckboxProps
+      then self.props.getCheckboxProps record
+      else disabled: record.name == 'Disabled User'
 
     onSelectInvert: (selectedRows) =>
       console.log 'onSelectInvert', selectedRows
