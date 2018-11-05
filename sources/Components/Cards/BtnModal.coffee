@@ -18,6 +18,7 @@ export default ->
       icon: @props.icon
       type: @props.type
       BtnTitle: @props.BtnTitle
+      handleOk: @props.handleOk
       style: @props.style
       ModalTitle: @props.ModalTitle
       ModalContent: @props.ModalContent
