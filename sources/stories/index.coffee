@@ -18,6 +18,7 @@ import Page from './Page'
 import Header from './Header/index'
 import Login from './Login'
 import FormPrj from './FormPrj'
+import Modal from './Modal'
 
 Welcome()
 Menu()
@@ -32,3 +33,4 @@ PageContent()
 Header()
 Login()
 FormPrj()
+Modal()
