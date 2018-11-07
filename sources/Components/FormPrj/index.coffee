@@ -287,6 +287,11 @@ class FormPrj extends Component
                       onChange value, c.key, c.keys, c.unit
                     placeholder: "请输入#{c.keys}"
                     (
+                      if c.disabled?
+                      then disabled: c.disabled
+                      else {}
+                    )...
+                    (
                       if c.value
                         value: c.value
                       else {}

@@ -32,6 +32,7 @@ import Cards from './Components/Cards'
 import BtnModal from './Components/Cards/BtnModal'
 import List from './Components/Cards/List'
 import Dropdown from './Components/Dropdown'
+import message from './Components/Messages'
 
 export {
   Page
