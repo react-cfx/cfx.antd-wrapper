@@ -19,6 +19,7 @@ import Header from './Header/index'
 import Login from './Login'
 import FormPrj from './FormPrj'
 import Messages from './Messages'
+import Modal from './Modal'
 
 Welcome()
 Menu()
@@ -34,3 +35,4 @@ Header()
 Login()
 FormPrj()
 Messages()
+Modal()

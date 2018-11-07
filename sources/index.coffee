@@ -1,61 +1,63 @@
 import {
-  FormField
+	FormField
 } from './Components/Form'
 import {
-  PageCenter
-  SiderContent
-  MainContent
+	PageCenter
+	SiderContent
+	MainContent
 } from './Components/Layout'
 import {
-  Page
-  PageHeader
-  PageContent
+	Page
+	PageHeader
+	PageContent
 } from './Components/Page'
 import ContentPage from './Components/Content'
 import Header from './Components/Header/Header'
 import Login, {
-  LoginForm
-  LoginCard
-  CenterCard
-  WithBackImg
-  WithBackCanva
+	LoginForm
+	LoginCard
+	CenterCard
+	WithBackImg
+	WithBackCanva
 } from './Components/Login'
 import {
-  Menu
+	Menu
 } from './Components/Navigation'
 import PrjForm from './Components/FormPrj/index'
 import {
-  Table
+	Table
 } from './Components/Table'
 import Steps from './Components/Steps'
 import Cards from './Components/Cards'
-import BtnModal from './Components/Cards/BtnModal'
+import BtnModal from './Components/Cards/BtnModal/BtnModal'
+import Modal from './Components/Cards/Modal'
 import List from './Components/Cards/List'
 import Dropdown from './Components/Dropdown'
 import message from './Components/Messages'
 
 export {
-  Page
-  PageHeader
-  PageContent
-  PrjForm
-  BtnModal
-  List
-  ContentPage
-  Header
-  FormField
-  PageCenter
-  SiderContent
-  MainContent
-  Login
-  LoginForm
-  LoginCard
-  CenterCard
-  WithBackImg
-  WithBackCanva
-  Menu
-  Table
-  Steps
-  Cards
-  Dropdown
+	Page
+	PageHeader
+	PageContent
+	PrjForm
+	BtnModal
+	Modal
+	List
+	ContentPage
+	Header
+	FormField
+	PageCenter
+	SiderContent
+	MainContent
+	Login
+	LoginForm
+	LoginCard
+	CenterCard
+	WithBackImg
+	WithBackCanva
+	Menu
+	Table
+	Steps
+	Cards
+	Dropdown
 }
