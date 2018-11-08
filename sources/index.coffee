@@ -60,4 +60,5 @@ export {
 	Steps
 	Cards
 	Dropdown
+	message
 }
