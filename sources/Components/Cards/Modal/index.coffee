@@ -16,5 +16,6 @@ export default ->
 		c_Show
 			visible: @props.visible
 			handleOk: @props.handleOk
+			handleCancel: @props.handleCancel
 			ModalTitle: @props.ModalTitle
 			ModalContent: @props.ModalContent

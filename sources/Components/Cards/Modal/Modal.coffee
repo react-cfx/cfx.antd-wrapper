@@ -16,8 +16,12 @@ class ShowpModal extends Component
 
 	constructor: (props) ->
 		super props
+
 		@state =
-			visible: @props.visible
+			visible: 
+				unless @props.visible 
+				then @props.visible
+				else false
 		@
 
 	handleOk: (e) =>
@@ -26,6 +30,7 @@ class ShowpModal extends Component
 			visible: false
 			
 	handleCancel: (e) =>
+		@props.handleCancel()
 		@setState
 			visible: false
 
@@ -42,7 +47,11 @@ class ShowpModal extends Component
 				title: @props.ModalTitle
 				okText: '确定'
 				cancelText: '取消'
-				visible: @state.visible
+				visible: (
+					if @state.visible
+					then @state.visible
+					else @props.visible
+				)
 				onOk: @handleOk
 				onCancel: @handleCancel
 			,
